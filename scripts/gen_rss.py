@@ -31,6 +31,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 BASE = Path('/Volumes/Extra/arxiv_daily')
 SITE_LINK_DEFAULT = 'https://desperadoccy.github.io/Arxiv-daily/'
+CST = dt.timezone(dt.timedelta(hours=8))
 
 
 def _today() -> dt.date:
@@ -42,7 +43,7 @@ def _safe(s: str) -> str:
 
 
 def _fmt_rfc2822(d: dt.date) -> str:
-    dt_ = dt.datetime(d.year, d.month, d.day, 12, 0, 0, tzinfo=dt.timezone.utc)
+    dt_ = dt.datetime(d.year, d.month, d.day, 12, 0, 0, tzinfo=CST)
     return dt_.strftime('%a, %d %b %Y %H:%M:%S %z')
 
 
@@ -321,7 +322,7 @@ def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
 
 
 def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
-    now = dt.datetime.now(dt.timezone.utc).strftime('%a, %d %b %Y %H:%M:%S %z')
+    now = dt.datetime.now(CST).strftime('%a, %d %b %Y %H:%M:%S %z')
     self_feed = site_link + 'feed.xml'
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
