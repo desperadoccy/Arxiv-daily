@@ -103,13 +103,14 @@ def _render_paper(it: Dict[str, Any], with_deep: bool) -> str:
     if meta:
         parts.append('<p>' + ' | '.join(meta) + '</p>')
     if summary:
-        parts.append(f'<p>摘要: {_safe(summary)}</p>')
+        parts.append(f'<p><b>简述</b>: {_safe(summary)}</p>')
     if reason:
-        parts.append(f'<p>理由: {_safe(reason)}</p>')
+        parts.append(f'<p><b>筛选理由</b>: {_safe(reason)}</p>')
     if with_deep:
         deep = _pick_deep_text(it)
         if deep:
-            parts.append('<details><summary>Deep</summary>')
+            parts.append('<div style="margin: 8px 0 0 0; padding: 8px 10px; border-left: 3px solid #d0d7de; background: #f6f8fa;">')
+            parts.append('<p><b>Deep Review</b></p>')
             if deep.get('innovation'):
                 parts.append(f'<p><b>创新</b>: {_safe(deep["innovation"])}</p>')
             if deep.get('method'):
@@ -117,8 +118,8 @@ def _render_paper(it: Dict[str, Any], with_deep: bool) -> str:
             if deep.get('experiments'):
                 parts.append(f'<p><b>实验</b>: {_safe(deep["experiments"])}</p>')
             if deep.get('reason'):
-                parts.append(f'<p><b>推荐理由</b>: {_safe(deep["reason"])}</p>')
-            parts.append('</details>')
+                parts.append(f'<p><b>Deep 理由</b>: {_safe(deep["reason"])}</p>')
+            parts.append('</div>')
     parts.append('</li>')
     return '\n'.join(parts)
 
