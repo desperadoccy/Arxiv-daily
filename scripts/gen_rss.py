@@ -354,7 +354,7 @@ def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date,
 def generate_site(days: int, out_dir: Path, site_link: str, title: str, desc: str) -> None:
     today = _today()
     day_records: List[Tuple[dt.date, List[Dict[str, Any]]]] = []
-    for i in range(1, days + 1):
+    for i in range(days):
         day = today - dt.timedelta(days=i)
         screening = _load_screening(BASE / day.isoformat())
         if screening:
