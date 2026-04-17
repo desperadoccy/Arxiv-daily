@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>ArXiv Daily (AI Review)</title>
+  <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+  <description>Daily arXiv screening + deep reviews (one item per day).</description>
+  <lastBuildDate>Fri, 17 Apr 2026 02:30:36 +0000</lastBuildDate>
+  <language>zh-cn</language>
+  <item>
+    <title>ArXiv Daily · 2026-04-16</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+    <guid isPermaLink="false">arxiv-daily:2026-04-16</guid>
+    <pubDate>Thu, 16 Apr 2026 12:00:00 +0000</pubDate>
+    <description><![CDATA[<h2>ArXiv Daily · 2026-04-16</h2>
+<p>共 25 篇。🔴 必读 0，🟡 推荐 25，⚪ 可跳过 0。</p>
+<h3>🟡 推荐（25）</h3><ol>
+<li><p><b>Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.14041v1">https://arxiv.org/abs/2604.14041v1</a></p>
+<p>摘要: 评测MLLM日常视觉线索推理能力</p>
+<p>理由: Benchmark切中痛点，任务设计新，但偏评测非方法</p>
+</li>
+<li><p><b>POINTS-Seeker: Towards Training a Multimodal Agentic Search Model from Scratch</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.14029v1">https://arxiv.org/abs/2604.14029v1</a></p>
+<p>摘要: 从零训练多模态搜索智能体</p>
+<p>理由: 问题新，含训练范式与长程压缩，实证较强</p>
+</li>
+<li><p><b>MAny: Merge Anything for Multimodal Continual Instruction Tuning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.14016v1">https://arxiv.org/abs/2604.14016v1</a></p>
+<p>摘要: 训练免费多模态持续调参合并框架</p>
+<p>理由: 抓住双遗忘痛点，方法新颖且增益明显</p>
+</li>
+<li><p><b>Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.13942v1">https://arxiv.org/abs/2604.13942v1</a></p>
+<p>摘要: 分层规划反思提升长程操作</p>
+<p>理由: 长程操控痛点明确，闭环规划执行增益显著</p>
+</li>
+<li><p><b>GeoAgentBench: A Dynamic Execution Benchmark for Tool-Augmented Agents in Spatial Analysis</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13888v1">https://arxiv.org/abs/2604.13888v1</a></p>
+<p>摘要: 面向GIS智能体的动态评测基准</p>
+<p>理由: 基准新颖、评测务实，但偏垂直场景</p>
+</li>
+<li><p><b>Robust parameter inference for Taiji via time-frequency contrastive learning and normalizing flows</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13867v1">https://arxiv.org/abs/2604.13867v1</a></p>
+<p>摘要: 抗毛刺引力波快速参数推断</p>
+<p>理由: 方法扎实且实用，但偏领域应用创新</p>
+</li>
+<li><p><b>Character Beyond Speech: Leveraging Role-Playing Evaluation in Audio Large Language Models via Reinforcement Learning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13804v1">https://arxiv.org/abs/2604.13804v1</a></p>
+<p>摘要: 音频角色扮演评测与强化学习优化</p>
+<p>理由: 聚焦语音角色一致性评测，数据集与评估框架较新</p>
+</li>
+<li><p><b>Failure Identification in Imitation Learning Via Statistical and Semantic Filtering</b></p>
+<p>方向: MM | 标签: [MM] [VLA] | 链接: <a href="https://arxiv.org/abs/2604.13788v1">https://arxiv.org/abs/2604.13788v1</a></p>
+<p>摘要: 用统计加语义过滤识别机器人失败</p>
+<p>理由: 聚焦部署安全，方法实用，但偏检测模块</p>
+</li>
+<li><p><b>MedRCube: A Multidimensional Framework for Fine-Grained and In-Depth Evaluation of MLLMs in Medical Imaging</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13756v1">https://arxiv.org/abs/2604.13756v1</a></p>
+<p>摘要: 医疗影像MLLM细粒度评测框架</p>
+<p>理由: 评测维度新且实用，揭示可信性问题</p>
+</li>
+<li><p><b>Jump-Start Reinforcement Learning with Vision-Language-Action Regularization</b></p>
+<p>方向: VLA | 标签: [MM] [VLA] | 链接: <a href="https://arxiv.org/abs/2604.13733v1">https://arxiv.org/abs/2604.13733v1</a></p>
+<p>摘要: VLA引导RL提升机器人操控效率</p>
+<p>理由: 结合VLA与PPO，样本效率和实机泛化较亮眼</p>
+</li>
+<li><p><b>SLQ: Bridging Modalities via Shared Latent Queries for Retrieval with Frozen MLLMs</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13710v1">https://arxiv.org/abs/2604.13710v1</a></p>
+<p>摘要: 冻结MLLM用共享潜查询做检索</p>
+<p>理由: 方法简洁有效，兼顾性能、效率与新基准</p>
+</li>
+<li><p><b>Vision-and-Language Navigation for UAVs: Progress, Challenges, and a Research Roadmap</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.13654v1">https://arxiv.org/abs/2604.13654v1</a></p>
+<p>摘要: 系统综述无人机视觉语言导航</p>
+<p>理由: 综述全面、路线清晰，但偏survey非方法突破</p>
+</li>
+<li><p><b>Figma2Code: Automating Multimodal Design to Code in the Wild</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13648v1">https://arxiv.org/abs/2604.13648v1</a></p>
+<p>摘要: Figma多模态设计转代码基准</p>
+<p>理由: 任务贴近工业，数据基准有价值，但方法创新偏弱</p>
+</li>
+<li><p><b>AVID: A Benchmark for Omni-Modal Audio-Visual Inconsistency Understanding via Agent-Driven Construction</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13593v1">https://arxiv.org/abs/2604.13593v1</a></p>
+<p>摘要: 长视频音画不一致理解基准</p>
+<p>理由: 问题新且实用，基准规模大，但偏benchmark</p>
+</li>
+<li><p><b>Radar-Informed 3D Multi-Object Tracking under Adverse Conditions</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13571v1">https://arxiv.org/abs/2604.13571v1</a></p>
+<p>摘要: 显式雷达增强恶劣环境3D跟踪</p>
+<p>理由: 面向长距与恶劣天气，增益明显且思路实用</p>
+</li>
+<li><p><b>Parameter-efficient Quantum Multi-task Learning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13560v1">https://arxiv.org/abs/2604.13560v1</a></p>
+<p>摘要: 量子多任务头提升参数效率</p>
+<p>理由: 量子头参数缩放新颖，但实用性与收益仍需验证</p>
+</li>
+<li><p><b>Free Lunch for Unified Multimodal Models: Enhancing Generation via Reflective Rectification with Inherent Understanding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13540v1">https://arxiv.org/abs/2604.13540v1</a></p>
+<p>摘要: 用理解能力反哺多模态生成</p>
+<p>理由: 训练免费，思路新颖，但增益与泛化待核验</p>
+</li>
+<li><p><b>Enhanced Text-to-Image Generation by Fine-grained Multimodal Reasoning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13491v1">https://arxiv.org/abs/2604.13491v1</a></p>
+<p>摘要: 细粒度多模态推理提升文生图对齐</p>
+<p>理由: 细粒度反思新颖，对可控生成有参考价值</p>
+</li>
+<li><p><b>Towards Scalable Lightweight GUI Agents via Multi-role Orchestration</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.13488v1">https://arxiv.org/abs/2604.13488v1</a></p>
+<p>摘要: 轻量GUI智能体的多角色协同框架</p>
+<p>理由: 轻量GUI代理实用，含训练与协同设计</p>
+</li>
+<li><p><b>Robotic Manipulation is Vision-to-Geometry Mapping ($f(v) \rightarrow G$): Vision-Geometry Backbones over Language and Video Models</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.12908v1">https://arxiv.org/abs/2604.12908v1</a></p>
+<p>摘要: 以3D几何骨干替代VLA骨干</p>
+<p>理由: 问题切中操控本质，3D表征思路新，且有仿真与实机泛化增益</p>
+</li>
+<li><p><b>StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11757v1">https://arxiv.org/abs/2604.11757v1</a></p>
+<p>摘要: 简化VLA设计仍可达强性能</p>
+<p>理由: 统一基线强，适合把握VLA关键设计</p>
+</li>
+<li><p><b>Grounded World Model for Semantically Generalizable Planning</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11751v1">https://arxiv.org/abs/2604.11751v1</a></p>
+<p>摘要: 语言对齐世界模型做泛化规划</p>
+<p>理由: 用语言替代目标图像，语义泛化显著提升</p>
+</li>
+<li><p><b>LARY: A Latent Action Representation Yielding Benchmark for Generalizable Vision-to-Action Alignment</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11689v1">https://arxiv.org/abs/2604.11689v1</a></p>
+<p>摘要: 潜在动作表征评测基准</p>
+<p>理由: 基准价值高，但偏评测非方法突破</p>
+</li>
+<li><p><b>DA-PTQ: Drift-Aware Post-Training Quantization for Efficient Vision-Language-Action Models</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11572v1">https://arxiv.org/abs/2604.11572v1</a></p>
+<p>摘要: 面向VLA的漂移感知量化</p>
+<p>理由: 抓住时序漂移痛点，部署价值高，方法较实用</p>
+</li>
+<li><p><b>ReXSonoVQA: A Video QA Benchmark for Procedure-Centric Ultrasound Understanding</b></p>
+<p>方向: MM | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10916v2">https://arxiv.org/abs/2604.10916v2</a></p>
+<p>摘要: 超声流程视频问答基准</p>
+<p>理由: 面向机器人超声评测，揭示视频VLM程序理解短板</p>
+</li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>ArXiv Daily · 2026-04-15</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+    <guid isPermaLink="false">arxiv-daily:2026-04-15</guid>
+    <pubDate>Wed, 15 Apr 2026 12:00:00 +0000</pubDate>
+    <description><![CDATA[<h2>ArXiv Daily · 2026-04-15</h2>
+<p>共 26 篇。🔴 必读 0，🟡 推荐 26，⚪ 可跳过 0。</p>
+<h3>🟡 推荐（26）</h3><ol>
+<li><p><b>RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</b></p>
+<p>方向: 其他 | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12820v1">https://arxiv.org/abs/2604.12820v1</a></p>
+<p>摘要: 推理时交互式模型遗忘</p>
+<p>理由: 问题新颖，方法实用，但需警惕真实遗忘性</p>
+</li>
+<li><p><b>DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12813v1">https://arxiv.org/abs/2604.12813v1</a></p>
+<p>摘要: 解耦感知与校准做视频质评</p>
+<p>理由: 轻量适配思路实用，但方法增量偏明显</p>
+</li>
+<li><p><b>DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12812v1">https://arxiv.org/abs/2604.12812v1</a></p>
+<p>摘要: 长文档多模态证据定位推理</p>
+<p>理由: 问题关键，方法完整，长文档场景实用</p>
+</li>
+<li><p><b>Rethinking the Personalized Relaxed Initialization in the Federated Learning: Consistency and Generalization</b></p>
+<p>方向: FL | 标签: [FL] | 链接: <a href="https://arxiv.org/abs/2604.12768v1">https://arxiv.org/abs/2604.12768v1</a></p>
+<p>摘要: 联邦初始化缓解漂移并解释泛化影响</p>
+<p>理由: 有理论分析与低成本改进，实用性强</p>
+</li>
+<li><p><b>CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12767v1">https://arxiv.org/abs/2604.12767v1</a></p>
+<p>摘要: 面向MLLM的自适应视觉token剪枝</p>
+<p>理由: 方法新颖实用，提效明显，但属增量优化</p>
+</li>
+<li><p><b>AffectAgent: Collaborative Multi-Agent Reasoning for Retrieval-Augmented Multimodal Emotion Recognition</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12735v1">https://arxiv.org/abs/2604.12735v1</a></p>
+<p>摘要: 多智能体检索增强情感识别</p>
+<p>理由: 多智能体RAG较新，实验充分，但偏任务改进</p>
+</li>
+<li><p><b>MISID: A Multimodal Multi-turn Dataset for Complex Intent Recognition in Strategic Deception Games</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12700v1">https://arxiv.org/abs/2604.12700v1</a></p>
+<p>摘要: 多模态多轮欺骗意图识别基准</p>
+<p>理由: 数据集新颖，任务有挑战，方法增量偏基准型</p>
+</li>
+<li><p><b>Differentiating Physical and Psychological Stress Using Wearable Physiological Signals and Salivary Cortisol</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12671v1">https://arxiv.org/abs/2604.12671v1</a></p>
+<p>摘要: 皮质醇显著提升压力分类</p>
+<p>理由: 多模态思路有价值，但样本仅6人</p>
+</li>
+<li><p><b>TimeSAF: Towards LLM-Guided Semantic Asynchronous Fusion for Time Series Forecasting</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12648v1">https://arxiv.org/abs/2604.12648v1</a></p>
+<p>摘要: 异步语义融合提升时序预测</p>
+<p>理由: 问题明确，结构新颖，实验全面，但增量偏方法优化</p>
+</li>
+<li><p><b>GeoAlign: Geometric Feature Realignment for MLLM Spatial Reasoning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12630v1">https://arxiv.org/abs/2604.12630v1</a></p>
+<p>摘要: 动态对齐几何特征提升空间推理</p>
+<p>理由: 抓住空间推理痛点，方法新且实验强</p>
+</li>
+<li><p><b>EEG-Based Multimodal Learning via Hyperbolic Mixture-of-Curvature Experts</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12579v1">https://arxiv.org/abs/2604.12579v1</a></p>
+<p>摘要: 双曲混合曲率建模EEG多模态</p>
+<p>理由: 方法有新意，但偏任务增益，通用性待验证</p>
+</li>
+<li><p><b>Cross-Modal Knowledge Distillation for PET-Free Amyloid-Beta Detection from MRI</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12574v1">https://arxiv.org/abs/2604.12574v1</a></p>
+<p>摘要: PET蒸馏助MRI预测Aβ阳性</p>
+<p>理由: 医学多模态蒸馏实用，效果中等</p>
+</li>
+<li><p><b>MODIX: A Training-Free Multimodal Information-Driven Positional Index Scaling for Vision-Language Models</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12537v1">https://arxiv.org/abs/2604.12537v1</a></p>
+<p>摘要: 训练免费的位置索引自适应缩放</p>
+<p>理由: 思路新颖且免训练，实用性强，但需看增益稳定性</p>
+</li>
+<li><p><b>Audio-Cogito: Towards Deep Audio Reasoning in Large Audio Language Models</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12527v1">https://arxiv.org/abs/2604.12527v1</a></p>
+<p>摘要: 开源音频大模型深度推理方案</p>
+<p>理由: 聚焦音频CoT稀缺问题，数据与方法均有实用价值</p>
+</li>
+<li><p><b>Enhance-then-Balance Modality Collaboration for Robust Multimodal Sentiment Analysis</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12518v1">https://arxiv.org/abs/2604.12518v1</a></p>
+<p>摘要: 增强弱模态并平衡融合</p>
+<p>理由: 针对模态失衡与缺失，方法完整且实用</p>
+</li>
+<li><p><b>NTIRE 2026 The 3rd Restore Any Image Model (RAIM) Challenge: Professional Image Quality Assessment (Track 1)</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12512v1">https://arxiv.org/abs/2604.12512v1</a></p>
+<p>摘要: MLLM驱动专业图像质量评测基准</p>
+<p>理由: 挑战赛综述，基准有价值，但方法创新有限</p>
+</li>
+<li><p><b>From Attenuation to Attention: Variational Information Flow Manipulation for Fine-Grained Visual Perception</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12508v1">https://arxiv.org/abs/2604.12508v1</a></p>
+<p>摘要: 用VIF缓解多模态细粒度感知衰减</p>
+<p>理由: 问题切中痛点，方法新颖且可插拔</p>
+</li>
+<li><p><b>SEATrack: Simple, Efficient, and Adaptive Multimodal Tracker</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12502v1">https://arxiv.org/abs/2604.12502v1</a></p>
+<p>摘要: 高效多模态跟踪新框架</p>
+<p>理由: 兼顾性能与参数效率，方法设计有新意</p>
+</li>
+<li><p><b>Decoding by Perturbation: Mitigating MLLM Hallucinations via Dynamic Textual Perturbation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12424v1">https://arxiv.org/abs/2604.12424v1</a></p>
+<p>摘要: 用文本扰动抑制多模态幻觉</p>
+<p>理由: 训练免费且思路新颖，实用性强，值得关注</p>
+</li>
+<li><p><b>Why and When Visual Token Pruning Fails? A Study on Relevant Visual Information Shift in MLLMs Decoding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.12358v1">https://arxiv.org/abs/2604.12358v1</a></p>
+<p>摘要: 揭示视觉剪枝在推理中失效根因</p>
+<p>理由: 问题新颖，分析扎实，方法通用且实用</p>
+</li>
+<li><p><b>StarVLA-$α$: Reducing Complexity in Vision-Language-Action Systems</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11757v1">https://arxiv.org/abs/2604.11757v1</a></p>
+<p>摘要: 极简VLA基线验证复杂设计非必需</p>
+<p>理由: 强基线+统一评测，适合把握VLA关键设计</p>
+</li>
+<li><p><b>Grounded World Model for Semantically Generalizable Planning</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11751v1">https://arxiv.org/abs/2604.11751v1</a></p>
+<p>摘要: 语言对齐世界模型做泛化规划</p>
+<p>理由: 用语言替代目标图像，语义泛化强，基准提升显著</p>
+</li>
+<li><p><b>LARY: A Latent Action Representation Yielding Benchmark for Generalizable Vision-to-Action Alignment</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11689v1">https://arxiv.org/abs/2604.11689v1</a></p>
+<p>摘要: 面向VLA的潜动作表征评测基准</p>
+<p>理由: 基准价值高，结论有启发，但方法创新较弱</p>
+</li>
+<li><p><b>DA-PTQ: Drift-Aware Post-Training Quantization for Efficient Vision-Language-Action Models</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.11572v1">https://arxiv.org/abs/2604.11572v1</a></p>
+<p>摘要: 面向VLA的漂移感知量化</p>
+<p>理由: 抓住时序漂移痛点，部署价值高，创新偏工程</p>
+</li>
+<li><p><b>ReXSonoVQA: A Video QA Benchmark for Procedure-Centric Ultrasound Understanding</b></p>
+<p>方向: MM | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10916v1">https://arxiv.org/abs/2604.10916v1</a></p>
+<p>摘要: 超声流程视频问答基准</p>
+<p>理由: 数据集新颖，聚焦医疗视频推理，适合看Benchmark设计</p>
+</li>
+<li><p><b>AnySlot: Goal-Conditioned Vision-Language-Action Policies for Zero-Shot Slot-Level Placement</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10432v2">https://arxiv.org/abs/2604.10432v2</a></p>
+<p>摘要: 分层VLA实现零样本槽位精准放置</p>
+<p>理由: 任务定义清晰，方法实用，基准新颖，但偏工程整合</p>
+</li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>ArXiv Daily · 2026-04-14</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+    <guid isPermaLink="false">arxiv-daily:2026-04-14</guid>
+    <pubDate>Tue, 14 Apr 2026 12:00:00 +0000</pubDate>
+    <description><![CDATA[<h2>ArXiv Daily · 2026-04-14</h2>
+<p>共 24 篇。🔴 必读 0，🟡 推荐 23，⚪ 可跳过 1。</p>
+<h3>🟡 推荐（23）</h3><ol>
+<li><p><b>Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10566v1">https://arxiv.org/abs/2604.10566v1</a></p>
+<p>摘要: 解析战争舆论协同行动与误导扩散</p>
+<p>理由: 大规模实证+多模态刻画，结论可指导内容治理</p>
+</li>
+<li><p><b>VidAudio-Bench: Benchmarking V2A and VT2A Generation across Four Audio Categories</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10542v1">https://arxiv.org/abs/2604.10542v1</a></p>
+<p>摘要: 细粒度视频音频生成评测基准</p>
+<p>理由: 评测体系完整，对V2A/VT2A研究很有参考价值</p>
+</li>
+<li><p><b>From Perception to Planning: Evolving Ego-Centric Task-Oriented Spatiotemporal Reasoning via Curriculum Learning</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10517v1">https://arxiv.org/abs/2604.10517v1</a></p>
+<p>摘要: 课程学习提升具身时空推理</p>
+<p>理由: 数据规模大，任务设定强，但需核验泛化与真实机器人价值</p>
+</li>
+<li><p><b>A Progressive Training Strategy for Vision-Language Models to Counteract Spatio-Temporal Hallucinations in Embodied Reasoning</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10506v1">https://arxiv.org/abs/2604.10506v1</a></p>
+<p>摘要: 渐进训练缓解时空推理幻觉偏差</p>
+<p>理由: CoT数据+弱标微调，显著缩小前后向差距</p>
+</li>
+<li><p><b>Visual Enhanced Depth Scaling for Multimodal Latent Reasoning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10500v1">https://arxiv.org/abs/2604.10500v1</a></p>
+<p>摘要: 增强视觉与动态深度的多模态隐式推理</p>
+<p>理由: 问题明确，方法新颖，但需看实验与泛化</p>
+</li>
+<li><p><b>UDAPose: Unsupervised Domain Adaptation for Low-Light Human Pose Estimation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10485v1">https://arxiv.org/abs/2604.10485v1</a></p>
+<p>摘要: 低照人体姿态估计域适应</p>
+<p>理由: 任务明确，方法完整，提升显著但偏专项</p>
+</li>
+<li><p><b>The Fréchet correlation coefficient for heterogeneous random objects</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10482v1">https://arxiv.org/abs/2604.10482v1</a></p>
+<p>摘要: 度量异构对象相关性的Fréchet系数</p>
+<p>理由: 方法新颖且通用，但偏统计理论，机器人直接相关性有限</p>
+</li>
+<li><p><b>Toward Accountable AI-Generated Content on Social Platforms: Steganographic Attribution and Multimodal Harm Detection</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10460v1">https://arxiv.org/abs/2604.10460v1</a></p>
+<p>摘要: 多模态有害检测结合隐写溯源</p>
+<p>理由: 系统性强但偏工程整合，创新有限</p>
+</li>
+<li><p><b>AnySlot: Goal-Conditioned Vision-Language-Action Policies for Zero-Shot Slot-Level Placement</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10432v1">https://arxiv.org/abs/2604.10432v1</a></p>
+<p>摘要: 分层VLA实现零样本精确插槽放置</p>
+<p>理由: 目标明确，方法实用，含新基准但创新偏工程化</p>
+</li>
+<li><p><b>Sense Less, Infer More: Agentic Multimodal Transformers for Edge Medical Intelligence</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10404v1">https://arxiv.org/abs/2604.10404v1</a></p>
+<p>摘要: 边端多模态医疗感知与推理协同节能</p>
+<p>理由: 问题重要，方法完整，但增益较小且需看硬件实测</p>
+</li>
+<li><p><b>FashionMV: Product-Level Composed Image Retrieval with Multi-View Fashion Data</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10297v1">https://arxiv.org/abs/2604.10297v1</a></p>
+<p>摘要: 多视角时尚组合检索新任务与数据集</p>
+<p>理由: 任务设定新、数据价值高，方法增量偏工程化</p>
+</li>
+<li><p><b>Descriptor-Injected Cross-Modal Learning: A Systematic Exploration of Audio-MIDI Alignment via Spectral and Melodic Features</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10283v1">https://arxiv.org/abs/2604.10283v1</a></p>
+<p>摘要: 描述符注入提升音频MIDI对齐</p>
+<p>理由: 实验系统全面，增益明确，但偏任务优化</p>
+</li>
+<li><p><b>A Coordinate-Invariant Local Representation of Motion and Force Trajectories for Identification and Generalization Across Coordinate Systems</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10241v1">https://arxiv.org/abs/2604.10241v1</a></p>
+<p>摘要: 提出坐标不变轨迹表征DUTIR</p>
+<p>理由: 方法通用且实用，但偏表示学习基础</p>
+</li>
+<li><p><b>Adapting 2D Multi-Modal Large Language Model for 3D CT Image Analysis</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10233v1">https://arxiv.org/abs/2604.10233v1</a></p>
+<p>摘要: 2D多模态大模型迁移至3DCT分析</p>
+<p>理由: 思路实用，面向3D医疗MM落地，创新中等</p>
+</li>
+<li><p><b>SVSR: A Self-Verification and Self-Rectification Paradigm for Multimodal Reasoning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10228v1">https://arxiv.org/abs/2604.10228v1</a></p>
+<p>摘要: 多模态推理引入自验证自纠错</p>
+<p>理由: 方法较系统，偏训练范式创新，需看实验含金量</p>
+</li>
+<li><p><b>Wearable AI in the Era of Large Sensor Models</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10172v1">https://arxiv.org/abs/2604.10172v1</a></p>
+<p>摘要: 提出可穿戴大传感模型框架</p>
+<p>理由: 立意前沿但属观点综述，方法与实验不足</p>
+</li>
+<li><p><b>Device-Conditioned Neural Architecture Search for Efficient Robotic Manipulation</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10170v1">https://arxiv.org/abs/2604.10170v1</a></p>
+<p>摘要: 面向异构硬件的机器人策略高效部署</p>
+<p>理由: 工程价值高，提速显著，但方法偏部署优化</p>
+</li>
+<li><p><b>Visual Late Chunking: An Empirical Study of Contextual Chunking for Efficient Visual Document Retrieval</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10167v1">https://arxiv.org/abs/2604.10167v1</a></p>
+<p>摘要: 视觉文档检索的高效上下文分块</p>
+<p>理由: 效率提升显著，24数据集验证，实用价值高</p>
+</li>
+<li><p><b>MoRI: Mixture of RL and IL Experts for Long-Horizon Manipulation Tasks</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10165v1">https://arxiv.org/abs/2604.10165v1</a></p>
+<p>摘要: RL与IL混合提升长程操作效率</p>
+<p>理由: 实机效果强，但偏方法整合，VLA相关性较弱</p>
+</li>
+<li><p><b>PhyMix: Towards Physically Consistent Single-Image 3D Indoor Scene Generation with Implicit--Explicit Optimization</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10125v1">https://arxiv.org/abs/2604.10125v1</a></p>
+<p>摘要: 单图室内3D生成引入物理一致性优化</p>
+<p>理由: 评测体系新，兼顾训练与测试时物理约束</p>
+</li>
+<li><p><b>A Dual Cross-Attention Graph Learning Framework For Multimodal MRI-Based Major Depressive Disorder Detection</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.10116v1">https://arxiv.org/abs/2604.10116v1</a></p>
+<p>摘要: 双交叉注意力融合MRI诊断抑郁症</p>
+<p>理由: 多模态融合思路清晰，但方法增量偏应用</p>
+</li>
+<li><p><b>ABot-Claw: A Foundation for Persistent, Cooperative, and Self-Evolving Robotic Agents</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10096v1">https://arxiv.org/abs/2604.10096v1</a></p>
+<p>摘要: 面向多机器人闭环自治的VLA系统框架</p>
+<p>理由: 系统整合强，但更偏框架，需看实证深度</p>
+</li>
+<li><p><b>A Ray Intersection Algorithm for Fast Growth Distance Computation Between Convex Sets</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.10058v1">https://arxiv.org/abs/2604.10058v1</a></p>
+<p>摘要: 快速求凸集增长距离的新算法</p>
+<p>理由: 几何优化扎实，机器人规划仿真实用</p>
+</li>
+</ol>
+<h3>⚪ 可跳过（1）</h3><ul>
+<li>From GPT-3 to GPT-5: Mapping their capabilities, scope, limitations, and consequences（综述性强但方法与新见有限，偏资料汇编）</li>
+</ul>]]></description>
+  </item>
+  <item>
+    <title>ArXiv Daily · 2026-04-13</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+    <guid isPermaLink="false">arxiv-daily:2026-04-13</guid>
+    <pubDate>Mon, 13 Apr 2026 12:00:00 +0000</pubDate>
+    <description><![CDATA[<h2>ArXiv Daily · 2026-04-13</h2>
+<p>共 21 篇。🔴 必读 0，🟡 推荐 21，⚪ 可跳过 0。</p>
+<h3>🟡 推荐（21）</h3><ol>
+<li><p><b>AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.09445v1">https://arxiv.org/abs/2604.09445v1</a></p>
+<p>摘要: 师生异构特征实现高效视觉定位</p>
+<p>理由: 边端定位很实用，思路新，精度效率权衡突出</p>
+</li>
+<li><p><b>Do Vision Language Models Need to Process Image Tokens?</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09425v1">https://arxiv.org/abs/2604.09425v1</a></p>
+<p>摘要: 视觉token深层处理未必必要</p>
+<p>理由: 量化视觉表征早收敛，启发降算力与架构改造</p>
+</li>
+<li><p><b>PhysInOne: Visual Physics Learning and Reasoning in One Suite</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.09415v1">https://arxiv.org/abs/2604.09415v1</a></p>
+<p>摘要: 大规模物理视频数据套件</p>
+<p>理由: 数据规模大且任务全，偏数据集论文</p>
+</li>
+<li><p><b>EpiAgent: An Agent-Centric System for Ancient Inscription Restoration</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09367v1">https://arxiv.org/abs/2604.09367v1</a></p>
+<p>摘要: 多智能体铭文修复系统</p>
+<p>理由: 任务新颖，Agent框架有趣，但应用导向偏强</p>
+</li>
+<li><p><b>Arbitration Failure, Not Perceptual Blindness: How Vision-Language Models Resolve Visual-Linguistic Conflicts</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09364v1">https://arxiv.org/abs/2604.09364v1</a></p>
+<p>摘要: VLM非看不见而是仲裁失灵</p>
+<p>理由: 提出编码-落地解耦，MAC+干预证因果并可小幅提升</p>
+</li>
+<li><p><b>Visually-Guided Policy Optimization for Multimodal Reasoning</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09349v1">https://arxiv.org/abs/2604.09349v1</a></p>
+<p>摘要: 用RL优化VLM视觉注意与遗忘问题</p>
+<p>理由: 聚焦视觉忠实性与时序遗忘，方法可复用</p>
+</li>
+<li><p><b>VAG: Dual-Stream Video-Action Generation for Embodied Data Synthesis</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09330v1">https://arxiv.org/abs/2604.09330v1</a></p>
+<p>摘要: 联合生成视频动作对，提升对齐用于合成数据</p>
+<p>理由: 端到端视频-动作同步生成，解决两阶段误差累积</p>
+</li>
+<li><p><b>Multimodal Anomaly Detection for Human-Robot Interaction</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09326v1">https://arxiv.org/abs/2604.09326v1</a></p>
+<p>摘要: 多模态特征重构用于HRI异常检测</p>
+<p>理由: 思路务实但数据集较小、创新中等</p>
+</li>
+<li><p><b>Constraint-Aware Corrective Memory for Language-Based Drug Discovery Agents</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09308v1">https://arxiv.org/abs/2604.09308v1</a></p>
+<p>摘要: 用约束诊断与纠错记忆提升药物代理成功率</p>
+<p>理由: 聚焦集合级约束控制，给出可复现框架与显著提升</p>
+</li>
+<li><p><b>AMO-ENE: Attention-based Multi-Omics Fusion Model for Outcome Prediction in Extra Nodal Extension and HPV-associated Oropharyngeal Cancer</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09280v1">https://arxiv.org/abs/2604.09280v1</a></p>
+<p>摘要: CT多模态注意力模型预测ENE与预后</p>
+<p>理由: 端到端自动化+较大队列，指标亮眼但缺外部验证</p>
+</li>
+<li><p><b>Unseen Astronomy</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09250v1">https://arxiv.org/abs/2604.09250v1</a></p>
+<p>摘要: 多模态天文展示与应用综述</p>
+<p>理由: 偏综述与社区动员，启发大于技术细节</p>
+</li>
+<li><p><b>FashionStylist: An Expert Knowledge-enhanced Multimodal Dataset for Fashion Understanding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09249v1">https://arxiv.org/abs/2604.09249v1</a></p>
+<p>摘要: 专家标注多任务时尚理解数据集</p>
+<p>理由: 统一覆盖定位补全评估，专家标注提升推理价值</p>
+</li>
+<li><p><b>Vision Transformers for Preoperative CT-Based Prediction of Histopathologic Chemotherapy Response Score in High-Grade Serous Ovarian Carcinoma</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09197v1">https://arxiv.org/abs/2604.09197v1</a></p>
+<p>摘要: 用CT+临床预测卵巢癌化疗反应</p>
+<p>理由: 方法新但外部AUC降至0.68，泛化存疑</p>
+</li>
+<li><p><b>UniSemAlign: Text-Prototype Alignment with a Foundation Encoder for Semi-Supervised Histopathology Segmentation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09169v1">https://arxiv.org/abs/2604.09169v1</a></p>
+<p>摘要: 多模态对齐提升病理半监督分割</p>
+<p>理由: 方法清晰，增益明显，但任务较垂直</p>
+</li>
+<li><p><b>MAG-3D: Multi-Agent Grounded Reasoning for 3D Understanding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09167v1">https://arxiv.org/abs/2604.09167v1</a></p>
+<p>摘要: 多智能体免训练实现3D可执行推理</p>
+<p>理由: 训练free+可执行验证，3D grounded思路新但偏系统集成</p>
+</li>
+<li><p><b>Truncated Rectified Flow Policy for Reinforcement Learning with One-Step Sampling</b></p>
+<p>方向: 其他 | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09159v1">https://arxiv.org/abs/2604.09159v1</a></p>
+<p>摘要: 一步采样流策略提升最大熵强化学习</p>
+<p>理由: 改进生成式策略效率，实验较强但增量有限</p>
+</li>
+<li><p><b>Pareto Set Characterization in Constrained Multiobjective Optimization and the COBI Problem Generator *</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09131v1">https://arxiv.org/abs/2604.09131v1</a></p>
+<p>摘要: 解析可控的约束多目标基准生成器</p>
+<p>理由: 基准设计扎实，适合多目标优化评测</p>
+</li>
+<li><p><b>Physically Grounded 3D Generative Reconstruction under Hand Occlusion using Proprioception and Multi-Contact Touch</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09100v1">https://arxiv.org/abs/2604.09100v1</a></p>
+<p>摘要: 触觉与本体感知辅助遮挡下3D重建</p>
+<p>理由: 多模态物理约束新颖，实机验证强，但偏场景化</p>
+</li>
+<li><p><b>Learning Vision-Language-Action World Models for Autonomous Driving</b></p>
+<p>方向: VLA | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09059v1">https://arxiv.org/abs/2604.09059v1</a></p>
+<p>摘要: 结合世界模型与反思推理提升驾驶预测</p>
+<p>理由: 想象未来帧再推理纠偏，含新数据集与RL验证</p>
+</li>
+<li><p><b>Tora3: Trajectory-Guided Audio-Video Generation with Physical Coherence</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09057v1">https://arxiv.org/abs/2604.09057v1</a></p>
+<p>摘要: 用轨迹先验提升音画物理一致生成</p>
+<p>理由: 轨迹驱动音画对齐与新数据集，实用但偏增量</p>
+</li>
+<li><p><b>SiMing-Bench: Evaluating Procedural Correctness from Continuous Interactions in Clinical Skill Videos</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.09037v1">https://arxiv.org/abs/2604.09037v1</a></p>
+<p>摘要: 评测视频模型的临床流程状态追踪能力</p>
+<p>理由: 临床长视频新基准，揭示MLLM过程判断短板</p>
+</li>
+</ol>]]></description>
+  </item>
+  <item>
+    <title>ArXiv Daily · 2026-04-12</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+    <guid isPermaLink="false">arxiv-daily:2026-04-12</guid>
+    <pubDate>Sun, 12 Apr 2026 12:00:00 +0000</pubDate>
+    <description><![CDATA[<h2>ArXiv Daily · 2026-04-12</h2>
+<p>共 30 篇。🔴 必读 0，🟡 推荐 29，⚪ 可跳过 1。</p>
+<h3>🟡 推荐（29）</h3><ol>
+<li><p><b>Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08545v1">https://arxiv.org/abs/2604.08545v1</a></p>
+<p>摘要: 解耦奖励抑制盲目工具调用</p>
+<p>理由: 问题重要，方法新颖，但增量偏训练技巧</p>
+</li>
+<li><p><b>SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds</b></p>
+<p>方向: 其他 | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08544v1">https://arxiv.org/abs/2604.08544v1</a></p>
+<p>摘要: 物理对齐仿真扩展柔性操作数据</p>
+<p>理由: 面向柔性操作痛点，零样本扩数结果亮眼</p>
+</li>
+<li><p><b>Seeing but Not Thinking: Routing Distraction in Multimodal Mixture-of-Experts</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08541v1">https://arxiv.org/abs/2604.08541v1</a></p>
+<p>摘要: 揭示多模态MoE推理受路由分心</p>
+<p>理由: 问题新颖，机制分析扎实，但增益较有限</p>
+</li>
+<li><p><b>AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08540v1">https://arxiv.org/abs/2604.08540v1</a></p>
+<p>摘要: 面向文生音视频的细粒度评测基准</p>
+<p>理由: 评测框架系统，揭示现有T2AV模型关键短板</p>
+</li>
+<li><p><b>OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08539v1">https://arxiv.org/abs/2604.08539v1</a></p>
+<p>摘要: 多模态RL新目标提升通用推理</p>
+<p>理由: 提出新RL目标，通用性强，需看实验扎实度</p>
+</li>
+<li><p><b>ActiveGlasses: Learning Manipulation with Active Vision from Ego-centric Human Demonstration</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08534v1">https://arxiv.org/abs/2604.08534v1</a></p>
+<p>摘要: 第一视角主动视觉模仿操控</p>
+<p>理由: 主动视觉零样本迁移新颖，实用性强但偏系统集成</p>
+</li>
+<li><p><b>UniversalVTG: A Universal and Lightweight Foundation Model for Video Temporal Grounding</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08522v1">https://arxiv.org/abs/2604.08522v1</a></p>
+<p>摘要: 轻量统一视频时序定位基础模型</p>
+<p>理由: 跨数据集统一训练，轻量且SOTA，实用价值高</p>
+</li>
+<li><p><b>MolmoWeb: Open Visual Web Agent and Open Data for the Open Web</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08516v1">https://arxiv.org/abs/2604.08516v1</a></p>
+<p>摘要: 开源视觉网页代理与数据集</p>
+<p>理由: 开源完整配方，网页代理SOTA，复现价值高</p>
+</li>
+<li><p><b>Visually-grounded Humanoid Agents</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08509v1">https://arxiv.org/abs/2604.08509v1</a></p>
+<p>摘要: 视觉驱动类人智能体框架</p>
+<p>理由: 场景重建结合具身规划，方向新且实用</p>
+</li>
+<li><p><b>Bridging the Gap between Micro-scale Traffic Simulation and 4D Digital Cityscapes</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08497v1">https://arxiv.org/abs/2604.08497v1</a></p>
+<p>摘要: 微观交通仿真结合4D数字城市</p>
+<p>理由: 系统工程扎实，偏可视化与感知验证</p>
+</li>
+<li><p><b>What They Saw, Not Just Where They Looked: Semantic Scanpath Similarity via VLMs and NLP metric</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08494v1">https://arxiv.org/abs/2604.08494v1</a></p>
+<p>摘要: 用VLM评估注视序列语义相似性</p>
+<p>理由: 语义视线分析新颖，但更偏方法扩展</p>
+</li>
+<li><p><b>Figures as Interfaces: Toward LLM-Native Artifacts for Scientific Discovery</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08491v1">https://arxiv.org/abs/2604.08491v1</a></p>
+<p>摘要: 把科研图表变成LLM可操作接口</p>
+<p>理由: 概念新颖，偏系统框架，方法深度待看</p>
+</li>
+<li><p><b>Faithful GRPO: Improving Visual Spatial Reasoning in Multimodal Language Models via Constrained Policy Optimization</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08476v1">https://arxiv.org/abs/2604.08476v1</a></p>
+<p>摘要: 约束GRPO提升多模态空间推理可信度</p>
+<p>理由: 问题重要，方法清晰，指标提升显著</p>
+</li>
+<li><p><b>LAMP: Lift Image-Editing as General 3D Priors for Open-world Manipulation</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08475v1">https://arxiv.org/abs/2604.08475v1</a></p>
+<p>摘要: 用图像编辑先验提升开放域3D操控泛化</p>
+<p>理由: 思路新颖，强调3D几何先验与零样本操控</p>
+</li>
+<li><p><b>Quantization Impact on the Accuracy and Communication Efficiency Trade-off in Federated Learning for Aerospace Predictive Maintenance</b></p>
+<p>方向: FL | 标签: [FL] | 链接: <a href="https://arxiv.org/abs/2604.08474v1">https://arxiv.org/abs/2604.08474v1</a></p>
+<p>摘要: INT4联邦学习精度通信权衡较优</p>
+<p>理由: 实验扎实且有工程价值，但方法创新有限</p>
+</li>
+<li><p><b>BLaDA: Bridging Language to Functional Dexterous Actions within 3DGS Fields</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08410v1">https://arxiv.org/abs/2604.08410v1</a></p>
+<p>摘要: 语言驱动灵巧操作的可解释零样本框架</p>
+<p>理由: 模块化清晰，3DGS功能定位新颖，但偏工程整合</p>
+</li>
+<li><p><b>TASU2: Controllable CTC Simulation for Alignment and Low-Resource Adaptation of Speech LLMs</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08384v1">https://arxiv.org/abs/2604.08384v1</a></p>
+<p>摘要: 可控CTC模拟提升语音LLM低资源适配</p>
+<p>理由: 方法新颖实用，低成本对齐与适配价值高</p>
+</li>
+<li><p><b>CapTalk: Unified Voice Design for Single-Utterance and Dialogue Speech Generation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08363v1">https://arxiv.org/abs/2604.08363v1</a></p>
+<p>摘要: 统一语音设计扩展到多轮对话</p>
+<p>理由: 任务新，统一框架完整，对话语音设计有参考价值</p>
+</li>
+<li><p><b>mmid: Multi-Modal Integration and Downstream analyses for healthcare analytics in Python</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08334v1">https://arxiv.org/abs/2604.08334v1</a></p>
+<p>摘要: 医疗多模态分析Python工具包</p>
+<p>理由: 偏工具平台，应用价值高，算法新意有限</p>
+</li>
+<li><p><b>Lost in the Hype: Revealing and Dissecting the Performance Degradation of Medical Multimodal Large Language Models in Image Classification</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08333v1">https://arxiv.org/abs/2604.08333v1</a></p>
+<p>摘要: 剖析医疗MLLM分类退化根因</p>
+<p>理由: 问题重要，分析系统，但偏诊断非方法突破</p>
+</li>
+<li><p><b>Multi-Modal Learning meets Genetic Programming: Analyzing Alignment in Latent Space Optimization</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08324v1">https://arxiv.org/abs/2604.08324v1</a></p>
+<p>摘要: 质疑SNIP潜空间对齐有效性</p>
+<p>理由: 负结果扎实，适合评估多模态SR路线可行性</p>
+</li>
+<li><p><b>Fundus-R1: Training a Fundus-Reading MLLM with Knowledge-Aware Reasoning on Public Data</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08322v1">https://arxiv.org/abs/2604.08322v1</a></p>
+<p>摘要: 公开数据训练眼底推理多模态模型</p>
+<p>理由: 公共数据+RAG推理链+过程奖励，实用且可复现</p>
+</li>
+<li><p><b>Orion-Lite: Distilling LLM Reasoning into Efficient Vision-Only Driving Models</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08266v1">https://arxiv.org/abs/2604.08266v1</a></p>
+<p>摘要: 蒸馏VLA推理到纯视觉驾驶</p>
+<p>理由: 闭环蒸馏超教师，Bench2Drive刷榜</p>
+</li>
+<li><p><b>HiRO-Nav: Hybrid ReasOning Enables Efficient Embodied Navigation</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08232v1">https://arxiv.org/abs/2604.08232v1</a></p>
+<p>摘要: 按动作熵自适应触发导航推理</p>
+<p>理由: 问题真实，方法实用，兼顾性能与推理成本</p>
+</li>
+<li><p><b>SciFigDetect: A Benchmark for AI-Generated Scientific Figure Detection</b></p>
+<p>方向: MM | 标签: [MM] | 链接: <a href="https://arxiv.org/abs/2604.08211v1">https://arxiv.org/abs/2604.08211v1</a></p>
+<p>摘要: 首个AI科研图检测基准</p>
+<p>理由: 任务新颖，基准稀缺，适合多模态取证研究</p>
+</li>
+<li><p><b>ViVa: A Video-Generative Value Model for Robot Reinforcement Learning</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.08168v1">https://arxiv.org/abs/2604.08168v1</a></p>
+<p>摘要: 视频生成先验增强机器人价值估计</p>
+<p>理由: 思路新颖且贴近真机，但验证范围较窄</p>
+</li>
+<li><p><b>HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.07993v1">https://arxiv.org/abs/2604.07993v1</a></p>
+<p>摘要: 面向类人全身操作的跨本体VLA框架</p>
+<p>理由: 类人全身控制新颖，真实机实验强，但方法较工程化</p>
+</li>
+<li><p><b>How Far Are Large Multimodal Models from Human-Level Spatial Action? A Benchmark for Goal-Oriented Embodied Navigation in Urban Airspace</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.07973v1">https://arxiv.org/abs/2604.07973v1</a></p>
+<p>摘要: 评测多模态模型城市空域导航能力</p>
+<p>理由: 基准扎实、分析到位，但偏评测非方法突破</p>
+</li>
+<li><p><b>WorldMAP: Bootstrapping Vision-Language Navigation Trajectory Prediction with Generative World Models</b></p>
+<p>方向: VLA | 标签: [VLA] | 链接: <a href="https://arxiv.org/abs/2604.07957v1">https://arxiv.org/abs/2604.07957v1</a></p>
+<p>摘要: 世界模型蒸馏导航轨迹监督</p>
+<p>理由: 思路新，teacher-student转世界模型为监督，效果提升明显</p>
+</li>
+</ol>
+<h3>⚪ 可跳过（1）</h3><ul>
+<li>Exploring Temporal Representation in Neural Processes for Multimodal Action Prediction（方法较专，结果初步，对VLA主线参考有限）</li>
+</ul>]]></description>
+  </item>
+</channel>
+</rss>
