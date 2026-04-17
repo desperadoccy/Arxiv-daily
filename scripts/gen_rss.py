@@ -322,7 +322,7 @@ def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
 
 
 def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
-    now = dt.datetime.now(CST).strftime('%a, %d %b %Y %H:%M:%S %z')
+    now = dt.datetime.now().astimezone(CST).replace(microsecond=0).strftime('%a, %d %b %Y %H:%M:%S %z')
     self_feed = site_link + 'feed.xml'
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
