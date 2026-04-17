@@ -1,195 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>ArXiv Daily (AI Review)</title>
-  <link>https://desperadoccy.github.io/Arxiv-daily/</link>
   <description>Daily arXiv screening + deep reviews, with standalone HTML pages.</description>
-  <lastBuildDate>Fri, 17 Apr 2026 04:14:32 +0000</lastBuildDate>
+  <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+  <atom:link href="https://desperadoccy.github.io/Arxiv-daily/feed.xml" rel="self" type="application/rss+xml" />
+  <atom:icon>https://desperadoccy.github.io/Arxiv-daily/icon-144.png</atom:icon>
+  <atom:logo>https://desperadoccy.github.io/Arxiv-daily/icon-144.png</atom:logo>
+  <image>
+    <url>https://desperadoccy.github.io/Arxiv-daily/icon-144.png</url>
+    <title>ArXiv Daily (AI Review)</title>
+    <link>https://desperadoccy.github.io/Arxiv-daily/</link>
+  </image>
+  <lastBuildDate>Fri, 17 Apr 2026 04:30:34 +0000</lastBuildDate>
   <language>zh-cn</language>
   <item>
     <title>ArXiv Daily · 2026-04-16</title>
     <link>https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html</link>
     <guid isPermaLink="true">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html</guid>
+    <description><![CDATA[<p><strong>ArXiv Daily · 2026-04-16</strong></p><p>共 25 篇，🔴 必读 0，🟡 推荐 25，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.14041v1">Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios</a></strong><br>评测MLLM日常视觉线索推理能力<br><small>Benchmark切中痛点，任务设计新，但偏评测非方法</small></li><li><strong><a href="https://arxiv.org/abs/2604.14029v1">POINTS-Seeker: Towards Training a Multimodal Agentic Search Model from Scratch</a></strong><br>从零训练多模态搜索智能体<br><small>问题新，含训练范式与长程压缩，实证较强</small></li><li><strong><a href="https://arxiv.org/abs/2604.14016v1">MAny: Merge Anything for Multimodal Continual Instruction Tuning</a></strong><br>训练免费多模态持续调参合并框架<br><small>抓住双遗忘痛点，方法新颖且增益明显</small></li><li><strong><a href="https://arxiv.org/abs/2604.13942v1">Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection</a></strong><br>分层规划反思提升长程操作<br><small>长程操控痛点明确，闭环规划执行增益显著</small></li><li><strong><a href="https://arxiv.org/abs/2604.13888v1">GeoAgentBench: A Dynamic Execution Benchmark for Tool-Augmented Agents in Spatial Analysis</a></strong><br>面向GIS智能体的动态评测基准<br><small>基准新颖、评测务实，但偏垂直场景</small></li></ul>]]></description>
+    <content:encoded><![CDATA[<p><strong>ArXiv Daily · 2026-04-16</strong></p><p>共 25 篇，🔴 必读 0，🟡 推荐 25，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.14041v1">Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios</a></strong><br>评测MLLM日常视觉线索推理能力<br><small>Benchmark切中痛点，任务设计新，但偏评测非方法</small></li><li><strong><a href="https://arxiv.org/abs/2604.14029v1">POINTS-Seeker: Towards Training a Multimodal Agentic Search Model from Scratch</a></strong><br>从零训练多模态搜索智能体<br><small>问题新，含训练范式与长程压缩，实证较强</small></li><li><strong><a href="https://arxiv.org/abs/2604.14016v1">MAny: Merge Anything for Multimodal Continual Instruction Tuning</a></strong><br>训练免费多模态持续调参合并框架<br><small>抓住双遗忘痛点，方法新颖且增益明显</small></li><li><strong><a href="https://arxiv.org/abs/2604.13942v1">Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection</a></strong><br>分层规划反思提升长程操作<br><small>长程操控痛点明确，闭环规划执行增益显著</small></li><li><strong><a href="https://arxiv.org/abs/2604.13888v1">GeoAgentBench: A Dynamic Execution Benchmark for Tool-Augmented Agents in Spatial Analysis</a></strong><br>面向GIS智能体的动态评测基准<br><small>基准新颖、评测务实，但偏垂直场景</small></li></ul>]]></content:encoded>
     <pubDate>Thu, 16 Apr 2026 12:00:00 +0000</pubDate>
-    <description><![CDATA[ArXiv Daily · 2026-04-16
-共 25 篇。必读 0，推荐 25，可跳过 0。
-完整网页: https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html
-
-【重点论文】
-- Seek-and-Solve: Benchmarking MLLMs for Visual Clue-Driven Reasoning in Daily Scenarios
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.14041v1
-  简述: 评测MLLM日常视觉线索推理能力
-  筛选理由: Benchmark切中痛点，任务设计新，但偏评测非方法
-- POINTS-Seeker: Towards Training a Multimodal Agentic Search Model from Scratch
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.14029v1
-  简述: 从零训练多模态搜索智能体
-  筛选理由: 问题新，含训练范式与长程压缩，实证较强
-- MAny: Merge Anything for Multimodal Continual Instruction Tuning
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.14016v1
-  简述: 训练免费多模态持续调参合并框架
-  筛选理由: 抓住双遗忘痛点，方法新颖且增益明显
-- Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection
-  方向:VLA | 标签:VLA
-  链接: https://arxiv.org/abs/2604.13942v1
-  简述: 分层规划反思提升长程操作
-  筛选理由: 长程操控痛点明确，闭环规划执行增益显著
-- GeoAgentBench: A Dynamic Execution Benchmark for Tool-Augmented Agents in Spatial Analysis
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.13888v1
-  简述: 面向GIS智能体的动态评测基准
-  筛选理由: 基准新颖、评测务实，但偏垂直场景]]></description>
-    <content:encoded><![CDATA[<p><b>ArXiv Daily · 2026-04-16</b></p><p>共 25 篇。🔴 必读 0，🟡 推荐 25，⚪ 可跳过 0。</p><p>完整网页: <a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-16.html</a></p>]]></content:encoded>
+    <media:content url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" medium="image" type="image/png"/>
+    <media:thumbnail url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png"/>
+    <enclosure url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" type="image/png"/>
   </item>
   <item>
     <title>ArXiv Daily · 2026-04-15</title>
     <link>https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html</link>
     <guid isPermaLink="true">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html</guid>
+    <description><![CDATA[<p><strong>ArXiv Daily · 2026-04-15</strong></p><p>共 26 篇，🔴 必读 0，🟡 推荐 26，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.12820v1">RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</a></strong><br>推理时交互式模型遗忘<br><small>问题新颖，方法实用，但需警惕真实遗忘性</small></li><li><strong><a href="https://arxiv.org/abs/2604.12813v1">DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment</a></strong><br>解耦感知与校准做视频质评<br><small>轻量适配思路实用，但方法增量偏明显</small></li><li><strong><a href="https://arxiv.org/abs/2604.12812v1">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a></strong><br>长文档多模态证据定位推理<br><small>问题关键，方法完整，长文档场景实用</small></li><li><strong><a href="https://arxiv.org/abs/2604.12768v1">Rethinking the Personalized Relaxed Initialization in the Federated Learning: Consistency and Generalization</a></strong><br>联邦初始化缓解漂移并解释泛化影响<br><small>有理论分析与低成本改进，实用性强</small></li><li><strong><a href="https://arxiv.org/abs/2604.12767v1">CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models</a></strong><br>面向MLLM的自适应视觉token剪枝<br><small>方法新颖实用，提效明显，但属增量优化</small></li></ul>]]></description>
+    <content:encoded><![CDATA[<p><strong>ArXiv Daily · 2026-04-15</strong></p><p>共 26 篇，🔴 必读 0，🟡 推荐 26，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.12820v1">RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair</a></strong><br>推理时交互式模型遗忘<br><small>问题新颖，方法实用，但需警惕真实遗忘性</small></li><li><strong><a href="https://arxiv.org/abs/2604.12813v1">DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment</a></strong><br>解耦感知与校准做视频质评<br><small>轻量适配思路实用，但方法增量偏明显</small></li><li><strong><a href="https://arxiv.org/abs/2604.12812v1">DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding</a></strong><br>长文档多模态证据定位推理<br><small>问题关键，方法完整，长文档场景实用</small></li><li><strong><a href="https://arxiv.org/abs/2604.12768v1">Rethinking the Personalized Relaxed Initialization in the Federated Learning: Consistency and Generalization</a></strong><br>联邦初始化缓解漂移并解释泛化影响<br><small>有理论分析与低成本改进，实用性强</small></li><li><strong><a href="https://arxiv.org/abs/2604.12767v1">CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models</a></strong><br>面向MLLM的自适应视觉token剪枝<br><small>方法新颖实用，提效明显，但属增量优化</small></li></ul>]]></content:encoded>
     <pubDate>Wed, 15 Apr 2026 12:00:00 +0000</pubDate>
-    <description><![CDATA[ArXiv Daily · 2026-04-15
-共 26 篇。必读 0，推荐 26，可跳过 0。
-完整网页: https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html
-
-【重点论文】
-- RePAIR: Interactive Machine Unlearning through Prompt-Aware Model Repair
-  方向:其他 | 标签:MM
-  链接: https://arxiv.org/abs/2604.12820v1
-  简述: 推理时交互式模型遗忘
-  筛选理由: 问题新颖，方法实用，但需警惕真实遗忘性
-- DPC-VQA: Decoupling Quality Perception and Residual Calibration for Video Quality Assessment
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.12813v1
-  简述: 解耦感知与校准做视频质评
-  筛选理由: 轻量适配思路实用，但方法增量偏明显
-- DocSeeker: Structured Visual Reasoning with Evidence Grounding for Long Document Understanding
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.12812v1
-  简述: 长文档多模态证据定位推理
-  筛选理由: 问题关键，方法完整，长文档场景实用
-- Rethinking the Personalized Relaxed Initialization in the Federated Learning: Consistency and Generalization
-  方向:FL | 标签:FL
-  链接: https://arxiv.org/abs/2604.12768v1
-  简述: 联邦初始化缓解漂移并解释泛化影响
-  筛选理由: 有理论分析与低成本改进，实用性强
-- CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.12767v1
-  简述: 面向MLLM的自适应视觉token剪枝
-  筛选理由: 方法新颖实用，提效明显，但属增量优化]]></description>
-    <content:encoded><![CDATA[<p><b>ArXiv Daily · 2026-04-15</b></p><p>共 26 篇。🔴 必读 0，🟡 推荐 26，⚪ 可跳过 0。</p><p>完整网页: <a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-15.html</a></p>]]></content:encoded>
+    <media:content url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" medium="image" type="image/png"/>
+    <media:thumbnail url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png"/>
+    <enclosure url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" type="image/png"/>
   </item>
   <item>
     <title>ArXiv Daily · 2026-04-14</title>
     <link>https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html</link>
     <guid isPermaLink="true">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html</guid>
+    <description><![CDATA[<p><strong>ArXiv Daily · 2026-04-14</strong></p><p>共 24 篇，🔴 必读 0，🟡 推荐 23，⚪ 可跳过 1。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.10566v1">Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity</a></strong><br>解析战争舆论协同行动与误导扩散<br><small>大规模实证+多模态刻画，结论可指导内容治理</small></li><li><strong><a href="https://arxiv.org/abs/2604.10542v1">VidAudio-Bench: Benchmarking V2A and VT2A Generation across Four Audio Categories</a></strong><br>细粒度视频音频生成评测基准<br><small>评测体系完整，对V2A/VT2A研究很有参考价值</small></li><li><strong><a href="https://arxiv.org/abs/2604.10517v1">From Perception to Planning: Evolving Ego-Centric Task-Oriented Spatiotemporal Reasoning via Curriculum Learning</a></strong><br>课程学习提升具身时空推理<br><small>数据规模大，任务设定强，但需核验泛化与真实机器人价值</small></li><li><strong><a href="https://arxiv.org/abs/2604.10506v1">A Progressive Training Strategy for Vision-Language Models to Counteract Spatio-Temporal Hallucinations in Embodied Reasoning</a></strong><br>渐进训练缓解时空推理幻觉偏差<br><small>CoT数据+弱标微调，显著缩小前后向差距</small></li><li><strong><a href="https://arxiv.org/abs/2604.10500v1">Visual Enhanced Depth Scaling for Multimodal Latent Reasoning</a></strong><br>增强视觉与动态深度的多模态隐式推理<br><small>问题明确，方法新颖，但需看实验与泛化</small></li></ul>]]></description>
+    <content:encoded><![CDATA[<p><strong>ArXiv Daily · 2026-04-14</strong></p><p>共 24 篇，🔴 必读 0，🟡 推荐 23，⚪ 可跳过 1。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.10566v1">Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity</a></strong><br>解析战争舆论协同行动与误导扩散<br><small>大规模实证+多模态刻画，结论可指导内容治理</small></li><li><strong><a href="https://arxiv.org/abs/2604.10542v1">VidAudio-Bench: Benchmarking V2A and VT2A Generation across Four Audio Categories</a></strong><br>细粒度视频音频生成评测基准<br><small>评测体系完整，对V2A/VT2A研究很有参考价值</small></li><li><strong><a href="https://arxiv.org/abs/2604.10517v1">From Perception to Planning: Evolving Ego-Centric Task-Oriented Spatiotemporal Reasoning via Curriculum Learning</a></strong><br>课程学习提升具身时空推理<br><small>数据规模大，任务设定强，但需核验泛化与真实机器人价值</small></li><li><strong><a href="https://arxiv.org/abs/2604.10506v1">A Progressive Training Strategy for Vision-Language Models to Counteract Spatio-Temporal Hallucinations in Embodied Reasoning</a></strong><br>渐进训练缓解时空推理幻觉偏差<br><small>CoT数据+弱标微调，显著缩小前后向差距</small></li><li><strong><a href="https://arxiv.org/abs/2604.10500v1">Visual Enhanced Depth Scaling for Multimodal Latent Reasoning</a></strong><br>增强视觉与动态深度的多模态隐式推理<br><small>问题明确，方法新颖，但需看实验与泛化</small></li></ul>]]></content:encoded>
     <pubDate>Tue, 14 Apr 2026 12:00:00 +0000</pubDate>
-    <description><![CDATA[ArXiv Daily · 2026-04-14
-共 24 篇。必读 0，推荐 23，可跳过 1。
-完整网页: https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html
-
-【重点论文】
-- Israel-Hamas War on X: A Case Study of Coordinated Campaigns and Information Integrity
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.10566v1
-  简述: 解析战争舆论协同行动与误导扩散
-  筛选理由: 大规模实证+多模态刻画，结论可指导内容治理
-- VidAudio-Bench: Benchmarking V2A and VT2A Generation across Four Audio Categories
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.10542v1
-  简述: 细粒度视频音频生成评测基准
-  筛选理由: 评测体系完整，对V2A/VT2A研究很有参考价值
-- From Perception to Planning: Evolving Ego-Centric Task-Oriented Spatiotemporal Reasoning via Curriculum Learning
-  方向:VLA | 标签:VLA
-  链接: https://arxiv.org/abs/2604.10517v1
-  简述: 课程学习提升具身时空推理
-  筛选理由: 数据规模大，任务设定强，但需核验泛化与真实机器人价值
-- A Progressive Training Strategy for Vision-Language Models to Counteract Spatio-Temporal Hallucinations in Embodied Reasoning
-  方向:VLA | 标签:VLA
-  链接: https://arxiv.org/abs/2604.10506v1
-  简述: 渐进训练缓解时空推理幻觉偏差
-  筛选理由: CoT数据+弱标微调，显著缩小前后向差距
-- Visual Enhanced Depth Scaling for Multimodal Latent Reasoning
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.10500v1
-  简述: 增强视觉与动态深度的多模态隐式推理
-  筛选理由: 问题明确，方法新颖，但需看实验与泛化]]></description>
-    <content:encoded><![CDATA[<p><b>ArXiv Daily · 2026-04-14</b></p><p>共 24 篇。🔴 必读 0，🟡 推荐 23，⚪ 可跳过 1。</p><p>完整网页: <a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-14.html</a></p>]]></content:encoded>
+    <media:content url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" medium="image" type="image/png"/>
+    <media:thumbnail url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png"/>
+    <enclosure url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" type="image/png"/>
   </item>
   <item>
     <title>ArXiv Daily · 2026-04-13</title>
     <link>https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html</link>
     <guid isPermaLink="true">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html</guid>
+    <description><![CDATA[<p><strong>ArXiv Daily · 2026-04-13</strong></p><p>共 21 篇，🔴 必读 0，🟡 推荐 21，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.09445v1">AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization</a></strong><br>师生异构特征实现高效视觉定位<br><small>边端定位很实用，思路新，精度效率权衡突出</small></li><li><strong><a href="https://arxiv.org/abs/2604.09425v1">Do Vision Language Models Need to Process Image Tokens?</a></strong><br>视觉token深层处理未必必要<br><small>量化视觉表征早收敛，启发降算力与架构改造</small></li><li><strong><a href="https://arxiv.org/abs/2604.09415v1">PhysInOne: Visual Physics Learning and Reasoning in One Suite</a></strong><br>大规模物理视频数据套件<br><small>数据规模大且任务全，偏数据集论文</small></li><li><strong><a href="https://arxiv.org/abs/2604.09367v1">EpiAgent: An Agent-Centric System for Ancient Inscription Restoration</a></strong><br>多智能体铭文修复系统<br><small>任务新颖，Agent框架有趣，但应用导向偏强</small></li><li><strong><a href="https://arxiv.org/abs/2604.09364v1">Arbitration Failure, Not Perceptual Blindness: How Vision-Language Models Resolve Visual-Linguistic Conflicts</a></strong><br>VLM非看不见而是仲裁失灵<br><small>提出编码-落地解耦，MAC+干预证因果并可小幅提升</small></li></ul>]]></description>
+    <content:encoded><![CDATA[<p><strong>ArXiv Daily · 2026-04-13</strong></p><p>共 21 篇，🔴 必读 0，🟡 推荐 21，⚪ 可跳过 0。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.09445v1">AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization</a></strong><br>师生异构特征实现高效视觉定位<br><small>边端定位很实用，思路新，精度效率权衡突出</small></li><li><strong><a href="https://arxiv.org/abs/2604.09425v1">Do Vision Language Models Need to Process Image Tokens?</a></strong><br>视觉token深层处理未必必要<br><small>量化视觉表征早收敛，启发降算力与架构改造</small></li><li><strong><a href="https://arxiv.org/abs/2604.09415v1">PhysInOne: Visual Physics Learning and Reasoning in One Suite</a></strong><br>大规模物理视频数据套件<br><small>数据规模大且任务全，偏数据集论文</small></li><li><strong><a href="https://arxiv.org/abs/2604.09367v1">EpiAgent: An Agent-Centric System for Ancient Inscription Restoration</a></strong><br>多智能体铭文修复系统<br><small>任务新颖，Agent框架有趣，但应用导向偏强</small></li><li><strong><a href="https://arxiv.org/abs/2604.09364v1">Arbitration Failure, Not Perceptual Blindness: How Vision-Language Models Resolve Visual-Linguistic Conflicts</a></strong><br>VLM非看不见而是仲裁失灵<br><small>提出编码-落地解耦，MAC+干预证因果并可小幅提升</small></li></ul>]]></content:encoded>
     <pubDate>Mon, 13 Apr 2026 12:00:00 +0000</pubDate>
-    <description><![CDATA[ArXiv Daily · 2026-04-13
-共 21 篇。必读 0，推荐 21，可跳过 0。
-完整网页: https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html
-
-【重点论文】
-- AsymLoc: Towards Asymmetric Feature Matching for Efficient Visual Localization
-  方向:VLA | 标签:VLA
-  链接: https://arxiv.org/abs/2604.09445v1
-  简述: 师生异构特征实现高效视觉定位
-  筛选理由: 边端定位很实用，思路新，精度效率权衡突出
-- Do Vision Language Models Need to Process Image Tokens?
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.09425v1
-  简述: 视觉token深层处理未必必要
-  筛选理由: 量化视觉表征早收敛，启发降算力与架构改造
-- PhysInOne: Visual Physics Learning and Reasoning in One Suite
-  方向:其他 | 标签:VLA
-  链接: https://arxiv.org/abs/2604.09415v1
-  简述: 大规模物理视频数据套件
-  筛选理由: 数据规模大且任务全，偏数据集论文
-- EpiAgent: An Agent-Centric System for Ancient Inscription Restoration
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.09367v1
-  简述: 多智能体铭文修复系统
-  筛选理由: 任务新颖，Agent框架有趣，但应用导向偏强
-- Arbitration Failure, Not Perceptual Blindness: How Vision-Language Models Resolve Visual-Linguistic Conflicts
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.09364v1
-  简述: VLM非看不见而是仲裁失灵
-  筛选理由: 提出编码-落地解耦，MAC+干预证因果并可小幅提升]]></description>
-    <content:encoded><![CDATA[<p><b>ArXiv Daily · 2026-04-13</b></p><p>共 21 篇。🔴 必读 0，🟡 推荐 21，⚪ 可跳过 0。</p><p>完整网页: <a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-13.html</a></p>]]></content:encoded>
+    <media:content url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" medium="image" type="image/png"/>
+    <media:thumbnail url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png"/>
+    <enclosure url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" type="image/png"/>
   </item>
   <item>
     <title>ArXiv Daily · 2026-04-12</title>
     <link>https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html</link>
     <guid isPermaLink="true">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html</guid>
+    <description><![CDATA[<p><strong>ArXiv Daily · 2026-04-12</strong></p><p>共 30 篇，🔴 必读 0，🟡 推荐 29，⚪ 可跳过 1。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.08545v1">Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models</a></strong><br>解耦奖励抑制盲目工具调用<br><small>问题重要，方法新颖，但增量偏训练技巧</small></li><li><strong><a href="https://arxiv.org/abs/2604.08544v1">SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds</a></strong><br>物理对齐仿真扩展柔性操作数据<br><small>面向柔性操作痛点，零样本扩数结果亮眼</small></li><li><strong><a href="https://arxiv.org/abs/2604.08541v1">Seeing but Not Thinking: Routing Distraction in Multimodal Mixture-of-Experts</a></strong><br>揭示多模态MoE推理受路由分心<br><small>问题新颖，机制分析扎实，但增益较有限</small></li><li><strong><a href="https://arxiv.org/abs/2604.08540v1">AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation</a></strong><br>面向文生音视频的细粒度评测基准<br><small>评测框架系统，揭示现有T2AV模型关键短板</small></li><li><strong><a href="https://arxiv.org/abs/2604.08539v1">OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks</a></strong><br>多模态RL新目标提升通用推理<br><small>提出新RL目标，通用性强，需看实验扎实度</small></li></ul>]]></description>
+    <content:encoded><![CDATA[<p><strong>ArXiv Daily · 2026-04-12</strong></p><p>共 30 篇，🔴 必读 0，🟡 推荐 29，⚪ 可跳过 1。</p><p><a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html">查看完整日报</a></p><p><strong>重点论文</strong></p><ul><li><strong><a href="https://arxiv.org/abs/2604.08545v1">Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models</a></strong><br>解耦奖励抑制盲目工具调用<br><small>问题重要，方法新颖，但增量偏训练技巧</small></li><li><strong><a href="https://arxiv.org/abs/2604.08544v1">SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds</a></strong><br>物理对齐仿真扩展柔性操作数据<br><small>面向柔性操作痛点，零样本扩数结果亮眼</small></li><li><strong><a href="https://arxiv.org/abs/2604.08541v1">Seeing but Not Thinking: Routing Distraction in Multimodal Mixture-of-Experts</a></strong><br>揭示多模态MoE推理受路由分心<br><small>问题新颖，机制分析扎实，但增益较有限</small></li><li><strong><a href="https://arxiv.org/abs/2604.08540v1">AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation</a></strong><br>面向文生音视频的细粒度评测基准<br><small>评测框架系统，揭示现有T2AV模型关键短板</small></li><li><strong><a href="https://arxiv.org/abs/2604.08539v1">OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks</a></strong><br>多模态RL新目标提升通用推理<br><small>提出新RL目标，通用性强，需看实验扎实度</small></li></ul>]]></content:encoded>
     <pubDate>Sun, 12 Apr 2026 12:00:00 +0000</pubDate>
-    <description><![CDATA[ArXiv Daily · 2026-04-12
-共 30 篇。必读 0，推荐 29，可跳过 1。
-完整网页: https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html
-
-【重点论文】
-- Act Wisely: Cultivating Meta-Cognitive Tool Use in Agentic Multimodal Models
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.08545v1
-  简述: 解耦奖励抑制盲目工具调用
-  筛选理由: 问题重要，方法新颖，但增量偏训练技巧
-- SIM1: Physics-Aligned Simulator as Zero-Shot Data Scaler in Deformable Worlds
-  方向:其他 | 标签:VLA
-  链接: https://arxiv.org/abs/2604.08544v1
-  简述: 物理对齐仿真扩展柔性操作数据
-  筛选理由: 面向柔性操作痛点，零样本扩数结果亮眼
-- Seeing but Not Thinking: Routing Distraction in Multimodal Mixture-of-Experts
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.08541v1
-  简述: 揭示多模态MoE推理受路由分心
-  筛选理由: 问题新颖，机制分析扎实，但增益较有限
-- AVGen-Bench: A Task-Driven Benchmark for Multi-Granular Evaluation of Text-to-Audio-Video Generation
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.08540v1
-  简述: 面向文生音视频的细粒度评测基准
-  筛选理由: 评测框架系统，揭示现有T2AV模型关键短板
-- OpenVLThinkerV2: A Generalist Multimodal Reasoning Model for Multi-domain Visual Tasks
-  方向:MM | 标签:MM
-  链接: https://arxiv.org/abs/2604.08539v1
-  简述: 多模态RL新目标提升通用推理
-  筛选理由: 提出新RL目标，通用性强，需看实验扎实度]]></description>
-    <content:encoded><![CDATA[<p><b>ArXiv Daily · 2026-04-12</b></p><p>共 30 篇。🔴 必读 0，🟡 推荐 29，⚪ 可跳过 1。</p><p>完整网页: <a href="https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html">https://desperadoccy.github.io/Arxiv-daily/days/2026-04-12.html</a></p>]]></content:encoded>
+    <media:content url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" medium="image" type="image/png"/>
+    <media:thumbnail url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png"/>
+    <enclosure url="https://desperadoccy.github.io/Arxiv-daily/icon-144.png" type="image/png"/>
   </item>
 </channel>
 </rss>

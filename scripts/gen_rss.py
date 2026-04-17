@@ -12,8 +12,8 @@ Output structure under site root:
 Strategy:
   - Generate one standalone HTML page per day
   - RSS item links to that day's HTML page
-  - RSS description stays plain text for reader compatibility
-  - content:encoded provides a compact rich summary
+  - RSS description is short HTML summary, inspired by weekly.tw93.fun
+  - content:encoded provides the same summary for compatible readers
 """
 
 from __future__ import annotations
@@ -27,6 +27,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 BASE = Path('/Volumes/Extra/arxiv_daily')
 SITE_LINK = 'https://desperadoccy.github.io/Arxiv-daily/'
+ICON_URL = SITE_LINK + 'icon-144.png'
 
 
 def _today() -> dt.date:
@@ -84,17 +85,38 @@ def _group_items(screening: List[Dict[str, Any]]):
     return must, rec, skip
 
 
+def _paper_title(it: Dict[str, Any]) -> str:
+    return str(it.get('paper', {}).get('title', '')).strip()
+
+
+def _paper_url(it: Dict[str, Any]) -> str:
+    return str(it.get('paper', {}).get('url', '')).strip()
+
+
+def _paper_summary(it: Dict[str, Any]) -> str:
+    return str(it.get('screening', {}).get('summary', '')).strip()
+
+
+def _paper_reason(it: Dict[str, Any]) -> str:
+    return str(it.get('screening', {}).get('reason', '')).strip()
+
+
+def _paper_direction(it: Dict[str, Any]) -> str:
+    return str(it.get('screening', {}).get('direction', '')).strip()
+
+
+def _paper_tags(it: Dict[str, Any]) -> List[str]:
+    tags = it.get('paper', {}).get('tags') or []
+    return [str(t) for t in tags] if isinstance(tags, list) else []
+
+
 def _render_paper_text(it: Dict[str, Any], include_deep: bool) -> str:
-    paper = it.get('paper', {})
-    scr = it.get('screening', {})
-    title = str(paper.get('title', '')).strip()
-    url = str(paper.get('url', '')).strip()
-    tags = paper.get('tags') or []
-    if not isinstance(tags, list):
-        tags = []
-    summary = str(scr.get('summary', '')).strip()
-    reason = str(scr.get('reason', '')).strip()
-    direction = str(scr.get('direction', '')).strip()
+    title = _paper_title(it)
+    url = _paper_url(it)
+    summary = _paper_summary(it)
+    reason = _paper_reason(it)
+    direction = _paper_direction(it)
+    tags = _paper_tags(it)
 
     lines = []
     if title:
@@ -103,7 +125,7 @@ def _render_paper_text(it: Dict[str, Any], include_deep: bool) -> str:
     if direction:
         meta.append(f'方向:{direction}')
     if tags:
-        meta.append('标签:' + ','.join(str(t) for t in tags))
+        meta.append('标签:' + ','.join(tags))
     if meta:
         lines.append('  ' + ' | '.join(meta))
     if url:
@@ -135,28 +157,52 @@ def _render_day_text(day: dt.date, screening: List[Dict[str, Any]], site_link: s
         f'共 {len(screening)} 篇。必读 {len(must)}，推荐 {len(rec)}，可跳过 {len(skip)}。',
         f'完整网页: {day_url}',
     ]
-
     preview = (must + rec)[:5]
     if preview:
         lines.append('')
         lines.append('【重点论文】')
         for it in preview:
             lines.append(_render_paper_text(it, include_deep=False))
-
     return '\n'.join(lines).strip()
 
 
+def _render_feed_summary_html(day: dt.date, screening: List[Dict[str, Any]], site_link: str) -> str:
+    must, rec, skip = _group_items(screening)
+    day_url = f'{site_link}days/{day.isoformat()}.html'
+    preview = (must + rec)[:5]
+
+    parts = []
+    parts.append(f'<p><strong>ArXiv Daily · {day.isoformat()}</strong></p>')
+    parts.append(f'<p>共 {len(screening)} 篇，🔴 必读 {len(must)}，🟡 推荐 {len(rec)}，⚪ 可跳过 {len(skip)}。</p>')
+    parts.append(f'<p><a href="{_safe(day_url)}">查看完整日报</a></p>')
+
+    if preview:
+        parts.append('<p><strong>重点论文</strong></p>')
+        parts.append('<ul>')
+        for it in preview:
+            title = _paper_title(it)
+            url = _paper_url(it)
+            summary = _paper_summary(it)
+            reason = _paper_reason(it)
+            li = []
+            li.append(f'<strong><a href="{_safe(url)}">{_safe(title)}</a></strong>')
+            if summary:
+                li.append(f'<br>{_safe(summary)}')
+            if reason:
+                li.append(f'<br><small>{_safe(reason)}</small>')
+            parts.append('<li>' + ''.join(li) + '</li>')
+        parts.append('</ul>')
+
+    return ''.join(parts)
+
+
 def _render_paper_card(it: Dict[str, Any]) -> str:
-    paper = it.get('paper', {})
-    scr = it.get('screening', {})
-    title = str(paper.get('title', ''))
-    url = str(paper.get('url', ''))
-    tags = paper.get('tags') or []
-    if not isinstance(tags, list):
-        tags = []
-    direction = str(scr.get('direction', ''))
-    summary = str(scr.get('summary', ''))
-    reason = str(scr.get('reason', ''))
+    title = _paper_title(it)
+    url = _paper_url(it)
+    tags = _paper_tags(it)
+    direction = _paper_direction(it)
+    summary = _paper_summary(it)
+    reason = _paper_reason(it)
     deep = _pick_deep_text(it)
 
     parts = ['<article class="paper">']
@@ -188,7 +234,7 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
     return '\n'.join(parts)
 
 
-def _render_day_page(day: dt.date, screening: List[Dict[str, Any]], site_link: str) -> str:
+def _render_day_page(day: dt.date, screening: List[Dict[str, Any]]) -> str:
     must, rec, skip = _group_items(screening)
     title = f'ArXiv Daily · {day.isoformat()}'
     nav = '<p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>'
@@ -199,9 +245,13 @@ def _render_day_page(day: dt.date, screening: List[Dict[str, Any]], site_link: s
     if rec:
         sections.append(f'<section><h2>🟡 推荐（{len(rec)}）</h2>' + ''.join(_render_paper_card(it) for it in rec) + '</section>')
     if skip:
-        items = ''.join(f'<li>{_safe(str(it.get("paper", {}).get("title", "")))}' + (f'（{_safe(str(it.get("screening", {}).get("reason", ""))) }）' if str(it.get('screening', {}).get('reason', '')).strip() else '') + '</li>' for it in skip[:20])
+        items = []
+        for it in skip[:20]:
+            title_i = _paper_title(it)
+            reason_i = _paper_reason(it)
+            items.append(f'<li>{_safe(title_i)}' + (f'（{_safe(reason_i)}）' if reason_i else '') + '</li>')
         tail = f'<p>其余 {len(skip) - 20} 篇略。</p>' if len(skip) > 20 else ''
-        sections.append(f'<section><h2>⚪ 可跳过（{len(skip)}）</h2><ul>{items}</ul>{tail}</section>')
+        sections.append(f'<section><h2>⚪ 可跳过（{len(skip)}）</h2><ul>{"".join(items)}</ul>{tail}</section>')
 
     return f'''<!doctype html>
 <html lang="zh-CN">
@@ -239,13 +289,11 @@ def _render_day_page(day: dt.date, screening: List[Dict[str, Any]], site_link: s
 '''
 
 
-def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]], site_link: str) -> str:
+def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
     items = []
     for day, screening in days:
         must, rec, skip = _group_items(screening)
-        items.append(
-            f'<li><a href="days/{day.isoformat()}.html">{day.isoformat()}</a> · 共 {len(screening)} 篇，必读 {len(must)}，推荐 {len(rec)}，可跳过 {len(skip)}</li>'
-        )
+        items.append(f'<li><a href="days/{day.isoformat()}.html">{day.isoformat()}</a> · 共 {len(screening)} 篇，必读 {len(must)}，推荐 {len(rec)}，可跳过 {len(skip)}</li>')
 
     return f'''<!doctype html>
 <html lang="zh-CN">
@@ -274,35 +322,49 @@ def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]], site_link: s
 '''
 
 
+def _render_icon_png(out_dir: Path) -> None:
+    # 1x1 transparent PNG, enough to satisfy feed readers expecting an icon/logo URL.
+    import base64
+    png_base64 = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a7WQAAAAASUVORK5CYII='
+    (out_dir / 'icon-144.png').write_bytes(base64.b64decode(png_base64))
+
+
 def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
     now = dt.datetime.now(dt.timezone.utc).strftime('%a, %d %b %Y %H:%M:%S %z')
+    self_feed = site_link + 'feed.xml'
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">',
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/">',
         '<channel>',
         f'  <title>{_safe(title)}</title>',
-        f'  <link>{_safe(site_link)}</link>',
         f'  <description>{_safe(desc)}</description>',
+        f'  <link>{_safe(site_link)}</link>',
+        f'  <atom:link href="{_safe(self_feed)}" rel="self" type="application/rss+xml" />',
+        f'  <atom:icon>{_safe(ICON_URL)}</atom:icon>',
+        f'  <atom:logo>{_safe(ICON_URL)}</atom:logo>',
+        '  <image>',
+        f'    <url>{_safe(ICON_URL)}</url>',
+        f'    <title>{_safe(title)}</title>',
+        f'    <link>{_safe(site_link)}</link>',
+        '  </image>',
         f'  <lastBuildDate>{_safe(now)}</lastBuildDate>',
         '  <language>zh-cn</language>',
     ]
     for day, screening in days:
         item_link = f'{site_link}days/{day.isoformat()}.html'
         body_text = _render_day_text(day, screening, site_link)
-        must, rec, skip = _group_items(screening)
-        body_html = (
-            f'<p><b>ArXiv Daily · {day.isoformat()}</b></p>'
-            f'<p>共 {len(screening)} 篇。🔴 必读 {len(must)}，🟡 推荐 {len(rec)}，⚪ 可跳过 {len(skip)}。</p>'
-            f'<p>完整网页: <a href="{_safe(item_link)}">{_safe(item_link)}</a></p>'
-        )
+        summary_html = _render_feed_summary_html(day, screening, site_link)
         out.extend([
             '  <item>',
             f'    <title>{_safe("ArXiv Daily · " + day.isoformat())}</title>',
             f'    <link>{_safe(item_link)}</link>',
             f'    <guid isPermaLink="true">{_safe(item_link)}</guid>',
+            f'    <description><![CDATA[{summary_html}]]></description>',
+            f'    <content:encoded><![CDATA[{summary_html}]]></content:encoded>',
             f'    <pubDate>{_safe(_fmt_rfc2822(day))}</pubDate>',
-            '    <description><![CDATA[' + body_text + ']]></description>',
-            '    <content:encoded><![CDATA[' + body_html + ']]></content:encoded>',
+            f'    <media:content url="{_safe(ICON_URL)}" medium="image" type="image/png"/>',
+            f'    <media:thumbnail url="{_safe(ICON_URL)}"/>',
+            f'    <enclosure url="{_safe(ICON_URL)}" type="image/png"/>',
             '  </item>',
         ])
     out.extend(['</channel>', '</rss>'])
@@ -324,11 +386,11 @@ def generate_site(days: int, out_dir: Path, site_link: str, title: str, desc: st
     days_dir.mkdir(parents=True, exist_ok=True)
 
     for day, screening in day_records:
-        (days_dir / f'{day.isoformat()}.html').write_text(_render_day_page(day, screening, site_link), encoding='utf-8')
+        (days_dir / f'{day.isoformat()}.html').write_text(_render_day_page(day, screening), encoding='utf-8')
 
-    (out_dir / 'index.html').write_text(_render_index(day_records, site_link), encoding='utf-8')
+    (out_dir / 'index.html').write_text(_render_index(day_records), encoding='utf-8')
     (out_dir / 'feed.xml').write_text(_render_rss(title, site_link, desc, day_records), encoding='utf-8')
-
+    _render_icon_png(out_dir)
     print(f'Generated site in {out_dir} with {len(day_records)} days')
 
 
