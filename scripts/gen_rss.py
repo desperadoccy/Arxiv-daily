@@ -8,6 +8,9 @@ Data source:
 Feed strategy:
   - Keep last N days (default 7)
   - One RSS item per day
+
+Behavior:
+  - If a paper has `deep_review`, include it in the RSS content for both 必读 and 推荐.
 """
 
 from __future__ import annotations
@@ -131,7 +134,7 @@ def _render_day_html(day: dt.date, screening: List[Dict[str, Any]]) -> str:
         parts.append('</ol>')
     if rec:
         parts.append(f'<h3>🟡 推荐（{len(rec)}）</h3><ol>')
-        parts.extend(_render_paper(it, False) for it in rec)
+        parts.extend(_render_paper(it, True) for it in rec)
         parts.append('</ol>')
     if skip:
         parts.append(f'<h3>⚪ 可跳过（{len(skip)}）</h3><ul>')
