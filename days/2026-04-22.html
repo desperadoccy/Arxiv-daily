@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-04-22</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-04-22</h1>
+    <p class="summary">共 18 篇。🔴 必读 0，🟡 推荐 18，⚪ 可跳过 0。</p>
+    <section><h2>🟡 推荐（18）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19453v1" target="_blank" rel="noopener noreferrer">ZC-Swish: Stabilizing Deep BN-Free Networks for Edge and Micro-Batch Applications</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">FL</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19417v1" target="_blank" rel="noopener noreferrer">MER 2026: From Discriminative Emotion Recognition to Generative Emotion Understanding</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态情感理解挑战综述</p>
+<p><strong>筛选理由</strong>: 挑战赛综述价值高，方法创新有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文的核心创新在于将 MER 挑战从“固定标签的判别式情感识别”系统性推进到“开放词表、可解释、可生成的情感理解”，并在 2026 版中进一步扩展为四个互补方向：对话中对方情绪识别（MER-Cross）、细粒度情绪识别（MER-FG）、人类情绪描述偏好建模（MER-Prefer）以及基于 EEG-fNIRS 的生理信号情绪理解（MER-PS）。其中最重要的贡献不是单一模型，而是围绕新型任务定义、数据集构建、评测协议与基线体系，搭建了一个覆盖外显行为与内隐生理、个体情绪与交互情绪、分类识别与生成理解的统一研究基准。</p>
+<p><strong>方法</strong>: 论文本质上是一篇挑战赛/基准论文，方法上主要是为四个任务分别设计数据、标注和评测方案。MER-Cross 从双人交互场景中筛选“说话者-倾听者”不一致的音视频样本，重点预测 interlocutor 的情绪；MER-FG 采用开放词表标签并基于 emotion wheel 设计分层同义归并后的评测指标；MER-Prefer 将任务定义为给定视频后对两段情绪描述进行人类偏好判别；MER-PS 则利用同步 EEG 与 fNIRS 信号进行连续 valence-arousal 回归预测。论文同时为每个赛道提供了统一 baseline，包括单模态/多模态特征、零样本 MLLM、后训练 AffectGPT，以及 EEG/fNIRS 融合网络，为后续研究建立可比较起点。</p>
+<p><strong>实验</strong>: 实验最有价值的地方在于清晰揭示了任务难度与研究空白：在 MER-Cross 中，传统对个体情绪有效的音频与多模态融合方法，对“对方情绪”预测显著失效，说明交互情绪建模远比个体情绪更难。MER-FG 中，专门针对开放词表情绪进行后训练的 AffectGPT 明显优于零样本模型，验证了生成式情感理解需要任务特定优化；MER-PS 中，EEG+fNIRS 双模态融合优于单模态，表明生理信号协同建模具有实际增益。</p>
+<p><strong>Deep理由</strong>: 如果你关注多模态情感计算、MLLM 情感理解或机器人情绪交互，这篇论文非常值得读，因为它准确代表了该领域从分类走向生成、从个体走向交互、从行为走向生理的最新趋势。它虽不是单一算法论文，但其任务定义和基准设计对后续研究方向具有很强的指导意义。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19405v1" target="_blank" rel="noopener noreferrer">Lost in Translation: Do LVLM Judges Generalize Across Languages?</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19403v1" target="_blank" rel="noopener noreferrer">VecHeart: Holistic Four-Chamber Cardiac Anatomy Modeling via Hybrid VecSets</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 四腔心脏整体建模与生成框架</p>
+<p><strong>筛选理由</strong>: 多部件解剖建模新颖，实用性强，但偏特定医学场景</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: VecHeart把原本偏向单物体建模的VecSet扩展为四腔心脏的整体解剖建模框架，核心在于提出Hybrid Part Transformer，通过part-specific query与交替的intra/inter-part attention显式建模心腔之间的结构依赖。其次，论文提出Anatomical Completion Masking与Modality Alignment，使模型不仅能在部分腔室缺失时补全完整心脏，还能把完整表面学习到的解剖先验迁移到稀疏、噪声较大的MRI切片输入上。第三，作者还展示了该表示可自然扩展到3D+t四腔动态网格生成，说明其不仅是重建模型，也是统一的生成式形状表示。</p>
+<p><strong>方法</strong>: 方法上，VecHeart先对五个解剖部分（LV、Myo、RV、LA、RA）分别用共享点云编码器和各自的learnable part query编码为part latent code。随后通过Hybrid Part Transformer在每个part内部做self-attention、在所有part之间做cross-part attention，并交替堆叠，使局部几何细节和跨腔室拓扑/解剖关系同时被建模，最后由共享SDF解码器输出各部分隐式表面。为适应缺失输入，训练时随机mask 1到2个腔室，用learnable query替代其latent并要求恢复完整四腔结构；为适应切片模态，再引入slice encoder并用latent alignment loss把切片latent对齐到完整表面latent空间。整个训练分两阶段：先在完整高质量表面上学形状先验，再用合成的SAX/LAX稀疏切片微调切片编码器。</p>
+<p><strong>实验</strong>: 实验上，VecHeart在完整输入、缺失部分输入、合成稀疏切片、仅SAX切片以及真实CMR切片零样本测试等多种场景下都优于PartSDF、ImHeart、SDF4CHD和CardiacFlow，说明其鲁棒性覆盖了临床更真实的不完整观测条件。尤其在缺失腔室和只给SAX的困难设定下，基线方法对缺失房室的误差会显著恶化，而VecHeart仍能依靠跨部件先验维持较好的重建质量。进一步地，在3D+t四腔序列生成上，其vFID和cycle-CD也优于CardiacFlow，生成结果更平滑且更少体素离散伪影。</p>
+<p><strong>Deep理由</strong>: 这篇工作把多部件隐式表示、缺失结构补全和跨模态稀疏重建统一到一个框架里，问题设置非常贴近真实临床采集场景。对做医学影像、三维形状建模、神经隐式场和心脏数字孪生的研究者而言，方法设计和实验设置都很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19399v1" target="_blank" rel="noopener noreferrer">Optimal Routing for Federated Learning over Dynamic Satellite Networks: Tractable or Not?</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">FL</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19386v1" target="_blank" rel="noopener noreferrer">Air-Know: Arbiter-Calibrated Knowledge-Internalizing Robust Network for Composed Image Retrieval</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19383v1" target="_blank" rel="noopener noreferrer">Multimodal Transformer for Sample-Aware Prediction of Metal-Organic Framework Properties</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态样本感知MOF性质预测</p>
+<p><strong>筛选理由</strong>: XRD+MOFid建模新颖，实验样本差异建模有价值</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19379v1" target="_blank" rel="noopener noreferrer">PanDA: Unsupervised Domain Adaptation for Multimodal 3D Panoptic Segmentation in Autonomous Driving</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 这篇论文首次系统研究了“多模态3D全景分割（LiDAR+RGB）”上的无监督域自适应问题，把以往主要停留在3D语义分割层面的UDA推进到了同时包含语义与实例的更难任务。其核心创新有两点：一是提出 Asymmetric Multimodal Drop（AMD），通过在源域有监督训练中有针对性地破坏单一模态的实例内部与边界区域，模拟真实部署时的模态失衡；二是提出 Dual-Expert Pseudo-Label Refinement（DualRefine），联合利用3D几何先验和2D视觉基础模型先验，修复伪标签的残缺掩码并纠正实例类别错误。</p>
+<p><strong>方法</strong>: PanDA整体采用 mean-teacher 框架：student 在源域使用真实标注训练，在目标域使用 teacher 生成并经 refinement 的伪标签训练，teacher 由 student 的EMA更新。针对域移带来的模态退化，AMD只在源域施加，随机选择图像或LiDAR一侧，对边界区域和thing实例内部做结构化drop，迫使模型学会跨模态补全和鲁棒融合。针对目标域伪标签不完整的问题，作者先做面向thing/stuff差异化的置信度过滤，再通过 DualRefine 的 Grow 和 Reassign 两步分别利用3D几何superpoints补全stuff区域、利用2D VFM proposal修正低置信thing实例类别。最终训练目标由源域panoptic损失、源域辅助语义损失、目标域panoptic损失和teacher-student一致性损失组成。</p>
+<p><strong>实验</strong>: 实验覆盖了时间（Day→Night）、天气（Sunny→Rainy）、地点（USA→Singapore）和跨数据集/传感器（SemanticKITTI→nuScenes）四类典型域移，设置较完整。相对直接源域训练的Baseline，PanDA在PQ上分别提升+8.4、+8.9、+13.2和+53.3，且全面优于改造后的Pano-xMUDA与Pano-UniDSeg，说明其不仅对语义有效，也真正提升了实例级panoptic质量。消融实验也比较扎实：AMD主要增强在恶劣条件下的thing鲁棒性，DualRefine则显著改善伪标签完整性与类别可靠性，两者组合效果最好。</p>
+<p><strong>Deep理由</strong>: 如果你关注自动驾驶感知、3D scene understanding 或多模态域自适应，这篇工作很值得读，因为它把UDA从3D语义分割扩展到更实际也更困难的3D panoptic设定。方法设计抓住了真实问题中的两个关键痛点——模态退化与伪标签破碎——实验也覆盖多种域移场景，具有较强参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19267v1" target="_blank" rel="noopener noreferrer">Multimodal embodiment-aware navigation transformer</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态具身感知提升导航鲁棒性</p>
+<p><strong>筛选理由</strong>: 多模态+具身描述实用，导航泛化提升明显</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19264v1" target="_blank" rel="noopener noreferrer">DR-MMSearchAgent: Deepening Reasoning in Multimodal Search Agents</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 强化多模态搜索代理深度推理训练</p>
+<p><strong>筛选理由</strong>: 问题明确，方法实用，但创新更偏训练优化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文针对多模态搜索 Agent 在强化学习中常见的“过早停止探索/交互坍塌”问题，提出了两个关键机制：SPAI（Structural Proximity-weighted Advantage Injection）和 BGAS（Bidirectionally Guided Adaptive Smoothing）。前者不再只看最终答案奖励，而是利用整条轨迹中奖励出现的位置与结构相似性来重塑 advantage，使“同答但不同推理长度”的轨迹也能被区分；后者则用双向高斯型工具调用奖励，在答对时鼓励简洁、答错时鼓励继续搜索，从而动态控制搜索深度与冗余。</p>
+<p><strong>方法</strong>: 整体框架 DR-MMSearchAgent 建立在多轮工具调用的多模态搜索 Agent 上，核心目标是让模型学会更深、更稳定的交互式推理。训练时，模型基于图像与问题进行多条 rollout，SPAI 会对 batch 内所有轨迹做结构化比较，根据 reward token 在不同位置的分布情况注入更有区分度的 advantage；BGAS 再结合正确性、格式约束和工具效率三类奖励，动态调整模型何时继续搜索、何时停止。除此之外，作者还构建了一个至少包含 3 步推理链的 BridgeVQA 数据集，并加入 refining agent 对检索结果进行压缩去噪，以减少长上下文干扰。</p>
+<p><strong>实验</strong>: 实验上，论文在 FVQA-test、InfoSeek、SimpleVQA、LiveVQA、MMSearch 等多个知识密集型基准上取得了最优结果，其中在 FVQA-test 上比 MMSearch-R1 提升 8.4%。消融实验表明，BridgeVQA、SPAI、BGAS 和 refining agent 四部分都带来稳定增益，尤其 SPAI 对提升探索多样性和避免 advantage 信号塌缩作用明显。作者还展示了该方法可迁移到非搜索类视觉推理任务，在 MathVista、MathVerse、HallusionBench、ChartQA 等数据集上也优于多个 7B 级开源基线。</p>
+<p><strong>Deep理由</strong>: 这篇论文抓住了当前多模态搜索 Agent 训练中的一个真实痛点：RL 过程中的探索退化，并提出了相对新颖且工程上可落地的解决方案。虽然方法有一定启发性、实验也较强，但论文中部分理论与实现细节仍偏经验化，数据规模也不算特别大，因此更适合做方向跟踪与方法借鉴，而未必是定义领域范式的“必读”工作。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19196v1" target="_blank" rel="noopener noreferrer">Benchmarking Vision Foundation Models for Domain-Generalizable Face Anti-Spoofing</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19193v1" target="_blank" rel="noopener noreferrer">How Far Are Video Models from True Multimodal Reasoning?</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19135v1" target="_blank" rel="noopener noreferrer">Diff-SBSR: Learning Multimodal Feature-Enhanced Diffusion Models for Zero-Shot Sketch-Based 3D Shape Retrieval</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 扩散特征助力零样本草图检索3D</p>
+<p><strong>筛选理由</strong>: 任务新，方法实用，但偏工程堆叠</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19105v1" target="_blank" rel="noopener noreferrer">EgoMotion: Hierarchical Reasoning and Diffusion for Egocentric Vision-Language Motion Generation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 第一视角视觉语言驱动动作生成</p>
+<p><strong>筛选理由</strong>: 任务新颖，分层解耦合理，但需看实验与泛化</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19081v1" target="_blank" rel="noopener noreferrer">Proactive Detection of GUI Defects in Multi-Window Scenarios via Multimodal Reasoning</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19055v1" target="_blank" rel="noopener noreferrer">ATRIE: Adaptive Tuning for Robust Inference and Emotion in Persona-Driven Speech Synthesis</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 ATRIE，一个面向人格驱动语音合成的统一框架：用 14B LLM 的情感/人格推理能力离线蒸馏到仅 11.8M 的轻量适配器中，实现“强语义理解 + 实时推理”兼得。其核心结构 P2-DT 将静态身份音色与动态情感韵律显式解耦，分别通过 Timbre Track 和 Prosody Track 建模，从而同时提升角色一致性与情感表达力。</p>
+<p><strong>方法</strong>: ATRIE 先在离线阶段利用 Qwen 2.5 14B 根据文本和 persona 配置生成链式推理、VAD 分数及相对韵律控制目标，再将这些信号蒸馏到 Persona-to-Prosody 适配器中。在线阶段，轻量适配器直接预测音高、能量、时长和停顿等控制量，并驱动 GPT-SoVITS v4 生成语音。系统中的 P2-DT 双轨架构用标量量化的 timbre 表征稳定角色身份，用分层 flow-matching 建模随语境变化的 prosody。与此同时，作者还引入对比学习约束，使生成的韵律嵌入与目标 persona 在共享空间中更对齐。</p>
+<p><strong>实验</strong>: 在 AnimeTTS-Bench 上，ATRIE 取得 CCS 0.86、EEA 0.84、RTF 0.18，角色一致性和情感表达均显著优于 FastSpeech2、VITS、VALL-E、CosyVoice 2 等基线。扩展到 50 个角色的严格零样本设定下，其跨模态 persona 检索也达到 mAP 0.75，明显超过 CLAP、LAION-CLAP 等通用多模态编码器。消融实验进一步表明，LLM 教师、CoT 推理、对比对齐和参考音频选择对性能都至关重要。</p>
+<p><strong>Deep理由</strong>: 这篇工作把 LLM 蒸馏、人格建模、情感 TTS 和跨模态检索结合得较完整，思路新颖且任务定义有启发性。不过论文中数据集描述与实验规模存在一定不一致（如前文 3 个角色、后文扩展到 50 个角色），部分结果也需要更强的外部复现来进一步验证。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19042v1" target="_blank" rel="noopener noreferrer">STK-Adapter: Incorporating Evolving Graph and Event Chain for Temporal Knowledge Graph Extrapolation</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.18988v1" target="_blank" rel="noopener noreferrer">A Multi-Agent Framework with Structured Reasoning and Reflective Refinement for Multimodal Empathetic Response Generation</a></h3>
+<p class="meta">方向: 未知 | 标签: <span class="tag">MM</span></p>
+<p><strong>筛选理由</strong>: AI 解析失败</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把多模态共情回复生成从“单次隐式生成”改造成“结构化推理 + 全局反思纠错”的闭环多智能体框架。作者不仅显式拆分了感知、情绪预测、策略规划、回复生成四个阶段，还设计了一个全局反思代理，能够定位最早出错环节并触发针对性重生成，从而减少情绪判断偏差和共情失真。</p>
+<p><strong>方法</strong>: 方法上，框架先由多模态感知代理从对话文本和视频关键帧中提取情绪相关证据，再由一致性感知情绪预测器结合跨模态线索推断目标情绪。随后，语用策略规划代理从沟通目标、人际立场、策略方式和语言语气四个维度生成结构化回复计划，最后由策略引导生成器输出回复。在此基础上，全局反思代理逐步审计每个中间状态与最终回复，若发现问题则从责任模块开始局部回滚并重生成，最终再从多轮历史结果中选择最佳回复而非直接采用最后一次结果。</p>
+<p><strong>实验</strong>: 实验在 IEMOCAP 和 MELD 两个多模态情感对话基准上进行，整体显示该方法在生成质量、情绪准确率、语义匹配和人工共情评分上优于多数现有方法。尤其在 IEMOCAP 上，相比已有方法取得了约 16.4% 的情绪准确率提升和 16.0% 的共情评分提升；消融实验还证明了结构化级联设计、反思模块以及有限轮次迭代选择机制都对性能有明显贡献。</p>
+<p><strong>Deep理由</strong>: 这篇论文的任务切入点和系统设计都很有价值，尤其适合关注多模态情感交互、Agentic LLM 和可解释生成的研究者。不过其方法主要依赖推理流程工程与大模型能力，理论深度和训练层面的新意相对有限，且部分实验结果仍存在数据集敏感性，因此更适合作为值得跟进的系统型工作。</p>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
