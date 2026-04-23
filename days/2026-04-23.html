@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-04-23</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-04-23</h1>
+    <p class="summary">共 36 篇。🔴 必读 0，🟡 推荐 36，⚪ 可跳过 0。</p>
+    <section><h2>🟡 推荐（36）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20692v1" target="_blank" rel="noopener noreferrer">A Kinematic Framework for Evaluating Pinch Configurations in Robotic Hand Design without Object or Contact Models</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 无物体模型的手部捏取运动学评估</p>
+<p><strong>筛选理由</strong>: 适合手部设计早期评估，但偏运动学分析</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个完全基于运动学的 pinch（捏取）评估框架，只利用手部运动链与指尖可达工作空间之间的几何关系，就能判断多种 pinch 构型是否可实现，无需物体几何、接触模型或力学参数。其关键创新在于把 pinch 能力分解为 distal phalanx alignment、lateral pinch、tip pinch 三类可计算判据，并统一用于五指灵巧手设计阶段的定量比较。论文还进一步把“拇指对掌能力”与“非拇指指间 pinch”放到同一框架下分析，使其不仅能评估 thumb opposability，也能评估更一般的手指间交互潜力。</p>
+<p><strong>方法</strong>: 方法上，作者先为四种不同自由度组合的五指手建立 DH 运动学模型，并在给定关节范围内离散采样各指的可达工作空间。随后分别设计三类评估：其一通过末节指骨方向平行与投影区间重叠，检测 pulp pinch / three-jaw chuck 及非拇指指间对向区域；其二通过拇指远端与食指各节侧向接触点之间的距离和相对姿态约束，评估 lateral pinch；其三通过拇指与其他手指指尖间的距离和非平行姿态约束，评估 tip pinch。最终以“检测到的可行 pinch 点占可达点比例”等指标，对不同手部构型的 pinch 潜力进行比较。</p>
+<p><strong>实验</strong>: 实验比较了 4 种五指手结构（3/4-DoF finger × 4/5-DoF thumb），系统分析了分辨率、容差 ε 与自由度配置对可行 pinch 区域检测结果的影响。结果表明：手指增加一维 F/E 自由度通常显著扩大 distal alignment 与 tip pinch 可行区域，而拇指自由度提升的收益更依赖具体运动链布置，并非单纯“DoF 越多越好”；此外，论文还展示了不同 finger pair 与不同 pinch span 下可行区域的细粒度差异，这对设计阶段做结构取舍很有价值。</p>
+<p><strong>Deep理由</strong>: 这篇论文很适合机器人手设计前期做结构筛选，尤其适合缺少具体任务物体和接触模型时的快速比较分析。虽然方法偏几何/运动学，尚未进入真实抓取稳定性层面，但作为早期设计评估工具非常实用、思路也比较清晰。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20689v1" target="_blank" rel="noopener noreferrer">FingerEye: Continuous and Unified Vision-Tactile Sensing for Dexterous Manipulation</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 统一视觉触觉的灵巧操作传感器</p>
+<p><strong>筛选理由</strong>: 传感器新颖且任务强，但偏系统集成</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 FingerEye，一种面向灵巧操作的连续统一视觉-触觉传感范式：在接触前用指尖双目 RGB 提供近距离视觉与隐式深度，在接触后通过柔顺环形结构形变 + AprilTag 位姿估计得到接触力/力矩代理信号，从而把 pre-contact、contact initiation、post-contact 三阶段打通。其关键创新不只是“把视觉和触觉装进一个手指里”，而是用同一条自然 RGB 感知流完成跨阶段状态感知，避免了传统视觉/触觉割裂和 STS 方案中的模式切换、复杂光学结构与中央接触区域受限问题。</p>
+<p><strong>方法</strong>: 硬件上，FingerEye 采用紧凑楔形指尖结构，集成两颗不同视角与焦距配置的微型相机、包围透明亚克力盖板的硅胶柔顺环，以及定制 AprilTag 阵列；通过多 tag PnP 估计盖板 6D 位姿变化，将其作为接触形变与 6D wrench 的代理。学习上，作者构建了多 FingerEye + 腕部相机的采集平台，并设计基于 Transformer 的 imitation learning policy：冻结视觉骨干提取多视角特征，融合机器人关节状态与近期 tag pose 历史，用 action chunking 预测未来动作序列。为提升泛化，论文进一步构建 Isaac Lab 数字孪生，并提出 shared-encoder + multi-decoder 的 simulation-augmented representation learning，只让真实数据监督动作、让仿真数据监督物体状态，从而利用仿真做外观增强而不过度引入动力学偏差。</p>
+<p><strong>实验</strong>: 传感层面，作者验证了 AprilTag 位姿估计在受力扰动和低照度下的鲁棒性，最小可检测 wrench 达到毫牛/毫牛米量级，并通过 1000+ 组同步数据证明形变与 6D 力/力矩之间存在稳定映射；在脆弱物体抓取实验中，系统可及时检测接触起始并实现无损提取。策略层面，在 coin standing、chip picking、letter retrieving、syringe manipulation 四类高接触灵巧任务中，FingerEye 相比仅腕部视觉平均提升超过 30% 成功率，且双目优于单目；同时其策略在相同输入下比强基线训练更快（约 2.8×）且成功率更高，并通过仿真增强显著改善未见外观颜色泛化。</p>
+<p><strong>Deep理由</strong>: 这篇工作把“连续视觉-触觉感知”从概念真正落实到可复现硬件、数字孪生和 imitation learning 全链路系统里，且任务设计能明显体现其必要性。对做 VLA、灵巧手、触觉传感、模仿学习和 sim2real 的研究者都很有启发，尤其适合作为“感知-硬件-学习协同设计”范例来读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20686v1" target="_blank" rel="noopener noreferrer">Kinematic Optimization of Phalanx Length Ratios in Robotic Hands Using Potential Dexterity</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 机器人手指骨长度比优化框架</p>
+<p><strong>筛选理由</strong>: 偏机构设计，方法系统，对VLA关联弱</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个面向五指机器人手的“潜在灵巧性（potential dexterity）”驱动的指骨长度比例优化框架，在不预设具体物体或任务的前提下，用运动学指标系统性地设计手指结构。其关键创新在于把全局可操作度、工作空间体积、拇指-其余手指重叠工作空间以及指尖灵敏度统一到一个加权目标函数中，并显式分析不同指节长度对这些能力的差异化贡献。</p>
+<p><strong>方法</strong>: 作者针对四个四自由度手指和一个五自由度拇指建立了参数化运动学模型，将待优化变量定义为拇指与其余手指的三段指骨长度比例。方法上先对关节空间做离散采样，通过正运动学得到指尖工作空间点集，再利用 Jacobian 计算全局 manipulability，并通过体素化估计工作空间及拇指与四指的重叠体积。随后再计算远端指节对应的指尖灵敏度，将上述指标归一化后构造成加权目标函数，在满足总长度、最小长度和指节递减约束下枚举搜索最优设计组合。</p>
+<p><strong>实验</strong>: 实验穷举了 48 个拇指设计和 27 个其余手指设计，并在 7 组不同权重配置下分析最优结构，最终将结果归纳为 4 类代表性设计组。结果显示：远端指节更长通常有利于扩大工作空间和提升拇指对掌重叠区，但会增大灵敏度、削弱精细控制；而较长的近端指节更有利于 manipulability。另一个重要发现是，权重系数的提高并不会线性对应某一指标的绝对最大化，因为各指标在可行设计空间中的分布并不均匀。</p>
+<p><strong>Deep理由</strong>: 如果你关注机器人手的机构设计、尤其是任务无关的早期尺寸优化，这篇论文很有参考价值，分析框架也较完整。但其贡献主要是工程化的运动学设计方法，缺少动力学、接触和真实操作实验验证，因此更适合作为设计指导而非最终性能定论。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20638v1" target="_blank" rel="noopener noreferrer">Evaluating Computing Platforms for Sustainability: A Comparative Analysis of FPGAs against ASICs, GPUs, and CPUs</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 比较FPGA与ASIC/GPU/CPU碳足迹</p>
+<p><strong>筛选理由</strong>: 偏平台可持续性评估，方法实用但非核心模型创新</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 GreenFPGA，据作者所述这是首个面向 FPGA 的全生命周期碳足迹（CFP）评估框架，系统覆盖设计、制造、封装、测试、内存、退役、回收、重配置、运行以及设备失效/过时/升级导致的替换效应。其最有价值的创新在于把 FPGA 的“可重构、可跨多应用复用”显式纳入碳模型，并进一步引入概率建模与可靠性退化建模，从而不只看静态能耗，而是分析在何种部署区间内 FPGA 能比 ASIC/GPU/CPU 更可持续。</p>
+<p><strong>方法</strong>: GreenFPGA 将总碳足迹拆分为 embodied carbon（设计、制造、封装、测试、RAM、退役、EOL 替换）与 operational carbon（运行期能耗与重配置/开发开销）两部分，并分别建模后求和。对于 FPGA/CPU/GPU，论文利用“单一器件可跨多个应用复用”的假设，将一次性 embodied CFP 在多个应用上摊销；对于 ASIC，则每个应用通常需要重新设计制造。框架还对碳强度、制造能耗、气体排放、缺陷密度等关键参数采用 KDE/Gaussian 的概率分布建模，并通过 aging factor 建模 BTI/HCI 引起的长期能效退化。最后作者在 iso-performance 假设下，对 FPGA 与 ASIC、GPU、CPU进行两两对比，分析应用数量、生命周期、出货量和使用率等变量对总 CFP 的影响。</p>
+<p><strong>实验</strong>: 实验表明，FPGA 并非天然低碳，但在“工作负载频繁变化、应用种类多、生命周期较长、出货量较低到中等”的部署区间内，凭借可重构复用带来的 embodied CFP 摊销，往往能优于 ASIC，部分场景下也能优于 GPU/CPU。尤其在 FPGA 与 ASIC 的对比中，应用数增加时 ASIC 的重复设计制造成本迅速累积，而 FPGA 的增幅较小；作者还通过热力图与不确定性分析展示了不同变量组合下的可持续性边界。另一个亮点是论文强调 RAM、测试和 EOL 替换不可忽略，这些因素会显著改变过去只看芯片本体制造+运行能耗所得出的结论。</p>
+<p><strong>Deep理由</strong>: 这篇论文的价值不在于提出新的 FPGA 架构，而在于把“可持续性”上升为平台选择准则，适合做绿色计算、硬件系统设计、VLA/边缘部署决策的人阅读。若你关心 AI/机器人系统该选 ASIC、GPU 还是 FPGA，这篇文章提供了很有启发性的生命周期分析框架；但其结论较依赖 iso-performance 假设与参数设定，因此更适合作为决策参考而非绝对结论。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20596v1" target="_blank" rel="noopener noreferrer">Differentially Private Clustered Federated Learning with Privacy-Preserving Initialization and Normality-Driven Aggregation</a></h3>
+<p class="meta">方向: FL | 标签: <span class="tag">FL</span></p>
+<p><strong>简述</strong>: DP聚类联邦学习两阶段优化</p>
+<p><strong>筛选理由</strong>: 问题真实，方法完整，提升有限但有参考价值</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: {
+  &quot;innovation&quot;: &quot;论文提出 PINA，一个同时兼顾数据异质性与用户级差分隐私的 clustered FL 框架。其关键创新有两点：第一，用 LoRA+r=1 的极轻量私有初始化，让客户端仅上传经过 LDP 保护的稀疏 update sketch，从而在无服务器特权数据、无随机重启的情况下完成聚类原型初始化；第二，提出 normality-driven aggregation，根</p>
+<p><strong>Deep理由</strong>: AI 解析失败</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20570v1" target="_blank" rel="noopener noreferrer">Exploring Spatial Intelligence from a Generative Perspective</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 提出生成式空间智能基准并验证可提升推理</p>
+<p><strong>筛选理由</strong>: 基准新颖且证明生成训练可增强空间理解</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次从“生成”而非仅“理解”的视角系统研究空间智能，提出了 Generative Spatial Intelligence（GSI）这一能力定义，即模型能否在图像生成/编辑过程中遵守并操控3D空间约束。为此，作者构建了首个面向该问题的评测基准 GSI-Bench，包含真实场景的 GSI-Real 与可控大规模合成数据 GSI-Syn，并设计了覆盖指令遵循、空间精度、编辑局部性和外观一致性的统一评测协议。更重要的是，论文证明了“生成式空间训练”不仅能提升图像编辑中的空间能力，还能迁移增益到下游空间理解任务。</p>
+<p><strong>方法</strong>: 作者将 GSI 具体化为“空间约束图像编辑”任务：输入原图和明确的空间编辑指令，模型需输出满足目标3D变换的编辑图像。数据层面，GSI-Syn 基于 AI2-THOR 和 Mesa-Task 等仿真环境自动生成具有精确3D状态、空间操作和目标图像的训练/测试样本；GSI-Real 则基于 ScanNet++，借助 DetAny3D 做3D场景重建、规则生成空间操作，并结合 MLLM 过滤和人工审核保证质量。评测层面，论文设计了 IC、SA、EL、AC 四项指标，从是否遵循空间指令到几何精度、非编辑区域保持以及外观一致性进行全面评价。最后，作者使用 GSI-Syn 对统一多模态模型 BAGEL 进行微调，验证生成式空间训练的有效性与泛化能力。</p>
+<p><strong>实验</strong>: 实验表明，无论闭源还是开源当前先进多模态生成/编辑模型，在精细空间操作上整体表现都不理想，尤其在复杂场景中的移动、旋转和视角控制任务上明显不足。用 GSI-Syn 微调 BAGEL 后，其在 GSI-Real 上平均提升 7.83 分，在 GSI-Syn-Table 上提升 22.15 分，在 GSI-Syn-Room 上提升 7.05 分，说明合成空间监督具有很强的 sim-to-real 迁移能力。更关键的是，仅用生成式空间编辑数据训练，也能提升 OmniSpatial 和 SAT-Real 等空间理解基准表现，支持“生成训练可以反哺空间理解”这一核心结论。</p>
+<p><strong>Deep理由</strong>: 这篇工作把空间智能从传统的感知/问答范式推进到生成操控范式，问题定义新、 benchmark 完整、实验结论也很有启发性。对于做多模态大模型、机器人、世界模型或空间推理的人，这篇论文提供了一个非常值得关注的新研究方向。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20522v1" target="_blank" rel="noopener noreferrer">From Image to Music Language: A Two-Stage Structure Decoding Approach for Complex Polyphonic OMR</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 两阶段OMR解码复杂复调乐谱</p>
+<p><strong>筛选理由</strong>: 问题实际，解码设计清晰，但偏任务型</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文把复杂多声部 OMR 的核心难点明确建模为第二阶段的“结构解码/规整（regulation）”问题，而不是停留在符号检测或端到端串行转写层面。其关键创新是提出基于概率引导树搜索的拓扑求解器 BeadSolver：把候选音符/休止符视为带不确定性的事件集合，在全局结构约束下联合恢复 voice chain、tick 位置和时值属性。另一个重要创新是把解码器嵌入数据闭环，用程序合成 + 自动求解 + 人工/智能体修正来持续沉淀高质量结构化乐谱数据。</p>
+<p><strong>方法</strong>: 整体系统采用两阶段 OMR：第一阶段通过版面分析、staff 矫正、语义分割和事件组装，得到 measure-level 的 chord/rest 候选及其几何与局部属性提示；第二阶段把每个小节的结构恢复表述为一个 MDP。核心模型 BeadPicker 是带 prefix 条件的 Transformer，输出下一个事件、division、dots、tick 等概率或倾向；BeadSolver 则结合这些概率做树搜索，并用 x-tick 几何一致性、voice 完整性、节内时值闭合等全局代价进行剪枝和择优。最终输出可编辑的 measure 结构，包括每个事件的 voice、绝对 tick 和修正后的节奏属性，并可导出 MusicXML/LilyPond 等格式。</p>
+<p><strong>实验</strong>: 从论文当前给出的主体内容看，实验亮点主要体现在工程可用性和复杂钢琴复调场景的针对性：作者展示了多声部重叠、跨谱表书写、连音组/tuplet 时间扭曲等传统规则系统最容易失败的案例，并说明该方法能够在这些高歧义小节上通过搜索找到更可用的结构解。另一个亮点是其在线 demo 和完整生产管线设定，说明工作不是纯离线算法验证，而是面向真实 OMR 系统落地。不过由于你提供的正文在训练数据段后截断，完整定量实验和 benchmark 结果尚未出现，因此实验结论目前更偏方法和系统层面而非充分数值对比。</p>
+<p><strong>Deep理由</strong>: 这篇工作对复杂钢琴 OMR 中最难的 voice separation / intra-measure timing 问题给出了很有工程价值的建模思路，尤其适合关注多阶段文档理解、结构化解码和可编辑输出的研究者。之所以不是“必读”，主要因为你提供的版本缺少后半部分完整实验与消融，当前更像一篇方法与系统设计很强、但尚需更多量化证据支撑的工作。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20486v1" target="_blank" rel="noopener noreferrer">ProMMSearchAgent: A Generalizable Multimodal Search Agent Trained with Process-Oriented Rewards</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 过程奖励训练多模态搜索Agent</p>
+<p><strong>筛选理由</strong>: Sim2Real设定新颖，零样本迁移与增益显著</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于提出了一个“过程导向奖励 + Sim-to-Real 解耦训练”的多模态搜索智能体框架。作者指出以往方法用最终答对与否加工具惩罚来训练，会产生 reward-action mismatch：在本应调用搜索工具的样本上，正确动作反而被惩罚；为此他们引入基于模型自我知识边界探测得到的 behavioral metadata，并显式奖励“该搜时搜、不该搜时不搜”的决策。</p>
+<p><strong>方法</strong>: 方法上，作者先构建了一个新闻驱动的多模态 VQA 训练集，并通过对基座模型进行 8 次无工具 rollout，自举标注每个样本是 tool-free 还是 tool-required。训练时采用分解式奖励：outcome reward 负责最终答案正确性，process reward 由 behavior reward 和 format reward 组成，其中 behavior reward 专门奖励动作是否与元数据一致。与此同时，作者不在高延迟高成本的真实搜索 API 上直接训练，而是在本地 Tool Sandbox 中用 Wikipedia dump、文本检索器和预缓存的 Google Lens 结果进行稳定可复现的 RL 训练，最终再零样本迁移到真实 Google Search API。</p>
+<p><strong>实验</strong>: 实验上，ProMMSearchAgent 在 FVQA-test、InfoSeek、SimpleVQA、LiveVQA、MMSearch 五个基准上全面刷新或达到 SOTA，相比 MMSearch-R1 分别提升 +5.1、+6.3、+3.3、+4.2、+11.3 个百分点。消融实验非常有说服力：去掉 behavior reward 后模型几乎退化为 100% 调工具，而使用传统工具惩罚则会变得“tool-shy”；说明作者提出的 metadata-driven process reward 确实学到了更合理的知识边界与工具使用策略。另一个很强的结果是，本地训练仅损失约 1.88% 平均精度，却带来 13.1× 加速和近乎零 API 成本，证明其 Sim-to-Real 设定具有很高实用价值。</p>
+<p><strong>Deep理由</strong>: 这篇工作抓住了多模态搜索智能体训练中的两个关键痛点：奖励稀疏/错配，以及在线环境不可控，并给出了一个方法论上相当完整且实验充分验证的解决方案。对于关注 MLLM agent、工具使用、RL for reasoning、以及可复现智能体训练的研究者来说，这是一篇非常值得精读的论文。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20472v1" target="_blank" rel="noopener noreferrer">Temporal Difference Calibration in Sequential Tasks: Application to Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 用TD实现VLA时序校准</p>
+<p><strong>筛选理由</strong>: 把校准与价值函数统一，实机验证有新意</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次把“序列任务中的校准”正式定义出来：在轨迹执行过程中持续输出任务成功置信度，而真实成功标签只在episode结束时才揭晓。其最核心的理论贡献是证明：在二元成功情形下，最小化序列版Brier score的最优预测器正是策略的价值函数，因此把不确定性校准问题与强化学习中的value estimation/TD learning直接打通。基于这一点，作者提出TDQC，用时序差分而不是普通监督学习去做VLA成功概率校准。</p>
+<p><strong>方法</strong>: 作者先在POMDP框架下定义顺序Brier score，用它衡量任意时刻对最终任务成功率的预测是否既准确又校准。随后证明该目标的风险最小化解等价于策略的未来回报期望/价值函数，因此可以把成功预测器训练转化为Q/value学习问题。具体实现上，TDQC使用TD bootstrap损失：中间时刻让当前预测逼近下一时刻预测，终止时刻再对齐最终成功标签，并配合target network稳定训练。方法既支持white-box输入（VLA隐藏特征，类似SAFE），也支持black-box输入（动作/token概率），后者对只能通过API访问的模型尤其重要。</p>
+<p><strong>实验</strong>: 实验覆盖OpenVLA、UniVLA、π0、π0-FAST，以及LIBERO仿真、WidowX和Franka真实机器人数据。结果显示，TDQC在几乎所有设置下都显著降低sequential Brier score，并在4/6个unseen-task基准上达到或刷新ROC-AUC最优。更有意思的是，作者证明经过TD校准后，仅凭动作概率的black-box方法就能逼近甚至超过依赖内部隐藏状态的SAFE基线；此外，利用学到的价值预测器做测试时动作搜索，还能让OpenVLA在LIBERO上额外提升约13%~15%的成功率。</p>
+<p><strong>Deep理由</strong>: 这篇工作把校准、RL价值学习和VLA失败预测三者统一起来，理论清晰且实验非常扎实，对做机器人foundation model、VLA可靠性、black-box uncertainty estimation的人都很有参考价值。尤其是“Brier最优解=价值函数”这一连接非常漂亮，足以成为后续相关工作的基础视角。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20460v1" target="_blank" rel="noopener noreferrer">CCTVBench: Contrastive Consistency Traffic VideoQA Benchmark for Multimodal LLMs</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 交通视频问答对比一致性基准</p>
+<p><strong>筛选理由</strong>: 安全场景评测新颖，诊断细，但偏Benchmark</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文的核心创新在于提出了一个面向交通安全视频理解的“对比一致性”基准 CCTVBench，不再只看单个 VideoQA 样本答对与否，而是要求模型在真实事故视频、反事实视频以及互斥问题构成的四元组上满足严格一致的决策模式。更重要的是，作者不仅设计了 QuadAcc、视频/问题一致性等新指标，还把错误细分为 positive omission、positive swap、negative hallucination 和 mutual-exclusivity violation，使模型失败原因可以被精确诊断。除此之外，论文还提出了 C-TCD，把语义互斥的反事实视频直接作为推理时的对比输入，用于提升模型的一致性与拒答能力。</p>
+<p><strong>方法</strong>: CCTVBench 的构建流程是：先从真实交通事故/异常数据中选取事故视频作为正样本 v+，再利用 driving world model 生成仅在关键结果上不同、但场景布局/视角/光照尽量保持一致的反事实负样本 v-。随后基于人工标注的关键实体、因果关系和时空信息，生成互斥的问题对 q+ 和 q-，并形成 (v+, v-, q+, q-) 的四元组，其中只有 (v+, q+) 应回答 Yes，其余三项都应为 No。评测时作者定义 QuadAcc 作为最严格指标，并进一步从视频一致性、问题一致性、视觉-语言敏感性等角度分析模型是否真正依据视觉证据做判断。推理增强方面，C-TCD 在解码时用配对反事实视频的 logits 对原视频 logits 做对比校准，从而抑制幻觉和错误肯定。</p>
+<p><strong>实验</strong>: 实验覆盖了多种开源与闭源 Video-LLM，结果表明很多模型虽然在普通二分类 QA 指标上已有中等表现，但在四元组层面的 QuadAcc 上依然很低，说明“单题答对”与“对比一致”之间存在显著鸿沟。作者进一步发现，最大的瓶颈并不是识别互斥问题，而是对反事实视频上的 none-of-the-above 进行稳定拒答；很多模型会在 v- 上产生明显的 negative hallucination。最后，C-TCD 相比 VCD/TCD 取得了更稳定的收益，尤其在 Qwen3-VL 上同时提升了 BaAcc、MCCScore 和 QuadAcc，验证了语义反事实对比信号优于通用噪声或时间退化对比。</p>
+<p><strong>Deep理由</strong>: 如果你关注自动驾驶、交通场景理解或多模态大模型可靠性，这篇工作非常值得读，因为它把“是否真正看懂视频”从传统准确率问题推进到了“是否具备安全可用的一致决策规则”。它不仅提出了高价值 benchmark，还给出了可操作的诊断体系和一个有效的推理时改进方法，研究和应用价值都很强。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20444v1" target="_blank" rel="noopener noreferrer">VTouch++: A Multimodal Dataset with Vision-Based Tactile Enhancement for Bimanual Manipulation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 双臂操作视觉触觉多模态数据集</p>
+<p><strong>筛选理由</strong>: 触觉增强数据稀缺，双臂操作评测价值高</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文的核心创新在于提出了一个面向双臂接触密集操作的大规模真实机器人多模态数据集，首次系统性地联合采集了视觉、机器人本体状态与高分辨率视觉式触觉信号。与此同时，作者提出了“skill-axis”任务组织框架，将双臂协同、原子动作、接触/触觉模式、感知需求与任务层级结构化编码，使数据集不仅规模大，而且可组合、可分析、可用于泛化研究。</p>
+<p><strong>方法</strong>: 方法上，作者构建了一个跨构型的数据采集系统，覆盖固定双臂、轮式人形和UMI风格移动操作平台，并通过统一硬件抽象接口对状态、动作和传感进行语义对齐。采集过程中同步记录多视角RGB-D、指尖视觉触觉、关节状态、末端位姿与夹爪状态，并基于ROS2完成时间戳对齐、重采样、异常检测与轨迹筛选。数据集任务设计采用多维技能轴组合生成超过380个双臂任务与100+原子动作组合。进一步地，作者以CLIP式对比学习建立视觉-触觉-位姿共享表征，并将该数据集用于ACT和Diffusion Policy等策略学习与真实机器人推理验证。</p>
+<p><strong>实验</strong>: 实验亮点主要体现在两个层面：第一，作者进行了系统的跨模态检索实验，覆盖视觉-触觉-位姿的双模态与三模态检索，证明所建数据在多模态对齐学习上具有可用性，且其InfoNCE训练框架显著优于CCA/PLS等传统基线。第二，作者给出了真实机器人上的分层验证与推理结果，在ACT与Diffusion Policy对比中，扩散策略取得最佳整体表现，说明该数据集确实能支撑接触丰富双臂策略的训练与部署。</p>
+<p><strong>Deep理由</strong>: 这篇工作在数据集建设层面很有价值，尤其适合关注双臂操作、视觉触觉融合和具身智能数据基础设施的研究者。虽然目前论文在方法新颖性上更偏“系统与资源贡献”，且部分实验指标仍有提升空间，但其数据模态完整性和任务组织设计具有较强参考意义。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20434v1" target="_blank" rel="noopener noreferrer">Discrete Preference Learning for Personalized Multimodal Generation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 离散偏好token驱动个性化多模态生成</p>
+<p><strong>筛选理由</strong>: 任务新颖，方法完整，但偏应用整合创新</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了“个性化多模态生成”这一更贴近真实应用的新任务：从用户历史的图文交互中分别建模文本偏好与视觉偏好，再联合生成个性化且跨模态一致的内容。其最核心的技术创新是把协同过滤/GNN学到的连续用户偏好，通过残差向量量化转成可直接注入LLM和扩散模型的离散偏好token，从而打通“推荐式偏好建模”与“生成式离散输入”之间的鸿沟。此外，作者还设计了兼顾个性化与图文一致性的跨模态奖励，对轻量级token相关参数进行微调，避免大模型全量训练。</p>
+<p><strong>方法</strong>: 方法分两阶段。第一阶段，基于用户-物品多模态交互图，分别在文本图和视觉图上用LightGCN学习模态特定的用户/物品表示，再用RQVAE将这些连续表示量化为层次化的离散偏好token，并通过BPR损失和跨模态对比学习约束token同时保留协同过滤信号与图文对齐信息。第二阶段，将视觉token作为占位符嵌入注入扩散模型提示词，将文本token拼接到LLM输入中用于生成文案。最后利用“个性化奖励 + 跨模态一致性奖励”联合优化token关联参数，在冻结生成骨干的情况下实现高效适配。</p>
+<p><strong>实验</strong>: 实验覆盖MovieLens和工业广告两个真实场景，结果显示DPPMG在个性化图像生成和个性化文本生成上整体优于多种DM/LLM/MLLM基线，尤其在个性化指标上提升明显，同时保持较强的语义对齐与生成保真度。人工评测中，用户在图像偏好、文本偏好和图文一致性三项上都更偏向DPPMG。消融实验进一步证明：离散偏好token本身有效，而跨模态奖励确实能提升图文一致性；此外该token学习机制还能作为插件迁移到BM25、RSPG、SDXL、Qwen-VL等不同框架中。</p>
+<p><strong>Deep理由</strong>: 这篇论文的问题定义新、系统设计完整，尤其“连续偏好→离散token→多模态生成”的桥接思路很有启发性，对推荐+生成结合方向价值较高。不过方法仍较工程化，实验规模和理论深度尚不足以称为该方向的决定性里程碑。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20429v1" target="_blank" rel="noopener noreferrer">Fast-then-Fine: A Two-Stage Framework with Multi-Granular Representation for Cross-Modal Retrieval in Remote Sensing</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 遥感跨模态检索的两阶段高效框架</p>
+<p><strong>筛选理由</strong>: 兼顾检索效率与细粒度对齐，方法实用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个面向遥感跨模态检索的 Fast-then-Fine 两阶段框架，把“高效召回”和“细粒度对齐”显式解耦：先用与文本无关的粗召回缩小搜索空间，再对少量候选做文本引导的精排，从而在精度和效率之间取得更优平衡。另一个亮点是参数无关的 BTIB（Balanced Text-Guided Interaction Block）以及联合优化多粒度表示的 I2M 损失，在几乎不增加额外模型复杂度的前提下提升细粒度图文对齐能力。</p>
+<p><strong>方法</strong>: 方法上，作者先将遥感图像切分为 coarse / fine 两种粒度的 patch，并通过多粒度视觉编码得到文本无关的图像表示 v1，用于全库高效 Top-K 召回。随后，在重排阶段，利用查询文本 token 与候选图像 token 之间的相似度矩阵，通过双边归一化的 BTIB 生成文本引导的 coarse/fine 表示 v2、v3，再加权计算最终匹配分数。训练时，使用 I2M Loss 同时约束图文间的跨模态对齐，以及 v2/v3 对 v1 局部邻域结构的保持，使召回表示与重排表示在语义上更一致。</p>
+<p><strong>实验</strong>: 在 RSITMD 上，FTF 在不依赖任何外部大规模预训练数据的情况下，K=200 时达到 51.47 mR，超过此前最强 task-specific 方法 FSSN 的 51.28，并且优于部分依赖海量预训练数据的 VLM 方法。更关键的是，其两阶段设计显著提升检索效率：相较单阶段 rerank，可实现约 5× 到 19× 的加速；消融实验也验证了多粒度学习、BTIB 和 intra-modal consistency 三者都对性能有明确贡献。</p>
+<p><strong>Deep理由</strong>: 这篇论文最有价值的地方在于提出了一个很实用的系统范式：不仅追求精度，还正面解决了遥感跨模态检索的推理效率问题。若你关注遥感图文检索、两阶段检索架构或轻量级细粒度对齐机制，这篇很值得看；但从方法新颖性上看，更多是工程性整合与针对任务的优化，而非颠覆性突破。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20398v1" target="_blank" rel="noopener noreferrer">WebGen-R1: Incentivizing Large Language Models to Generate Functional and Aesthetic Websites with Reinforcement Learning</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用RL训练7B模型生成多页可用美观网站</p>
+<p><strong>筛选理由</strong>: 奖励设计新颖，结果强，但偏工程验证</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 WebGen-R1，这是一个面向多页网站端到端生成的强化学习框架，重点解决“小模型如何稳定生成可运行且美观的网站”这一长期难题。其最核心的创新在于把网站生成限制在一个预验证的 React 脚手架中，并设计了“静态校验→构建渲染→多模态奖励”的级联奖励机制，同时兼顾结构正确性、功能可执行性和视觉审美。相比以往依赖多代理、多轮交互和专有模型的路线，它展示了 7B 开源模型通过 RL 也能逼近超大闭源/开源模型的项目级生成能力。</p>
+<p><strong>方法</strong>: 方法上，作者首先采用 scaffold-driven structured generation：模型不从零生成整个项目，而是在固定模板上只生成可变组件、页面与命令，从而显著缩小动作空间并降低多文件依赖出错率。随后通过分层验证与渲染流水线先做静态合规检查，再执行依赖安装、构建、启动与浏览器截图，尽早过滤低质量样本。奖励函数采用级联式设计：若静态检查失败或构建失败直接给零奖励，只有成功渲染后才进一步结合 VLM 打分的审美分数、基于日志错误的功能完整性分数，以及鼓励结构化推理格式的 CoT 分数。训练阶段使用 GRPO 而非标准 PPO，通过同一 prompt 下组内相对优势归一化来降低高方差奖励带来的优化不稳定问题。</p>
+<p><strong>实验</strong>: 实验上，WebGen-R1 将 Qwen2.5-Coder-7B-Instruct 的有效渲染率从 30.56% 提升到 95.89%，审美对齐分数提升 44.32%，功能成功率从 1.59% 跃升至 29.21%，说明 RL 确实把“几乎不可用”的基座模型推到了“可部署”水平。更有说服力的是，它不仅显著超过多种 30B/72B 级开源模型，还在功能成功率上接近 DeepSeek-R1（671B），同时在渲染有效性和审美对齐上明显更强。消融实验还表明，SFT+RL 明显优于只做 SFT 或只做 RL，且更大的 GRPO group size 会稳定提升 FSR、VRR 和 AAS。</p>
+<p><strong>Deep理由</strong>: 这篇工作把“项目级代码生成”从函数级/单页级推进到真实多页网站生成，并且方法设计非常完整，兼具工程可落地性与研究启发性。对于关注代码生成、GUI/前端智能体、RLHF/RLVR 以及小模型能力提升的研究者来说，它是非常值得精读的一篇。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20350v1" target="_blank" rel="noopener noreferrer">X-PCR: A Benchmark for Cross-modality Progressive Clinical Reasoning in Ophthalmic Diagnosis</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 眼科多模态渐进推理评测基准</p>
+<p><strong>筛选理由</strong>: 基准设计系统，适合评估医疗多模态推理</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文提出了首个面向眼科诊断的“跨模态 + 渐进式临床推理”基准 X-PCR，不再只评估单步识别或单模态问答，而是将真实临床诊断过程形式化为六阶段因果依赖推理链。与此同时，它显式整合了 EP、CFP、FFA、ICGA、OCT、RetCam 六种关键眼科成像模态，并提供跨模态语义对应标注，从而首次系统评估 MLLM 的多模态证据整合能力与临床推理一致性。另一个重要创新是引入难度分层与不确定性感知评测，用 UAS、ECE 等指标同时衡量“答对”和“是否校准得当”，更贴近高风险医疗场景。</p>
+<p><strong>方法</strong>: X-PCR 基于 51 个公开数据集和 58 个医院真实多模态病例构建，共包含 26,415 张图像、177,868 个经专家验证的 VQA 对，覆盖 52 种眼科疾病。论文将诊断流程拆解为图像质量评估、解剖定位、病灶表征、疾病诊断、严重度分级和临床决策六个阶段，并显式约束阶段间的逻辑依赖，以评估纵向推理连贯性、误差传播和链式完成能力。为支持跨模态临床推理，作者设计了疾病中心的统一表示框架和多模态语义对齐机制，并定义了跨模态对应识别、诊断整合和模态选择三类任务。评测时同时采用阶段准确率、链完成率、专家难度分层准确率以及不确定性指标，形成比传统 accuracy 更完整的诊断能力评价体系。</p>
+<p><strong>实验</strong>: 作者系统评测了 21 个主流 MLLM，结果显示即便最强的 GPT-5 平均准确率也只有 76.24%，链完成率仅 24.47%，显著落后于专科医生的 82.85% 平均准确率和 62.48% 链完成率，说明现有模型距离真实临床级推理还有明显差距。另一个关键发现是，模型在推理链后半段表现显著下滑，尤其从疾病诊断到严重度分级是明显瓶颈；同时，随着输入模态数增加，多数模型性能反而下降，暴露出当前 MLLM 在跨模态证据融合上的系统性不足。论文还发现商业模型整体优于开源和医学专用模型，但后两类模型在校准性和稳定性上也并未表现出明显优势。</p>
+<p><strong>Deep理由</strong>: 这篇工作对医疗多模态大模型评测范式有明显推进，不只是做了一个更大的数据集，而是把“临床推理链、跨模态融合、置信度校准”三件关键但长期缺失的事情统一起来。若你关注医疗 MLLM、医学 VQA、临床推理评测或眼科基础模型，这篇论文具有很强的参考价值和方法论意义。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20328v1" target="_blank" rel="noopener noreferrer">Hybrid Latent Reasoning with Decoupled Policy Optimization</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 混合潜在推理优化多模态CoT</p>
+<p><strong>筛选理由</strong>: 方法新颖，兼顾视觉细节与强化优化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 HyLaR，将多模态推理从“纯文本 CoT”扩展为“离散文本 token + 连续视觉潜变量”交替进行的混合推理范式，从根本上缓解了视觉信息过早离散化带来的语义塌缩问题。更关键的是，作者提出专门面向该混合动作空间的 DePO（Decoupled Policy Optimization），把文本与潜变量的策略优化解耦，并用 vMF 分布刻画位于超球面上的隐状态几何，使 latent RL 的比率计算和 KL 约束都更稳定、严格且可闭式实现。</p>
+<p><strong>方法</strong>: 方法分两阶段：第一阶段先做 cold-start SFT，在推理轨迹中插入 &lt;|canvas_start|&gt;/&lt;|canvas_end|&gt; 控制符，把中间视觉“画布”压缩成紧凑 embedding，并通过文本 CE 损失 + latent MSE 对齐损失联合训练，让模型学会在文本推理与连续视觉思考之间切换。第二阶段使用 DePO 做强化学习，将文本位置和 latent 位置分别施加独立的 PPO clip 范围，以应对两类动作重要性比率方差差异。对于 latent 部分，论文不再用高斯假设，而是采用 vMF 分布对单位超球面上的连续隐向量建模，并把 KL 正则写成闭式余弦距离，从而降低方差并提升训练稳定性。推理时模型无需外部裁剪/缩放工具，只在内部 latent 空间递归“思考”，直到结束画布段再继续文本输出。</p>
+<p><strong>实验</strong>: 实验覆盖高分辨率感知、视觉搜索、通用 VQA 和幻觉诊断等多个基准，HyLaR 在 V*、HRBench-4K/8K、MMVP、MMStar、BLINK 等任务上普遍优于 Qwen2.5-VL-7B 以及多种 latent reasoning 基线。尤其在高分辨率小目标场景中，HyLaR-7B 在 V* 达到 83.77、HRBench-4K 达到 75.00、HRBench-8K 达到 70.50，显著超过 SkiLa、Monet 等方法。消融实验也较充分：RL 明显缓解了 SFT 下 latent step 增大后的“over-thinking”退化，DePO 优于 GRPO/DAPO/VLPO，且 vMF 建模稳定优于 Gaussian 假设。</p>
+<p><strong>Deep理由</strong>: 这篇工作在“多模态 latent reasoning + 强化学习优化”交叉点上提出了相对完整且有技术辨识度的方案，尤其 DePO 的几何建模和解耦 PPO 很值得关注。若你关注视觉 CoT、latent reasoning 或 MLLM 的 RL 训练，这是很有参考价值的一篇；但由于论文主要优势集中在特定高分辨率/细粒度任务上，通用性与扩展性仍值得继续观察。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20283v1" target="_blank" rel="noopener noreferrer">Multi-Perspective Evidence Synthesis and Reasoning for Unsupervised Multimodal Entity Linking</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: LLM增强无监督多模态实体链接</p>
+<p><strong>筛选理由</strong>: 多证据推理新颖，但偏任务方法创新</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把无监督多模态实体链接从“单一相似度打分”提升为“多视角证据综合+显式推理”范式，统一建模实例级、群体级、词法级和统计级四类证据。尤其重要的是其群体级证据构造：通过LLM增强图构建和非对称teacher-student跨模态图对齐，在模态缺失、视觉噪声较强的场景下仍能获得更稳健的上下文表示。另一个亮点是把LLM用作决策诱导器而非简单打分器，让其生成可解释的树状重排序逻辑。</p>
+<p><strong>方法</strong>: MSR-MEL采用两阶段框架。离线阶段先为mention-entity对构造14维多视角证据向量，其中实例级证据来自CLIP相似度，群体级证据来自上下文化多模态图上的GNN表示，词法证据来自字符串重叠，统计证据则总结均值、最大值、gap与模态可用性。图构建时先用CLIP做模态感知边筛选，再用LLM补充语义边；随后用文本teacher GNN和图像student GNN进行非对称蒸馏对齐。在线阶段先用9路检索得到高召回候选集，再由LLM依据多视角证据执行可解释的树状推理，对候选进行重排序并输出最终链接结果。</p>
+<p><strong>实验</strong>: 实验部分表明，MSR-MEL在多个主流MEL benchmark上稳定优于现有无监督方法，相比此前SOTA OpenMEL，平均Hit@1提升达到13.04%，说明多视角证据和推理机制确实有效。论文还特别强调其在真实不完整多模态数据上的鲁棒性，因为多个数据集实体图像缺失比例很高，而该方法通过群体级证据和模态感知推理缓解了这一问题。整体上，性能提升不仅来自更强表示，也来自后续LLM对证据冲突和可靠性的显式建模。</p>
+<p><strong>Deep理由</strong>: 如果你关注多模态实体链接、无监督检索匹配或LLM与图推理结合，这篇论文很值得读，因为它提出了一个相对完整且工程上可落地的新范式。它不只是换了个更强模型，而是重新定义了MEL中的证据组织方式和推理流程，启发性很强。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20267v1" target="_blank" rel="noopener noreferrer">ATIR: Towards Audio-Text Interleaved Contextual Retrieval</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 提出音文交错检索任务与基准</p>
+<p><strong>筛选理由</strong>: 任务新、基准有价值，但方法偏工程整合</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次系统性提出 ATIR（Audio-Text Interleaved contextual Retrieval）任务，把传统音频-文本检索从“单轮、单段、静态跨模态匹配”推进到“多轮、上下文相关、音频与文本交替出现的序列级检索”。同时，作者构建了首个较大规模 ATIR 基准，并提出一个面向该任务的选择式音频 token 压缩机制，用于缓解音频 token 过长、冗余高、噪声多的问题。</p>
+<p><strong>方法</strong>: 方法上，作者基于 Qwen2.5-Omni-3B 的 Thinker backbone 搭建双塔检索器，将查询和文档分别编码到共享向量空间，并用 InfoNCE 做对比学习。为适配 interleaved 场景，论文设计了两阶段训练：第一阶段先用单模态/跨模态弱监督数据激活基础表征能力，第二阶段再用合成的音频-文本交错数据和 hard negatives 强化复杂上下文检索能力。核心模块是 ATIR Selector：利用带时间戳标注的数据学习筛选重要音频 token，只保留信息密度高的片段，从而兼顾效率与效果。</p>
+<p><strong>实验</strong>: 实验上，ATIR-Qwen-3B 在四类设置（A→T、T→A、IAT→T、IAT→A）上整体显著超过文本检索、传统 cross-modal 检索和 fused-modal 检索基线，说明直接建模交错音频-文本序列比“先 ASR 再文本检索”更有效。消融实验进一步表明，Selector、Stage I、Stage II 三部分都有效，其中第二阶段的 interleaved hard negative 训练贡献最大；同时模型延迟还低于需要 ASR 前处理的方案。</p>
+<p><strong>Deep理由</strong>: 这是音频检索方向少见地把“交错多模态上下文”单独抽象成新任务，并同时给出 benchmark、模型和较完整实验验证的工作。若你关注多模态检索、语音助手、音频 RAG 或 MLLM 表征学习，这篇论文很值得重点阅读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.20263v1" target="_blank" rel="noopener noreferrer">AROMA: Augmented Reasoning Over a Multimodal Architecture for Virtual Cell Genetic Perturbation Modeling</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态虚拟细胞扰动推理框架</p>
+<p><strong>筛选理由</strong>: 多模态+可解释推理，含数据集与零样本验证</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: AROMA 的核心创新在于把虚拟细胞扰动预测从“仅做标签分类”推进到“有证据约束的可解释推理”：同时结合检索到的文本证据、知识图谱拓扑结构和蛋白序列表征，显式建模 perturbation gene 与 target gene 的依赖关系。另一个关键贡献是作者不仅提出模型，还构建了两类生物知识图谱（Gene-KG、Path-KG）和 49.8 万规模的 PerturbReason 推理数据集，并通过 SFT + GRPO 两阶段训练提升预测准确性与推理格式一致性。</p>
+<p><strong>方法</strong>: 任务定义为：给定细胞系、扰动基因和目标基因，预测目标基因在该扰动下是上调、下调还是无显著变化。模型先通过检索增强，将基因功能描述、知识图谱中的调控路径以及细胞系背景组织成文本输入；再分别用预训练 GAT 编码 Gene-KG 和 Path-KG 的局部子图，用冻结的 ESM-2 编码蛋白序列，并通过跨模态交互注意力生成 perturbation-target 交互特征。最后，这些交互特征以特殊 token 形式注入大语言模型，先进行监督微调，再用 GRPO 强化学习优化答案正确性与推理质量，从而实现可解释的扰动预测。</p>
+<p><strong>实验</strong>: 在 K562、HepG2、Jurkat 和 RPE1 四个细胞系上，AROMA 的平均 Macro-F1 达到 0.73，显著优于 SUMMER、scGPT、GEARS、GenePT 等基线，并且在 Up/Down 这两类更困难的差异表达类别上优势尤其明显。零样本迁移到未见过的 RPE1 细胞系时，性能仅小幅下降，说明跨细胞系泛化较强；在低流行度、低连通度的长尾基因上，模型也表现出更稳健的抗知识稀疏能力。消融实验进一步验证了检索模块、GNN 结构编码、ESM-2 序列表征以及 SFT+GRPO 两阶段训练都对最终性能有实质贡献。</p>
+<p><strong>Deep理由</strong>: 这篇工作把可解释推理、多模态生物表征和虚拟细胞扰动建模结合得较完整，实验也比较扎实，尤其适合关注 AI for Science、计算生物学和生物医学 LLM 的研究者。若你关注可解释的扰动预测或检索增强生物推理，它很值得读；但其任务仍停留在单基因到单目标的三分类设定，离更完整的细胞状态建模还有距离。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19734v1" target="_blank" rel="noopener noreferrer">UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 统一人机物理表征促迁移</p>
+<p><strong>筛选理由</strong>: 切中人形数据瓶颈，方法新，但摘要证据仍偏概念化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 UniT（Unified Latent Action Tokenizer via Visual Anchoring），核心思想是把“视觉后果”作为跨 embodiment 的公共锚点，将人类与人形机器人的异构动作统一映射到共享的离散 latent action token 空间中。其关键创新在于三分支（视觉/动作/融合）+ 双向 cross-reconstruction：动作去预测视觉变化、视觉去重建动作，从而滤除各自模态中的噪声与干扰，提炼出 embodiment-agnostic 的“物理意图”。这一统一物理语言不仅可用于策略学习，还能作为世界模型的统一控制接口，实现 human-to-humanoid 的双范式迁移。</p>
+<p><strong>方法</strong>: UniT 输入相邻观测对、状态和动作片段，分别经视觉分支、动作分支和融合分支编码，再通过共享的 RQ-VAE codebook 量化为统一离散 token。训练时，每个分支得到的 token 都同时送入视觉解码器和动作解码器做 cross-reconstruction：视觉解码器预测未来视觉特征，动作解码器重建 embodiment-specific 动作片段，以此强制 token 只保留跨模态一致的物理变化信息。基于该 tokenizer，VLA-UniT 在策略学习中让 VLM 预测 UniT token，再由轻量 flow-matching head 生成机器人动作；WM-UniT 在世界建模中使用 UniT 的动作分支特征替代原始动作作为视频生成条件，从而统一人类与机器人动力学表达。整体上，它把“难以直接对齐的动作空间”问题转化成“可统一预测的物理意图 token”问题。</p>
+<p><strong>实验</strong>: 实验覆盖仿真策略学习、真实机器人部署和世界模型三大场景，结果比较全面。在 RoboCasa GR1 上，VLA-UniT 用全量数据达到 66.7% 成功率，显著超过 GR00T baseline（47.8%）和其他 SOTA；在仅 10% 数据下也有 45.5%，显示出很强的数据效率。引入 EgoDex 人类数据后，其在仿真 OOD、真实机器人 5 类 OOD 场景以及零样本 unseen stacking 任务上都有明显增益，尤其 zero-shot stacking 达到 60%，说明该统一 token 确实具备跨 embodiment 迁移能力；在世界模型中，WM-UniT 相比 raw action conditioning 在 EgoDex 和 RoboCasa-GR1 上显著提升 PSNR/SSIM、降低 LPIPS/FVD/EPE，表明其也改善了可控视频生成与动力学一致性。</p>
+<p><strong>Deep理由</strong>: 这篇工作把“统一 latent action/token 作为跨 embodiment 物理语言”这件事做得非常系统，而且同时打通了 VLA policy learning 与 world modeling 两条线，视角完整、方法新颖、实验也有说服力。对于关注 humanoid foundation model、human data scaling、latent action representation 或 VLA/世界模型统一接口的研究者，这篇论文很有启发性。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19728v1" target="_blank" rel="noopener noreferrer">VLA Foundry: A Unified Framework for Training Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 统一VLA训练开源框架</p>
+<p><strong>筛选理由</strong>: 工程价值高，开源完整，但方法创新偏框架化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于提出了一个真正统一的 LLM→VLM→VLA 开源训练框架 VLA Foundry，把语言预训练、视觉语言对齐和机器人动作学习放进同一套代码、配置和数据管线中，而不是像多数现有工作那样只关注最后的 VLA/action finetuning。其次，它强调“全流程可控性”和“可组合性”：研究者可以在统一框架里灵活替换 backbone、数据混合策略、动作头和训练配方，从而系统研究非机器人数据如何影响机器人策略学习。</p>
+<p><strong>方法</strong>: 方法上，VLA Foundry 采用基于 YAML + frozen dataclass 的模块化配置系统，并通过 registry 机制统一管理模型、数据集和训练组件，使 LLM、VLM、VLA 共用同一个训练 loop 和数据抽象。数据层面，它支持 text、image-caption 和 robotics 数据的概率混合训练，并针对机器人数据实现了专门的 normalization、动作分块、SE(3) 相对位姿表示和多时序观测处理。模型实现上，作者既展示了从零开始训练 Foundry-LLM-1.2B→Foundry-VLM-1.3B→Foundry-VLA-1.7B 的完整路径，也展示了在同一框架内加载预训练 Qwen3-VL backbone，再接 flow-matching action head 得到 Foundry-Qwen3VLA-2.1B-MT。工程上则基于 FSDP2、WebDataset、Ray 和云训练工具实现可扩展分布式训练与可复现实验。</p>
+<p><strong>实验</strong>: 实验上，作者发布了两类代表模型：一个是完全从零训练的 Foundry-VLA-1.7B，另一个是基于预训练 Qwen3-VL 的 Foundry-Qwen3VLA-2.1B-MT，并在 LBM Eval 开源仿真基准上进行闭环评测。结果显示，完全开源的 from-scratch 模型在 aggregate 表现上已基本追平作者此前闭源 LBM 系统，而采用 Qwen3-VL backbone 后性能显著提升，平均比 prior closed-source baseline 高约 23 个百分点。论文还进一步比较了 single-task、multi-task、finetune 以及 sim-only/real-only/data-mixture 等设置，说明更强 VLM backbone 与更合理的数据配方会直接转化为更强的机器人策略性能。</p>
+<p><strong>Deep理由</strong>: 如果你关注 VLA、机器人基础模型或多模态预训练到控制的完整链路，这篇论文非常值得读，因为它解决的不是单一模型问题，而是整个研究基础设施问题。其价值不仅在模型结果，更在于提供了一个可复现、可扩展、可系统做 ablation 的统一平台，对后续 VLA 研究和开源生态都很关键。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19710v1" target="_blank" rel="noopener noreferrer">SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: VLA提速并强化负样本恢复学习</p>
+<p><strong>筛选理由</strong>: 兼顾效率与鲁棒性，含新数据集，但创新偏工程整合</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: SpanVLA 的核心创新有两点：一是提出“高效 action bridging”，将 VLM 的稀疏多层 KV-cache 与 flow-matching 动作专家结合起来，用历史轨迹初始化未来轨迹生成，显著降低了传统自回归动作解码的时延。二是把真实世界 negative-recovery 样本引入 GRPO 式强化后训练，不仅学习“正确怎么开”，还学习“哪些错误行为要避免、偏了以后如何恢复”，从而提升鲁棒性与长尾场景表现。</p>
+<p><strong>方法</strong>: 方法上，SpanVLA 采用 VLM backbone 负责视觉-语言理解与可选的 CoT 推理，并通过 adaptive reasoning 在简单场景下减少不必要推理。随后，模型从 VLM 的多个稀疏层提取多粒度特征，送入轻量级 flow-matching action expert，以历史轨迹嵌入作为初始化来并行生成连续未来轨迹。训练分为两阶段：先用 reasoning trace + trajectory 做监督微调，联合学习推理与规划；再用基于 GRPO 的强化微调，在正样本、负样本和恢复样本上结合驾驶奖励、负行为惩罚和恢复奖励优化策略。</p>
+<p><strong>实验</strong>: 实验上，SpanVLA 在 NAVSIM v1/v2 上取得了很强的结果：RFT 后在 NAVSIM v1 navtest 达到 90.3 PDMS，在 NAVSIM v2 navtest 达到 86.4 EPDMS，并在 navhard 上优于已有方法。效率方面，相比纯自回归动作生成，flow-matching bridge 将总推理时延明显压缩，在长动作序列下优势更大。消融实验还表明，历史轨迹初始化、稀疏多层 bridging，以及 negative-recovery 数据共同带来了性能提升。</p>
+<p><strong>Deep理由</strong>: 这篇工作同时解决了 VLA 在自动驾驶中最关键的两个痛点：动作生成延迟和鲁棒性不足，而且方案完整，涵盖模型设计、数据构建和后训练优化。对于关注 VLA、端到端自动驾驶和推理-规划结合的研究者来说，这是一篇很有代表性的近期工作。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19673v1" target="_blank" rel="noopener noreferrer">InHabit: Leveraging Image Foundation Models for Scalable 3D Human Placement</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 用基础模型生成大规模3D人景交互数据</p>
+<p><strong>筛选理由</strong>: 数据生成新颖，规模大，对具身感知有价值</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 这篇论文的核心创新是把 2D 基础模型中隐含的“人如何与环境互动”的常识，系统性迁移到 3D 人-场景交互数据生成中，提出了一个可扩展的 render–generate–lift 自动化管线。它不再像传统方法那样主要依赖几何接触启发式，而是先用 VLM 推理场景可供性、再用图像编辑模型生成语义合理的人物交互，最后借助已知 3D 场景几何将其提升为物理一致的 SMPL-X 人体。更重要的是，作者据此构建了首个大规模、楼宇级、多场景的 3D HSI 数据集 InHabitants，显著缓解了该方向长期的数据瓶颈。</p>
+<p><strong>方法</strong>: 方法上，InHabit首先从 HM3D 等 3D 场景中自动采样相机视角并渲染 RGB/depth 视图，然后通过两类提示策略驱动 VLM：一类是基于场景可供性的 affordance-driven prompting，另一类是基于动作词表的 action-driven prompting，以获得既符合环境语义又具有多样性的交互描述。接着，图像编辑模型根据文本在渲染图中插入一个或多个人物，生成与局部场景语境匹配的姿态、朝向和行为。最后，系统利用人体深度估计、SMPL-X 参数优化、接触/穿透/重投影等约束，将 2D 编辑结果提升回 3D，并通过可见性、边界深度一致性、人体体积三重过滤机制剔除不可信样本。</p>
+<p><strong>实验</strong>: 实验上，InHabit在文本驱动的人体放置任务中，相比 GenZI 和 POSA++ 取得更好的语义一致性与接触质量，并在用户研究中以 78.1% 的显著优势被偏好，说明其生成结果在自然性、物理可行性和交互合理性上更强。数据价值方面，用 InHabitants 增强训练后，DECO 在 DAMON 上的 contact recall 和 F1 明显提升，且优于加入 TRUMANS 的方案。进一步地，Human3R 和 GRAFT 在 PROX / RICH 上使用该数据训练后也获得了更强的人体-场景重建与接触预测表现，证明其不仅“好看”，而且能转化为有效监督信号。</p>
+<p><strong>Deep理由</strong>: 这是人-场景交互数据生成方向非常有代表性的工作，清晰展示了如何把 2D foundation model 的常识能力转化为 3D embodied AI 可用的数据资产。对于做 VLA、机器人、3D 人体重建、场景理解或合成数据的研究者，它提供了一个极具启发性的范式：用生成模型补足 3D 交互数据稀缺，而不是继续受限于昂贵的小规模 MoCap 采集。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19567v1" target="_blank" rel="noopener noreferrer">Multi-modal Reasoning with LLMs for Visual Semantic Arithmetic</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 用强化学习提升视觉语义算术推理</p>
+<p><strong>筛选理由</strong>: 任务新颖，数据集与方法完整，机器人相关性偏间接</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次较系统地把视觉语义算术定义为两个可评测任务：two-term subtraction 和 three-term operation，并为此构建了一个覆盖 18 类关系、1500+ subject-object 对的 IRPD 基准。相比以往直接在联合嵌入空间做向量加减，它提出 SAri-RFT，用 LVLM + GRPO + 可验证奖励进行后训练，让模型以“看图+推理+输出答案”的方式学习跨模态关系推断。尤其值得注意的是，作者为开放式三项类比题设计了软奖励函数，用词向量相似度替代简单 0/1 判定，这是论文方法上的关键增量。</p>
+<p><strong>方法</strong>: 整体方法分三部分：先从 ConceptNet 抽取 relation: subject→object 三元组，经 GPT-4 过滤“可视觉化、低歧义”概念，再用 FLUX 生成图像并结合 CLIP 分数和人工审核，构建 IRPD。随后将任务改写为 VQA 形式：两项任务让模型从候选关系中选择答案，三项任务则根据类比关系生成 object2。训练时在 Qwen2-VL-7B 上使用 GRPO 进行强化后训练：two-term 用分类正确性+格式奖励，three-term 用基于 Word2Vec 余弦相似度的软语义奖励+格式奖励，从而提升视觉语义关系推理能力。</p>
+<p><strong>实验</strong>: 实验显示，SAri-RFT 在 IRPD 上显著优于 ZeroCap、ImageBind、LanguageBind 以及未后训练/仅SFT的 LVLM。尤其在图像输入的 two-term 4选1 任务上，相比 Qwen2-VL-7B+SFT 从 33.56% 提升到 51.28%，提升非常明显；在 three-term 图像任务上，Cword2vec 从 0.1521 提升到 0.2667。作者还在真实世界 Visual7W-Telling 上验证了迁移性，准确率从 82.1% 提升到 83.8%，说明收益并非只局限于合成基准。</p>
+<p><strong>Deep理由</strong>: 这篇工作选题新，明确瞄准 VLA/机器人中非常关键的“感知到符号关系推理”能力，数据集、任务定义和训练框架都具有启发性。缺点是数据仍较合成、奖励设计依赖 Word2Vec 较粗糙，真实机器人场景验证不足，因此我给出“推荐”而非“必读”。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19451v1" target="_blank" rel="noopener noreferrer">Heterogeneity-Aware Personalized Federated Learning for Industrial Predictive Analytics</a></h3>
+<p class="meta">方向: FL | 标签: <span class="tag">RETRY</span></p>
+<p><strong>简述</strong>: 面向异构退化的个性化联邦预测</p>
+<p><strong>筛选理由</strong>: 工业联邦预测较垂直，方法增量清晰但新颖性有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一种面向工业预测分析的“异构性感知个性化联邦学习”框架，不再假设所有客户端退化过程同分布，而是让每个客户端学习一个彼此相似但不完全相同的个性化RUL/TTF模型。其关键创新在于：用统计型的(log)-location-scale回归替代主流深度学习联邦方案，同时通过客户端间参数相似性正则化与加权协作机制，既实现个性化建模，又能输出完整失效时间分布而非单点预测。</p>
+<p><strong>方法</strong>: 方法上，作者为每个客户端建立LLS回归模型，并把多客户端联合训练写成“局部负对数似然损失 + 跨客户端参数相似性正则”的优化问题。为保证可优化性，论文对参数进行了重参数化，使目标转化为凸优化问题。随后基于近端梯度下降（PGD）设计联邦参数估计算法：服务器端先根据客户端参数距离做相似性加权聚合，形成每个客户端的个性化云模型；客户端再利用本地私有数据做近端更新。这个两步迭代过程使得相似退化模式的客户端能够更强协同，而差异较大的客户端保持个性化。</p>
+<p><strong>实验</strong>: 仿真实验显示，在低异构场景下，所提PFL优于传统联邦学习（CFL）和纯本地训练；在高异构场景下优势更明显，CFL因单一全局模型假设失效而性能下降，PFL仍保持最佳。数据量实验进一步表明，PFL在小样本和样本不均衡场景中尤其受益，能够显著帮助数据稀缺客户端提升预测稳定性与精度。</p>
+<p><strong>Deep理由</strong>: 这篇论文在“工业联邦预测 + 客户端异构性 + 个性化统计建模”这个交叉点上有明确贡献，方法设计也较完整，尤其适合关注小样本、隐私保护和可解释性的研究者。不过从给出的内容看，案例研究部分展示还不完整，方法影响力和实证深度仍需结合完整论文进一步判断。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.19105v1" target="_blank" rel="noopener noreferrer">EgoMotion: Hierarchical Reasoning and Diffusion for Egocentric Vision-Language Motion Generation</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 分层推理扩散生成第一视角动作</p>
+<p><strong>筛选理由</strong>: 任务新颖，解耦思路强，摘要称SOTA但需看实验扎实度</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个新的任务——Egocentric Vision-Language Motion Generation，即基于第一视角图像、语言指令和初始姿态生成3D人体运动。其核心创新在于提出分层式 EgoMotion 框架，把“认知推理”和“运动生成”显式解耦：先用 VLM 将多模态输入映射为离散动作原语，再用扩散模型在连续潜空间中生成运动，从而缓解端到端联合训练中的语义-运动梯度冲突。另一个重要创新是将 latent diffusion 引入该任务，相比直接在关节空间生成，更能提升时序平滑性和物理可行性。</p>
+<p><strong>方法</strong>: EgoMotion 采用两阶段训练。第一阶段是 Cognitive Reasoning：使用基于 PaliGemma-2 的视觉语言模型，输入第一视角图像、文本指令和初始姿态，预测由 RVQ-VAE 编码得到的分层离散 motion tokens，通过 delay parallel modeling 建立高效的动作原语推理能力。第二阶段是 Motion Generation：冻结第一阶段训练好的 VLM，将其隐藏状态作为条件输入，驱动一个基于 VAE 潜空间的扩散/flow matching 生成器，在连续潜变量空间中逐步去噪生成完整动作序列。论文还系统比较了 autoregressive、masked modeling、raw diffusion 和 latent diffusion，最终证明 latent diffusion 是最佳选择。</p>
+<p><strong>实验</strong>: 在 Nymeria 数据集上，EgoMotion 相比改造后的 T2M-GPT、MMM、MoMask、MotionDiffuse 等基线取得全面优势，尤其在 FID、R@Top1、MM-Dist、Foot Sliding 和时序平滑性指标上表现突出。论文的消融实验非常充分，验证了两阶段训练优于 frozen-VLM 和 joint-tuning，说明“推理-生成解耦”确实有效。进一步地，RVQ-VAE 比普通 VQ-VAE 更适合作为动作离散表征，而 latent diffusion 在物理合理性、时序稳定性和推理效率之间取得了最优平衡。</p>
+<p><strong>Deep理由</strong>: 这篇工作把 VLM、动作离散原语和 latent diffusion 有机结合，问题定义新，方法设计也比较完整，对 VLA/embodied motion generation 很有启发性。虽然任务较新、评测生态仍不成熟，且论文数值提升非常大需要进一步关注复现性，但整体上是一篇值得认真阅读的前沿工作。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.18791v1" target="_blank" rel="noopener noreferrer">HELM: Harness-Enhanced Long-horizon Memory for Vision-Language-Action Manipulation</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 为VLA补足长程记忆与失败恢复</p>
+<p><strong>筛选理由</strong>: 直击长程操控痛点，提升显著但偏系统框架</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把长时程 VLA 失败归因为三个执行环路层面的结构性缺陷：记忆缺口、验证缺口和恢复缺口，而不是简单归因于上下文窗口不够长。基于这一诊断，作者提出 HELM，用外部情节记忆模块（EMM）、执行前失败预测器（SV）和恢复控制器（HC）形成闭环增强，其中最关键的新意是“记忆条件化的执行前失败预测”这一问题定义与学习方案。作者还通过实验明确证明：单纯把 VLA 的历史窗口从 8 扩到 32/64，并不能解决长程操控失败。</p>
+<p><strong>方法</strong>: HELM 是一个包裹在冻结 VLA 外部的模型无关执行框架。首先，EMM 以 CLIP embedding 为键维护关键帧记忆库，在每一步检索与当前观测最相关的历史片段，并把这些记忆序列化后注入到 VLA 的语言输入中；然后 VLA 基于当前观测、任务指令、子目标和检索记忆提出动作。接着，轻量级 MLP 形式的 SV 基于“当前观测 + 提议动作 + 子目标 + 记忆上下文”预测该动作在未来若干步内失败的概率；若风险过高，HC 不直接执行，而是调用回滚或前向恢复策略，从最近检查点重规划并重试。整个系统形成 retrieve → propose → verify → execute/recover 的增强执行闭环。</p>
+<p><strong>实验</strong>: 在 LIBERO-LONG 上，HELM 将 OpenVLA 的任务成功率从 58.4% 提升到 81.5%，绝对提升 23.1 个百分点，而把上下文窗口扩大到 H=32 仅提升到 63.8%，有力支持了“问题是结构性的而非纯上下文长度不足”。消融实验显示 EMM、SV 和 rollback 都有独立贡献，其中去掉 EMM 会下降 11.2 个点，去掉 SV 下降 8.4 个点；同时，SV 若不接入记忆，其效果明显下降，验证了记忆与验证器的耦合价值。跨骨干实验中，HELM 在 Octo 上也带来 21.6 个点增益，并且在作者构建的 LIBERO-Recovery 扰动恢复评测上显著优于各类基线。</p>
+<p><strong>Deep理由</strong>: 这篇论文对长程 VLA 失败机制给出了非常清晰且可操作的结构性解释，并提出了一个对现有 backbone 兼容、实验增益也很扎实的执行增强框架。对于做 VLA、机器人智能体、长程任务执行与恢复控制的研究者，它提供了比“继续堆模型/拉长上下文”更有启发性的研究方向。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.18484v1" target="_blank" rel="noopener noreferrer">XEmbodied: A Foundation Model with Enhanced Geometric and Physical Cues for Large-Scale Embodied Environments</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 为VLA注入3D几何与物理先验</p>
+<p><strong>筛选理由</strong>: 几何增强VLM思路新，18基准广，但偏云侧</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于提出了一个面向 embodied 场景的云端基础模型 XEmbodied，不再把几何信息仅作为额外输入拼接，而是通过 3D Adapter 将 3D foundation model 的几何表征显式注入到 VLM 的语义 token 流中，使模型获得“内生”的几何感知能力。与此同时，作者提出 Efficient Image-Embodied Adapter（EIEA），将检测、占据栅格、地图分割等物理线索压缩为可插拔的 latent physical cue tokens，在保证推理效率的同时增强物理约束和可验证性。再结合分层数据筛选与渐进式课程训练，模型在保持通用能力的同时显著提升了自动驾驶与机器人场景下的空间推理、语义理解和 OOD 泛化。</p>
+<p><strong>方法</strong>: 整体方法由三部分组成：首先，3DA 使用 2D 语义编码器和 3D 几何编码器双流建模，通过 cross-attention 将 3D 几何 token 融合进 2D 视觉语义 token，形成几何增强的语义表示。其次，EIEA 对检测框、BEV occupancy、地图分割等 embodied-native 模态分别编码，再用轻量 Mamba interpreter 融合文本与多模态信息，并将中间物理证据蒸馏为紧凑的 physical cue tokens 注入主干 VLM。最后，训练上采用四阶段 progressive curriculum：先对齐领域语义，再对齐 3D 几何，再进行端到端几何认知联合训练，最后引入 EIEA 并结合 GRPO 做 RL 后训练，以提升物理增强推理能力与答案保真度。</p>
+<p><strong>实验</strong>: 实验覆盖 18 个公开 benchmark，横跨 3D understanding、semantic reasoning 和 embodied affordance 三大维度，XEmbodied 在多数任务上取得 SOTA 或显著领先结果，例如在 SURDS、VLADBench、DriveLMM-o1、MapLM-v2 和 RoboRefit-Bench 上优势明显。值得注意的是，Cosmos-R1、DriveBench、Ego3DBench 等被严格排除在训练集之外，模型仍表现出较强 zero-shot/OOD 泛化能力。消融实验也比较充分，验证了数据过滤、3DA 的 cross-attention 设计、EIEA 的 latent cue 注入，以及渐进式课程训练均对性能提升有关键作用，同时 EIEA 相比显式 tool-augmented CoT 显著降低了推理时延。</p>
+<p><strong>Deep理由</strong>: 这篇工作抓住了 VLA/embodied foundation model 当前最关键的痛点：通用 VLM 缺乏几何与物理 grounding，并给出了结构设计、数据工程和训练流程一体化的解决方案。尽管部分实验数字非常激进、仍需后续社区复现验证，但从问题定义、系统完整性和工程落地价值来看，这是一篇非常值得重点关注的论文。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.18107v1" target="_blank" rel="noopener noreferrer">Test-Time Perturbation Learning with Delayed Feedback for Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 延迟反馈驱动VLA测试时自适应</p>
+<p><strong>筛选理由</strong>: 聚焦VLA鲁棒性，方法实用且有明确增益</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 PDF（Perturbation learning with Delayed Feedback），把 VLA 在测试时的脆弱性归因于“trajectory overfitting（轨迹过拟合）”：模型记住了训练轨迹中的动作-实体伪相关，而非真正基于目标语义做决策。基于这一诊断，作者设计了一个无需 verifier、也无需微调基座 VLA 的测试时自适应框架，通过不确定性驱动的数据增强投票和延迟反馈引导的轻量扰动头，在线修正过度自信的错误动作分布。其关键价值在于把传统 TTA 从“自监督置信度优化”推进到“带环境结果信号的决策修正”。</p>
+<p><strong>方法</strong>: PDF包含两个核心模块。第一，不确定性感知动作投票：用动作 logits 的归一化熵估计当前决策不确定性，并据此自适应分配图像增强预算，对原图和多个增强视角分别预测动作，再通过投票得到更稳健的执行动作，以削弱伪相关和注意力偏置。第二，延迟反馈引导适应：作者冻结整个 VLA，仅训练一个小型 perturbation head，对原始 logits 施加加性扰动；在 episode 结束后，利用成功/失败或累计回报等延迟反馈，通过 REINFORCE 风格目标和带门控的 KL 正则，回溯性地把动作分布推向更可能成功的方向。整体上，这是一种低开销、插件式、面向推理阶段的 VLA 鲁棒性增强方案。</p>
+<p><strong>实验</strong>: 在 LIBERO 四个子基准上，PDF 将平均成功率提升到 0.77，相比 vanilla OpenVLA 约提升 7.4%，并且在 Spatial、Goal、Long 三类任务上达到或接近最优，尤其长时序任务 Long 达到 0.59，显示出对序列决策错误累积更强的抑制能力。在 Atari-57 上，PDF 将平均 HNS 从 0.97 提升到 1.07，47/57 个游戏获得正增益，说明该方法不仅适用于机器人操作，也对广义视觉决策任务有效。消融实验进一步表明，数据增强和 delayed feedback 两个模块缺一不可，而完整损失中的 KL 稳定项与 REINFORCE 项具有互补作用。</p>
+<p><strong>Deep理由</strong>: 这篇工作对 VLA 测试时鲁棒性问题给出了一个很有启发性的解释框架——轨迹过拟合，并提出了工程上相当实用的 verifier-free 适应方案。虽然方法本质上仍是轻量补丁而非从根本上解决泛化问题，理论严谨性和反馈信用分配也还有提升空间，但其问题洞察、方法设计和实验覆盖都值得关注。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.18000v1" target="_blank" rel="noopener noreferrer">Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 揭示VLA具身推理能力被基准高分掩盖</p>
+<p><strong>筛选理由</strong>: 提出诊断基准，系统揭示VLA推理失真</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文的核心创新在于提出了 BeTTER，一个专门用于“诊断真实具身推理能力”的 VLA 基准，而不是继续用传统成功率去间接推断模型是否会推理。作者通过空间布局扰动、原子技能重组、对抗目标替换、时间外推等因果干预，把“会做动作”与“真的理解语义、跟踪状态、组合子目标”明确拆开，系统性揭示当前 VLA 存在“具身推理幻觉”。此外，论文进一步从机制层面解释问题来源：VLM 迁移到 VLA 的过程中，模型容量压缩、感知输入降采样和控制导向训练会共同导致高层语义表征退化。</p>
+<p><strong>方法</strong>: 方法上，BeTTER 采用模板驱动的任务生成框架：先定义高层交互模板，再借助 VLM 生成具体任务语义与物理约束，并通过开放词汇 3D 资产检索构建可扩展场景。基于少量人工遥操作演示，作者利用程序化轨迹放大生成多样训练样本，同时在执行时记录特权状态，如深度、bbox、mask 等，用于精细失败归因。评测时重点设计四类诊断干预：空间布局变化、技能重组、语义对抗扰动和长时序外推，并通过运动学隔离确保失败主要来自高层推理而非低层执行。最后，作者又通过静态 VLM benchmark 消融分析，追踪 VLM→VLA 过程中表征能力如何逐步坍塌。</p>
+<p><strong>实验</strong>: 实验最有说服力的地方在于：多个强基线 VLA（如 π0.5、GR00T-N1.6、Being-H0.5）虽然在 LIBERO 等标准基准上接近饱和，但在 BeTTER 的干预测试下会出现断崖式退化，例如语义指令跟随失败、子目标组合泛化几乎失效、状态跟踪混乱以及细粒度语义塌缩。论文不仅给出了行为层面的失败案例，还用 VLM 静态推理基准消融证明：容量缩小、多模态共训偏置和单帧低分辨率“近视式”输入会显著破坏空间语义与规划能力。更重要的是，作者在真实机器人平台上复现了相同症状，说明这不是仿真特有问题，而是当前 VLA 范式的结构性缺陷。</p>
+<p><strong>Deep理由</strong>: 这篇论文非常重要，因为它直接挑战了当前 VLA 领域“高 benchmark 成绩≈具身推理能力”的主流叙事，并提供了一个更有诊断性的评测框架。对于做 VLA、具身智能、机器人基础模型的人来说，它不仅指出问题，还给出了较清晰的机制解释，具有很强的研究启发价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17915v1" target="_blank" rel="noopener noreferrer">OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 统一解码器实现多范式自动驾驶</p>
+<p><strong>筛选理由</strong>: 统一架构新颖，指标强，适合关注端到端驾驶</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文最大的创新在于：它首次较系统地把自动驾驶中的异构解码任务——语言自回归生成、感知中的并行 query 预测、以及轨迹规划——统一到同一个预训练 VLM/LLM causal decoder 中，而不是再额外拼接独立 decoder。更关键的是，作者通过诊断实验发现“预训练 attention 可迁移、FFN 不易迁移”，据此提出只保留共享注意力骨干、对结构化任务单独加入轻量 self-attn 和 task-specific FFN 的设计原则。该工作本质上回答了 VLA 中一个很重要的问题：是否能在尽量不破坏原生 VLM 架构的前提下完成真正统一的多任务驾驶建模。</p>
+<p><strong>方法</strong>: OneDrive 以预训练视觉语言模型为底座，把图像 token、检测 query、车道 query、规划 query 和文本 token 按统一序列拼接后送入单一 Transformer decoder。其核心机制是保留原始 causal self-attention 作为跨模态共享条件接口：由于结构化 query 位于图像 token 之后，query 可以自然通过因果注意力读取视觉上下文；规划 token 又位于感知 token 之后，因此也能隐式条件于感知结果。为了适配并行结构化预测，作者只在浅层 mixed decoder 中为感知 query 增加额外 self-attention，并为 det/lane/plan 分别替换 task-specific FFN，而文本 token 继续沿用原始 LLM FFN。训练上采用三阶段策略：先做感知+语言预训练，再引入规划适配，最后端到端联合微调，以提高从预训练 VLM 到多任务驾驶的稳定迁移效果。</p>
+<p><strong>实验</strong>: 实验上，OneDrive 在 nuScenes open-loop 上取得 0.28 的平均 L2 和 0.18% 的平均 collision rate，优于同期强基线如 SOLVE-E2E 与 ColaVLA；在 NAVSIM closed-loop 上达到 86.8 PDMS，也超过作者构造的 query decoder baseline。除了性能，效率也是亮点：规划部署模式下无需完整前向整个 LLM，延迟可从 263ms 降到 156ms，约降低 40%。同时，加入文本监督并未破坏驾驶性能，反而对检测和安全性有轻微正增益，支持其“共享 causal attention 可稳定多任务优化”的论点。</p>
+<p><strong>Deep理由</strong>: 这篇论文对 VLA/端到端自动驾驶的意义很大：它不是简单把 LLM 接到驾驶系统后面，而是提出了一个有清晰可迁移性分析支撑的统一解码框架。对于关注多任务统一建模、VLM 在机器人/自动驾驶中的结构落地、以及高效端到端规划的人，这篇非常值得精读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17896v1" target="_blank" rel="noopener noreferrer">Can Explicit Physical Feasibility Benefit VLA Learning? An Empirical Study</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 显式可行性监督提升VLA可靠性</p>
+<p><strong>筛选理由</strong>: 问题关键、方法直接，实证显示提升可靠性与低数据效率</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把“物理可行性”从示教数据中隐式学习的副产品，提升为 VLA 训练阶段的显式监督信号。作者提出了一个极简但可微的几何可行性目标：将策略预测动作通过正向运动学映射到机器人连杆空间，再用机器人-障碍物的有符号距离对近碰撞/碰撞进行惩罚。更重要的是，这种几何监督只在训练时使用，不增加推理时的感知或规划负担，因此很好地验证了“显式物理先验能否补强 imitation-based VLA”的问题。</p>
+<p><strong>方法</strong>: 作者以扩散式 VLA（基于 RDT-1B）为骨干，保留标准的动作块去噪 imitation loss，即预测动作块与专家动作块之间的 MSE。与此同时，针对预测出的未来关节状态，利用正向运动学得到若干代表性连杆点的位置，并计算这些点到障碍物 OBB 的有符号距离；当距离低于安全边界 δ 时，施加平方 hinge 几何损失。最终训练目标为 Ltotal = LMSE + λLgeo，其中 λ 控制物理可行性监督强度。为了系统评估这一设计，作者在 Isaac Sim 中构建了近障碍 reaching 数据集，并通过小扰动/大扰动障碍重定位测试策略对障碍变化的响应能力。</p>
+<p><strong>实验</strong>: 实验结果表明，加入 feasibility supervision 后，策略在小扰动和大扰动下都显著提升了安全成功率 SSR，且收益不仅体现在更大的障碍物间隙，也体现在更好的目标到达精度上，说明它不是单纯让策略“更保守”。在低数据场景下（40 条 episode）收益尤其明显，甚至优于只用 MSE 但训练数据更多的基线，说明显式几何监督具有较强的数据效率增益。消融实验还发现，监督强度存在最佳区间：适中的 δ 和 λ 最有效，过强则会出现安全性提升但目标到达变差的 trade-off。</p>
+<p><strong>Deep理由</strong>: 这篇论文问题意识很强，切中当前 VLA 从“会做任务”走向“物理可靠执行”的关键短板，而且实验设计干净、结论明确。虽然方法本身较简单、验证场景也偏受控，但它为“在 VLA 中显式注入物理先验”提供了一个很有价值的实证起点。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17880v1" target="_blank" rel="noopener noreferrer">ST-$π$: Structured SpatioTemporal VLA for Robotic Manipulation</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 显式时空规划的操控VLA</p>
+<p><strong>筛选理由</strong>: 结构化时空分解清晰，适合关注精细操控</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把 VLA 中原本隐式的时空推理，拆成了“chunk-level 结构化规划 + step-level 时空动作生成”两个显式层次：前者由 ST-VLM 预测带有子任务语义、空间位置和时间时长的 action prompt，后者由 ST-AE 用空间/时间双生成器联合生成动作轨迹。相比只在视觉或动作表示里注入时序信息的方法，ST-π更强调任务边界、子任务因果关系和动作内部时空一致性的显式建模。</p>
+<p><strong>方法</strong>: ST-π由两个模块组成：ST-VLM 和 ST-AE。ST-VLM先将多视角视频、几何信息和时间戳融合成 4D 表征，再结合语言指令，自回归地产生一串按因果顺序排列的 chunk-level action prompts，每个 prompt 包含子任务描述、操作区域和持续时间。随后 ST-AE 以这些 prompt 为条件，通过共享骨干上的空间生成器和时间生成器分别建模轨迹的空间协调性与时间因果性，并采用 flow matching 逐步去噪生成 step-level 动作。整体上，它实现了“高层显式分解、低层显式控制”的统一时空操作框架。</p>
+<p><strong>实验</strong>: 实验覆盖 LIBERO、SIMPLER 和作者自建真实机器人数据集 STAR，结果显示 ST-π在长时程任务上优势尤其明显：在 STAR 上平均成功率达到 80.1%，超过 π0.5 的 76.2%；在 LIBERO 上平均成功率 97.3%，且完成时间更短。消融实验进一步证明，结构化任务分解、因果注意力、4D 观测以及空间/时间双生成器都对性能提升有明确贡献，其中长时程和多阶段任务受益最大。</p>
+<p><strong>Deep理由</strong>: 这篇工作在 VLA 中提出了比较清晰且有说服力的“显式时空结构化”路线，尤其适合长时程操作任务，方法设计与实验验证都较完整。虽然整体仍建立在顺序链式子任务分解假设上、创新更偏系统整合而非基础范式突破，但对机器人操作研究者和 VLA 方向读者很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17800v1" target="_blank" rel="noopener noreferrer">ReFineVLA: Multimodal Reasoning-Aware Generalist Robotic Policies via Teacher-Guided Fine-Tuning</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 教师推理增强VLA泛化</p>
+<p><strong>筛选理由</strong>: 推理监督思路新，结果强，但需看真实机器人泛化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: ReFineVLA 的核心创新是在预训练 VLA 的基础上，引入由强教师模型生成的显式多模态推理链（observation / situation analysis / spatial reasoning / task planning），让机器人策略不再只学习“观测到动作”的直接映射，而是同时学习“为什么这样做”。此外，论文提出了选择性迁移微调，只更新高层参数以注入推理能力，从而尽量保留原始 VLA 的泛化表征。作者还结合注意力可视化，证明推理监督确实让模型从狭窄的目标对准转向更语义化、更具空间上下文的关注模式。</p>
+<p><strong>方法</strong>: 方法上，作者先用 Gemini 之类的教师模型，对 BridgeData-v2 和 Google RT-1 数据中的约 125k 轨迹生成自然语言推理标注，构造成包含观测、动作和推理解释的数据集。随后，以 3.5B 的 SpatialVLA 为骨干，冻结大部分底层层，仅微调高层 Transformer block 与策略相关模块。训练目标是联合优化动作预测损失和推理生成损失，即 L = L_action + λ_r L_reasoning，使模型既能输出动作 token，也能生成分步骤 rationale。最终模型在闭环控制时仍以动作输出为主，但训练过程中通过教师推理实现更强的多模态理解与可解释性。</p>
+<p><strong>实验</strong>: 实验上，ReFineVLA 在 SimplerEnv 的 WidowX 与 Google Robot 基准上都取得了最优或接近最优结果。WidowX 上平均成功率达到 47.7%，比第二名提升 5.0%；Google Robot 上 visual matching 和 variant aggregation 分别达到 76.6% 和 68.8%，相对 SpatialVLA 提升 2.3% 和 3.5%。特别是在更依赖高层空间/时序理解的 Move Near 和 Open/Close Drawer 任务中，增益分别达到 9.6% 和 8.2%，说明显式推理监督对复杂操作更有效。</p>
+<p><strong>Deep理由</strong>: 这篇工作抓住了当前 VLA 研究中的关键痛点：泛化强但显式推理弱，并提出了一个实现成本相对可控、效果也较扎实的 teacher-guided fine-tuning 框架。虽然方法本质上仍是监督微调范式，理论突破不算特别激进，但在结果、可解释性分析和研究方向上都具有较强参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17787v1" target="_blank" rel="noopener noreferrer">AnchorRefine: Synergy-Manipulation Based on Trajectory Anchor and Residual Refinement for Vision-Language-Action Models</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 分层动作建模提升VLA精细操控</p>
+<p><strong>筛选理由</strong>: 问题明确，方法通用，仿真与真机均有增益</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文指出现有 VLA 将长程大幅运动与接触阶段的小幅精修放在统一动作空间里学习，会导致大动作主导优化、关键但幅值很小的纠偏信号被淹没。为此作者提出 AnchorRefine，将动作生成显式拆成“轨迹锚点规划（anchor）+ 残差精修（refine）”两阶段，并进一步为 gripper 设计了决策边界感知的专用精修机制。其核心价值在于：把精密操作中的全局运动组织与局部执行修正解耦，使 VLA 更擅长处理抓取、接触和释放等失败敏感环节。</p>
+<p><strong>方法</strong>: AnchorRefine首先基于视觉、语言和本体感觉构建共享多模态上下文，由 Trajectory Anchor Planner 在原始动作空间预测一个可执行的粗轨迹锚点。随后冻结 anchor 分支，用 Residual Refine Module 在“真实动作 - anchor 预测”的残差空间中只学习局部纠偏，从而降低目标空间的范数和协方差，提升优化稳定性。对于机械爪，作者没有直接做普通二分类或回归，而是围绕 anchor 的 gripper logit 构造边界感知的方向性修正目标，使模型更关注开/合切换时机这种离散决策错误。整体训练采用两阶段顺序训练，推理时再将 anchor 与 residual 相加得到最终动作，并对 gripper 概率施加修正后判定开闭。</p>
+<p><strong>实验</strong>: 在 LIBERO-LONG 和 CALVIN ABC→D 上，AnchorRefine 对两类不同范式骨干都带来稳定增益：基于 GR-1 时 LIBERO 成功率从 74.5% 提升到 82.3%，基于 X-VLA 时从 95.8% 提升到 97.4%；在 CALVIN 上也在各级长链任务中持续提升。真实机器人实验中，作者在 LeRobot SO101 上测试了抓取、插入、堆叠和开抽屉四类任务，平均成功率相比 ACT、π0、X-VLA 最高提升明显，最高可达 18% 的真实世界增益。机制分析还表明 refinement 更多是把 anchor 的失败纠正为成功，而不是破坏原本成功轨迹，并显著降低 gripper 相关错误。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题定义很准确，抓住了 VLA 在精密操作中“全局对、局部错”的核心瓶颈，方法也足够通用，可无缝叠加到回归式和扩散式骨干上。虽然整体思想建立在较经典的 coarse-to-fine / residual learning 之上，理论突破不算颠覆性，但工程价值强、实验完整，尤其对做 manipulation policy 和 VLA action head 设计的人很值得读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.17706v1" target="_blank" rel="noopener noreferrer">OmniVLA-RL: A Vision-Language-Action Model with Spatial Understanding and Online RL</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 融合空间理解与在线强化学习的VLA</p>
+<p><strong>筛选理由</strong>: 方法新，指标强，但需验证泛化与复现性</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 OmniVLA-RL，将 Spatial Expert、Reasoning Expert 和 Action Expert 通过 Mixture-of-Transformers 在同一 Transformer 主干内深度耦合，而不是像以往工作那样只做编码端或动作头的浅层空间融合。另一个关键创新是 Block-wise Causal Attention，把空间/语义 token 作为全可见前缀、动作 token 作为因果后缀，避免动作噪声反向污染感知表征。最后，作者提出 Flow-GSPO，把原本确定性的 flow matching 轨迹生成改写为可用于在线探索的 SDE 过程，并在动作块级别上做 GSPO 优化，以提升连续动作 RL 的稳定性。</p>
+<p><strong>方法</strong>: 整体框架由 VLA 模型和在线 RL 模块组成。VLA 部分采用三专家 MoT：Reasoning Expert 负责从多视角图像和语言中抽取语义与指令表示，Spatial Expert 用 VGGT 建模细粒度 3D 几何结构，Action Expert 则在融合后的空间-语义条件下用 Conditional Flow Matching 生成连续动作块。为保证多模态交互与动作自回归兼容，模型引入 Block-wise Causal Attention 进行前缀-后缀解耦。训练上采用三阶段流程：先做空间感知预训练，再做动作生成预训练，最后通过 Flow-GSPO 在环境中在线强化微调。</p>
+<p><strong>实验</strong>: 在 LIBERO 上，OmniVLA-RL 四个子任务全部取得第一，平均成功率达到 97.6%，超过 π0.5、F1 等强基线。在线强化学习实验中，Flow-GSPO 在更难的 LIBERO-Plus 上比 PPO 和 GRPO 收敛更快、最终成功率更高，后期稳定维持在 80% 以上。消融实验显示，去掉 Spatial Expert 成功率从 41.2% 降到 32.9%，说明显式空间建模确实是性能提升的核心来源。</p>
+<p><strong>Deep理由</strong>: 这篇工作把空间理解、流匹配动作生成和在线强化学习系统性地结合起来，整体设计完整，实验结果也很强，对 VLA 研究者有较高参考价值。但论文目前主要验证于仿真基准，缺少真实机器人部署与更充分的训练细节，因此更适合作为值得重点跟进的前沿工作，而非无条件“必读”。</p>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
