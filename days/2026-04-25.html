@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-04-25</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-04-25</h1>
+    <p class="summary">共 10 篇。🔴 必读 0，🟡 推荐 10，⚪ 可跳过 0。</p>
+    <section><h2>🟡 推荐（10）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21921v1" target="_blank" rel="noopener noreferrer">Context Unrolling in Omni Models</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 统一多模态下的上下文展开推理</p>
+<p><strong>筛选理由</strong>: 概念新，模态统一强，但摘要偏愿景</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了“Context Unrolling（上下文展开）”这一统一多模态模型的新范式：模型在最终输出前，不是直接从输入映射到答案，而是先主动调用文本推理、视觉 token、相机位姿、深度、novel view synthesis 等跨模态原子能力，构造可被后续解码利用的中间上下文。其核心贡献不只是把文本、图像、视频、3D 放进一个模型里，而是证明“统一训练”会涌现出跨模态显式推理能力，从而更接近共享的多模态知识流形并提升推理保真度。进一步地，作者展示了隐藏表征空间也可作为推理载体，使模型具备 any-to-any 的多模态理解、生成、编辑与几何推理能力。</p>
+<p><strong>方法</strong>: O mni 基于 BAGEL 路线扩展而来，采用 3B active parameters 的 MoE 架构，原生联合训练文本、图像、视频、3D 几何以及 hidden visual representations。推理时可形式化为迭代式上下文构造：通过若干原子算子 ϕt（如 describe、think、predict pose、estimate depth、roll out visual tokens、synthesize novel view）不断把新信息写入共享上下文，再由解码器在最终上下文条件下生成输出。作者特别强调多粒度上下文的重要性：短/长文本思维链提供语义与关系约束，视觉 token 提供结构约束，3D 几何与新视角生成提供空间约束。这样，图像生成、空间理解、深度估计等任务都被统一为“context-conditioned inference”，而非彼此孤立的单任务头。</p>
+<p><strong>实验</strong>: 实验最亮眼的地方在于：Context Unrolling 几乎在所有任务上都带来一致增益。比如在 GenEval2 上，O mni 从 baseline 的 29.25 提升到“long + visual”上下文下的 53.44，说明图像生成显著受益于长文本推理和视觉结构 token；空间理解上，加入 3D visual contexts 后 MMSI 子集得分从 27.14 提升到 34.17，表明“先想象新视角再回答”确实能解决几何歧义；深度估计上，引入 depth caption 和 visual contexts 后 δ1 从 83.21% 提升到 84.01%。此外，完整模型在图像生成、图像编辑、视频编辑、相机位姿和深度估计等多个基准上都达到或接近 SOTA，体现出统一模型并未因任务杂糅而显著牺牲专长性能。</p>
+<p><strong>Deep理由</strong>: 这篇论文不只是又做了一个更大的 omni model，而是提出了一个非常值得关注的统一多模态研究视角：模型能力的关键不在任务堆叠，而在中间上下文能否跨模态展开与组合。对于做多模态大模型、机器人/具身智能、世界模型和多模态推理的人来说，这个观点和实验验证都很有启发性。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21885v1" target="_blank" rel="noopener noreferrer">A Multimodal Text- and Graph-Based Approach for Open-Domain Event Extraction from Documents</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 图文融合做开放域事件抽取</p>
+<p><strong>筛选理由</strong>: 问题重要，方法合理，但创新偏整合</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 MODEE，一个将文本表征与文档级 token 图表征联合建模的开放域事件抽取框架，用图神经网络弥补 LLM 在长文档中对全局结构、远程依赖和事件语义关系建模不足的问题。其关键设计是基于注意力的门控多模态融合机制：先用完整 token 图学习结构化表示，再用门控向量选择性强化与主事件相关的 token，最后以生成式方式统一输出 5Ws。另一个亮点是把“多模态”定义为由单一文本源派生出的 text+graph 双模态，避免了传统图文多模态对并行标注数据的依赖。</p>
+<p><strong>方法</strong>: 给定一篇文档，MODEE 先用 T5 编码器得到 token 级上下文表示，再把文档中所有 token 构造成一个完整图，并通过两层 GraphSAGE 学习节点级结构/语义表示。随后，模型将文本表示和图表示投影到共享空间，通过加性注意力风格的门控机制计算每个 token 对主事件的重要性，并用该门控去重加权文本表示。最后，T5 解码器基于融合后的表示，以 seq2seq 方式一次性生成 where、when、what、who、why 五类事件要素。训练时文本侧用交叉熵损失，图侧用对比学习，把同一 5W 类 token 拉近、不同类 token 拉远，从而增强事件级语义聚类能力。</p>
+<p><strong>实验</strong>: 在作者自建的 10,000 篇新闻开放域数据集上，MODEE-Base 取得了最佳总体结果，Exact Match F1 达到 57.7，优于 T5-Base（53.3）、T5-Large（55.8）以及多种零样本/五样本大模型 prompting 方案，说明显式文档级结构建模比单纯放大语言模型更有效。消融实验表明，对比学习、注意力门控融合和完整图结构三者都不可或缺，其中将融合替换为简单相加会导致性能显著下降。进一步在闭域 DocEE 上，MODEE-Base 也超过已有 SOTA，显示出方法具有跨开放域/闭域任务的可迁移性。</p>
+<p><strong>Deep理由</strong>: 这篇论文的问题设定清晰、方法设计完整，尤其适合关注 LLM+GNN、文档级信息抽取和开放域事件抽取的研究者参考。不过其图构建方式较重（完整 token 图），评测也主要集中在新闻域和单事件场景，实际泛化与扩展性仍需更多验证。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21836v1" target="_blank" rel="noopener noreferrer">Modulating Cross-Modal Convergence with Single-Stimulus, Intra-Modal Dispersion</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 单样本离散度预测跨模态对齐</p>
+<p><strong>筛选理由</strong>: 方法新颖，解释跨模态收敛机制，有分析价值</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新是把“表征收敛”从以往的数据集整体层面，推进到“单个刺激”层面来测量。作者基于 Generalized Procrustes Analysis 提出 stimulus-specific residual / dispersion 指标，用它刻画同一张图像在多个视觉模型内部的一致性，并进一步发现这种视觉域内的一致性会显著调制视觉—语言跨模态对齐强度。换言之，论文不仅问“模型是否收敛”，还问“哪些样本更容易让模型收敛，以及这种收敛是否能跨模态传递”。</p>
+<p><strong>方法</strong>: 作者先收集多个训练目标不同的 ViT 视觉模型表示（MAE、DINOv2、CLIP、CLIP+finetune），对它们做中心化、归一化和维度对齐后，用广义 Procrustes 分析学习一个共享的 joint representation。随后，对每个刺激计算各模型投影到 joint space 后的残差，将其定义为该刺激的 intra-modal dispersion，并用两种方式汇总：跨模型平均残差，以及残差矩阵的第一主成分分数。最后，按低/高 dispersion 选取图像子集，再计算这些图像对应 caption 在多个 LLM 中的表示，与视觉模型之间的局部对齐指标 CKNNA，从而评估单刺激视觉分歧如何影响跨模态收敛。</p>
+<p><strong>实验</strong>: 实验最突出的结论是：低 intra-modal dispersion 的图像，几乎在所有视觉模型—语言模型配对上都表现出更高的 vision-language alignment，部分组合中提升接近 2 倍，尤其在 DINOv2 和 CLIP+ft 上更明显。这个现象对两种样本筛选策略都成立：无论是按平均残差排序，还是按残差 PCA 的 PC1 选样，结果都一致。补充实验还表明，去掉高 dispersion 样本会系统性提升跨模态对齐，而 leave-one-out 分析说明这种 dispersion 具有一定的跨视觉模型可泛化性。</p>
+<p><strong>Deep理由</strong>: 这篇工作方法上很干净，结论也相当有启发性：单样本层面的视觉一致性竟然能显著调控视觉—语言收敛，是理解多模态表征对齐的重要新视角。不过目前实验规模和数据范围还偏有限，更多是 workshop 风格的概念验证，离成为定论还需要更大范围验证。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21806v1" target="_blank" rel="noopener noreferrer">TEMA: Anchor the Image, Follow the Text for Multi-Modification Composed Image Retrieval</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 面向多修改图像检索的CIR新框架</p>
+<p><strong>筛选理由</strong>: 补足多修改场景与数据，任务设定较实用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首先指出传统 CIR 基准大多只包含简短单修改文本，难以覆盖真实场景中的多实体、多子句、多细节修改需求，并据此构建了两个多修改数据集 M-FashionIQ 和 M-CIRR。方法上提出 TEMA，这是首个面向 multi-modification CIR 的框架，通过训练期的文本解析辅助模块提升被修改实体的覆盖率，并通过实体映射模块缓解“修改子句-实体”错配问题。其核心价值在于把 CIR 从“粗粒度改动”推进到更贴近真实检索指令的“细粒度、多约束组合修改”。</p>
+<p><strong>方法</strong>: TEMA 由两个关键部分组成。第一，MMT Parsing Assistant（PA）在训练阶段利用 LLM 对长修改文本做摘要，并通过一致性检测确保摘要覆盖所有待修改实体，从而给模型提供更强的实体显式监督。第二，MMT-oriented Entity Mapping（EM）分别在文本侧和图像侧引入可学习 queries，通过 Transformer 聚合同一实体对应的多个修改子句，并将这些文本实体表示与视觉实体表示对齐。最终，模型将全局图像/文本特征与实体级特征联合组成查询表示，并通过检索损失、摘要蒸馏和正交约束共同优化。</p>
+<p><strong>实验</strong>: 在新构建的多修改基准上，TEMA 显著超过各类传统方法和基于 VLP 的强基线：例如在 M-FashionIQ 上 Avg R@10 / R@50 达到 50.59 / 72.09，在 M-CIRR 上 Avg 达到 75.76，明显优于 Candidate 与 BLIP4CIR。消融实验表明，PA 和 EM 都是性能提升的关键，尤其实体映射模块去除后性能下降最明显。更重要的是，TEMA 不仅适用于多修改场景，在原始 FashionIQ 和 CIRR 上也保持了很强竞争力，说明其具有良好的泛化性。</p>
+<p><strong>Deep理由</strong>: 这篇论文对 CIR 的问题设定做了很重要的现实化扩展，不只是换了一个模型，而是同时补上了数据基准与方法建模两块短板。若你关注多模态检索、细粒度指令理解或面向真实应用的 CIR，这篇工作非常值得读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21585v1" target="_blank" rel="noopener noreferrer">Scalable Multimodal Beam Alignment in V2X: An Anti-Imbalance Graph Learning Approach</a></h3>
+<p class="meta">方向: MM/FL/其他 | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态图学习做V2X波束对齐</p>
+<p><strong>筛选理由</strong>: 问题实际，方法完整，但偏工程改进</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个面向 V2X 波束对齐的分布式多模态图学习框架 GBA：车辆侧利用多模态传感数据直接预测低开销隐式反馈，RSU 侧利用 GNN 在动态车联网拓扑下生成可扩展的联合波束与功率分配策略。其最突出的创新是把“多模态感知 + 图神经网络 + 联邦学习 + 反不平衡数据增强”系统性结合起来，同时解决了动态用户数扩展、隐私保护训练以及模态/标签双重不平衡这三个现实难点。</p>
+<p><strong>方法</strong>: 方法上，框架由 GBA-Vehicle 和 GBA-RSU 两部分组成：前者在车端通过 RGB、LiDAR、GPS 三类模态分支提取特征，并融合后预测二值反馈向量；后者在 RSU 端把车辆视为图节点、把潜在干扰关系视为边，用 GNN 输出满足约束的波束选择与功率控制结果。训练上采用“RSU 侧集中学习 + 车端联邦学习”的混合范式，并通过三阶段离线训练进一步缓解车端预测误差对 RSU 决策的传递。针对数据不平衡，作者设计了 DA- 通过抑制主导模态来平衡各模态分支优化，设计了 DA+ 利用全局 BN 统计生成稀缺标签样本，从而联合缓解模态不平衡和标签不平衡。</p>
+<p><strong>实验</strong>: 实验基于真实驾驶数据集 FLASH，结果显示 GBA 在保持与高分辨率码本反馈方法接近的 sum-rate 的同时，可将波束对齐开销降低 93.75% 以上。相比 FedAvg、FLASH 等联邦式基线，加入 DA 后的方法在标签不平衡和模态不平衡场景下都取得更高的预测准确率与通信性能，而且不平衡越严重，优势越明显。论文还验证了 GNN 版 RSU 在车辆数变化和节点置换下明显优于 MLP/Transformer 变体，体现了良好的可扩展性与排列等变性。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题定义非常贴近真实 V2X 部署场景，方法设计也较完整，兼顾了低开销、可扩展、隐私保护和数据不平衡鲁棒性。对于研究多模态感知通信、联邦学习通信优化、图学习无线资源管理的人来说，具有较强参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21468v1" target="_blank" rel="noopener noreferrer">Novelty-Based Generation of Continuous Landscapes with Diverse Local Optima Networks</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用新颖搜索生成多样连续优化地形</p>
+<p><strong>筛选理由</strong>: 方法新颖，利于分析LON与算法性能关系</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于：针对 Max-Set of Gaussians（MSG）连续景观，提出了一种无需反复运行局部搜索/盆跳算法的快速 LON 构造方法，用“由高斯主导的区域及其合并关系”来替代传统 Basin of Attraction 的搜索式估计。进一步，作者把 MSG 参数作为基因型、LON 图特征作为表型，引入 Novelty Search 主动生成拓扑结构多样的景观实例，从而首次较系统地构建了“景观特征—优化器表现”的连续优化数据集。</p>
+<p><strong>方法</strong>: 方法上，作者先利用 MSG 景观的结构性质：局部最优必然是部分高斯中心，因此可显式枚举节点；再把每个点归属到当前占优高斯对应区域，并将被其他高斯在中心处压制的区域递归并入更优区域，由此定义替代性的 BoA。随后基于 escape-edge 思想，在每个局部最优附近采样扰动点，统计其落入其他 BoA 的比例来构造 LON 边权。最后，使用基于 (μ+λ)-ES 的 Novelty Search，在 MSG 参数空间中搜索能最大化 LON 特征多样性的实例，并用这些实例训练回归模型预测 CMA-ES 和 DE 的性能。</p>
+<p><strong>实验</strong>: 实验上最亮眼的结果有三点：第一，作者定义的替代 BoA 与 GD 得到的 BoA 高度一致，median difference rate 从 2D 的 2.04% 下降到 10D 的 0.07%，说明近似相当可靠。第二，Novelty Search 明显比随机采样更能覆盖 LON 特征空间，加入人工设计的 archetype 初始种群后，中位覆盖率在各维度都超过 0.8。第三，基于 LON 特征可较好预测 CMA-ES 和 DE 的 success rate，交叉验证 R² 达到 0.64–0.94，其中 global_funnel_size 和 in_strength_opt 最具解释力。</p>
+<p><strong>Deep理由</strong>: 这篇工作的方法设计很巧妙，尤其适合关注 landscape analysis、benchmark generation 和 algorithm selection 的研究者参考。虽然其快速 LON 构造目前强依赖 MSG 这一特定景观族，通用性仍有限，但作为“低成本生成可控连续景观并研究 LON—性能关系”的起点，价值相当高。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21461v1" target="_blank" rel="noopener noreferrer">Do MLLMs Understand Pointing? Benchmarking and Enhancing Referential Reasoning in Egocentric Vision</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 评测并提升第一视角指向理解</p>
+<p><strong>筛选理由</strong>: 问题重要，基准扎实，但偏评测与微调</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次系统性提出“Referential Hallucination（指称幻觉）”问题：当前 MLLM 在第一视角指向理解中，并不真正沿着手指几何方向做空间对齐，而是依赖手附近物体或显著目标进行投机性猜测。为此，作者构建了面向 egocentric pointing 的 EgoPoint-Bench，并设计了可扩展的物理驱动合成数据管线，实现“视觉-语言-空间”三者对齐的监督。更重要的是，论文证明仅用高质量模拟数据微调，就能显著提升真实世界中的指向推理能力，验证了 sim-to-real 的可行性。</p>
+<p><strong>方法</strong>: 方法上，作者首先用 Habitat-Sim 搭建 Point-Sim 框架，在 1838 个高保真 3D 场景中，通过导航采样、相机朝向对齐、手部运动学旋转和 ray-casting 验证，自动生成几何上精确的“手指-目标物体”配对样本。随后结合真实世界智能眼镜采集的数据，构建总计约 11.7k 的 QA 基准，覆盖 Basic Perception、Function &amp; State、Spatial Context、OCR、Adversarial Resilience 五个维度。语言层面进一步引入三级 deixis 难度，从显式描述到隐式代词，系统考察模型如何借助手势消解指称歧义。实验阶段则以 zero-shot 与 LoRA instruction tuning 两种设置评测闭源和开源 MLLM 的表现。</p>
+<p><strong>实验</strong>: 实验最有说服力的结论是：无论是 Gemini、GPT 系列还是 Qwen3-VL、InternVL、LLaVA 等开闭源模型，直接推理在该任务上普遍只有约 50%~60% 水平，远低于人类的 95.9%，说明现有 MLLM 确实缺乏精细的第一视角指向理解能力。使用作者的模拟数据进行 LoRA 微调后，所有开源模型均获得大幅提升，平均增益达到 +15% 到 +25%，其中 Qwen3-VL-32B、Qwen3-VL-8B 等在真实场景测试集上也能稳定提升到约 72% 左右。误差分析进一步表明，模型主要失败在“近邻干扰”和“忽视手势”两类问题，而作者方法能显著修复这些错误。</p>
+<p><strong>Deep理由</strong>: 这篇工作抓住了 egocentric AI/智能眼镜落地中的一个非常关键但此前被低估的问题：模型是否真的理解“我指的这个”。它不仅提出了清晰的新任务和高质量 benchmark，还通过实验扎实证明了当前 MLLM 的短板与改进路径，对 AR 助手、具身智能和多模态空间推理研究都非常有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21409v1" target="_blank" rel="noopener noreferrer">S1-VL: Scientific Multimodal Reasoning Model with Thinking-with-Images</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 科学多模态推理结合图像操作</p>
+<p><strong>筛选理由</strong>: 图像内思维新颖，科学场景效果强</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把科学多模态推理统一为两种原生协同模式：一类是标准的 Scientific Reasoning，另一类是可在推理过程中主动生成并执行图像处理代码的 Thinking-with-Images。更重要的是，作者没有把“用工具”当成默认行为，而是通过多维轨迹过滤与自适应数据路由，让模型学会判断何时真的需要做裁剪、放大、增强、标注等视觉操作。</p>
+<p><strong>方法</strong>: S1-VL 基于 Qwen3-VL-32B-Thinking 构建，采用四阶段渐进训练：先进行通用科学多模态 SFT，再做 Thinking-with-Images 冷启动 SFT，随后分别进行科学推理 RL 和 Thinking-with-Images RL。数据层面，作者构建了覆盖数学、物理、化学、天文、地理、生物六大学科的数据，并设计六维质量过滤框架清洗多轮视觉操作轨迹。推理时，模型可在 AIO Sandbox 中生成 Python 图像处理代码，迭代获取中间图像结果并继续推理，形成“视觉操作—观察—再推理”的闭环。RL 阶段则使用 SAPO，并配合格式、答案正确性、一致性、工具调用效率等复合奖励进行优化。</p>
+<p><strong>实验</strong>: 实验上，S1-VL-32B 在 13 个 benchmark 上进行了系统评测，尤其在 HRBench-4K、HRBench-8K、MME-RealWorld-CN、MME-RealWorld-Lite、V* 五个 Thinking-with-Images 基准上全部达到 SOTA。与此同时，它在 Physics、VRSBench 等科学推理任务上也优于对比系统，说明该方法不仅提升了细粒度视觉操作能力，也没有以牺牲常规科学推理为代价。</p>
+<p><strong>Deep理由</strong>: 这篇工作在科学多模态推理和 Thinking-with-Images 的结合上做得很完整，尤其在数据构建、训练课程设计和奖励机制分析上有较强参考价值。不过其核心能力仍建立在大基座模型和较重工程系统之上，方法新意更多体现在系统整合与训练范式优化，而非底层架构突破。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21404v1" target="_blank" rel="noopener noreferrer">Neurodiversity and Technostress: Towards a Multimodal Research Design for Evaluating Subjective, Physiological, and Behavioral Responses</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 提出神经多样性技术压力多模态研究设计</p>
+<p><strong>筛选理由</strong>: 方法论价值高，但偏研究设计非实证结果</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文的核心创新在于把“神经多样性（ND）”正式引入 technostress 研究框架，明确提出数字压力并非对所有人都是同质的，而是会受到注意调节、执行功能和感觉加工差异的系统影响。其次，论文提出一个同时整合主观自评、生理信号和行为交互数据的多模态实验设计，用于比较 ND 与 NT 人群在受控数字压力条件下的差异反应。</p>
+<p><strong>方法</strong>: 作者提出一个混合实验设计：以 ND/NT 作为组间变量，以两类数字任务（结构化的 web shop 任务、非结构化的 social media 任务）作为组内变量。实验流程包括静息基线、生理记录、任务执行、即时后测以及后续随访问卷，压力诱发手段包括中断、时间压力、系统延迟、故障和多任务切换。测量上结合主观问卷、心率/HRV 等生理指标，以及鼠标点击、响应时、任务切换乃至可选眼动数据。分析上计划使用重复测量 ANOVA 或混合效应模型，并进一步考察主观—生理—行为三类指标的一致或分离关系。</p>
+<p><strong>实验</strong>: 实验设计的亮点在于其生态效度与可控性的平衡：既采用接近真实数字工作的任务场景，又通过标准化 stressor 精确操控 technostress。另一个亮点是任务顺序做了 counterbalancing，并包含基线与恢复期测量，使得研究不仅能比较压力反应，还能分析恢复过程和不同任务类型下的差异模式。</p>
+<p><strong>Deep理由</strong>: 如果你关注 AI/HCI、数字工作场景中的人因研究，尤其是 neurodiversity 与 technostress 的交叉问题，这篇论文很有启发性。虽然它没有给出真实实验结果，但作为后续实证研究的设计蓝图和研究议程，价值较高。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.21362v1" target="_blank" rel="noopener noreferrer">KD-CVG: A Knowledge-Driven Approach for Creative Video Generation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 知识驱动的广告创意视频生成</p>
+<p><strong>筛选理由</strong>: 问题真实，方法完整，但偏垂直应用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把“广告创意视频生成”从通用 T2V 中单独抽出来，提出了一个知识驱动的生成范式：先构建面向电商场景的 Advertising Creative Knowledge Base（ACKB），再通过检索增强和运动先验迁移来补足现有模型的知识缺口。具体上，它提出了语义感知检索模块 SAR 解决卖点文案与视频内容之间的弱对应问题，以及多模态知识参考模块 MKR 将参考样本中的语义结构和运动模式注入视频生成过程，从而同时提升语义对齐与运动合理性。</p>
+<p><strong>方法</strong>: KD-CVG 整体分为两个阶段。首先，SAR 用 CLIP 文本特征构图，并通过 SC-GAT 建模卖点文本之间的语义关系，从 ACKB 中检索最相关的参考脚本与视频；同时用基于 CIDEr 的强化学习进一步优化检索结果，使检索到的参考更适合后续脚本生成。随后，MKR 先基于参考脚本做渐进式脚本生成：解析主体、场景、运动三类语义元素，保留运动模板、替换主体与场景，借助 LLM 合成更适配目标卖点的新脚本；再通过 motion prior distillation 将参考视频中的时序运动差分编码为先验，并用 MR-LoRA 注入 Open-Sora 的时序注意力模块，实现更平滑、更符合物理规律的广告视频生成。</p>
+<p><strong>实验</strong>: 实验显示该方法在自动指标和人工评测上都优于 Show-1、VideoCrafter2 和 Open-Sora。量化结果中，KD-CVG 的 Min-Max Score 达到 81.80%，显著高于 Open-Sora 的 47.06%，同时在 Dynamic Degree 和 Motion Smoothness 上兼顾得更好；用户研究中，其 Motion Regularity 和 Highlight Degree 也取得最高分。消融实验进一步证明，SAR 明显提升脚本语义质量，MKR 则显著改善视频运动表现，而且脚本生成质量与最终视频质量呈正相关。</p>
+<p><strong>Deep理由</strong>: 这篇工作在问题定义和系统设计上都很有价值，尤其对广告、电商、多模态生成落地很有启发，ACKB + 检索增强 + 运动先验的组合也较完整。不过论文目前仍偏工程整合，评测规模较小、理论新颖性中等，且很多收益依赖知识库质量与参考检索效果，因此更适合做方向参考而非作为奠基性必读论文。</p>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
