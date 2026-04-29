@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-04-29</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-04-29</h1>
+    <p class="summary">共 21 篇。🔴 必读 0，🟡 推荐 20，⚪ 可跳过 1。</p>
+    <section><h2>🟡 推荐（20）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25772v1" target="_blank" rel="noopener noreferrer">Scenario-based System Testing for Distributed Robotics Applications</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 分布式机器人场景化系统测试语言</p>
+<p><strong>筛选理由</strong>: 偏测试方法，工程价值高，算法创新有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了面向分布式机器人/复杂 CPS 系统测试的场景规约语言 SCSL，用“场景库 + 顺序/并行组合”替代传统需要全局单体模型的 MBT，从而显著降低建模复杂度。其关键创新在于同时支持在线(on-the-fly)测试、LTL 声明式规约与 guarded action 命令式规约混合建模，以及通过 collaboration 机制原生支持运行时动态重构（组件加入、删除、接口重连）。</p>
+<p><strong>方法</strong>: SCSL 将系统测试拆成若干参数化 elementary scenarios，每个场景只描述某一测试情境下对象的期望行为或施加刺激，而不是完整对象行为。语言层面包含对象类型、接口、全局常量/函数、辅助对象、LTL 规格、条件-动作规则以及 frame 变量，用于区分 observer 场景和 stimulator/simulator 场景。系统测试配置由 collaboration 和 schedule 两部分组成：前者定义测试参与对象及接口连接，后者以顺序/并行方式编排场景实例。执行时采用在线决策，根据 SUT 当前可观测状态动态选择后续测试步，并允许在执行过程中删除失效机器人、注册新对象和重建接口。</p>
+<p><strong>实验</strong>: 论文以多机器人危险区域搜救/打捞任务为完整案例，覆盖机器人接近目标、拾取物资、返航、失效/进入禁区后的处理以及最终 emergent property 检查。作者展示了一个自动生成的测试执行过程，说明原型工具链可以驱动 observer 场景检查 OE 行为，也可以通过 simulator 场景向系统施加命令。虽然论文更偏语言与语义设计、案例驱动验证，而非大规模定量对比实验，但例子较完整地体现了 SCSL 对高非确定性与动态重构测试流程的支持。</p>
+<p><strong>Deep理由</strong>: 如果你关注 VLA/具身智能/多机器人系统测试与验证，这篇论文的方法论价值很高，尤其适合理解如何测试动态重构、强非确定性的分布式机器人系统。但当前更像语言与原型平台论文，实验规模和定量评测相对有限，因此更适合研究者阅读而非直接作为工业落地证据。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25732v1" target="_blank" rel="noopener noreferrer">Personalized Multi-Interest Modeling for Cross-Domain Recommendation to Cold-Start Users</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多兴趣跨域冷启动推荐建模</p>
+<p><strong>筛选理由</strong>: 问题明确，方法新颖，但偏增量</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 这篇论文的核心创新在于把 Neural Process 与 Normalizing Flow 统一到冷启动跨域推荐中，用随机分布而不是单一确定性向量来建模用户偏好，并进一步把原本的高斯单峰偏好分布变成多峰分布，从而显式刻画用户的多兴趣特征。除此之外，作者还提出了一个带 preference pool 的公共偏好编码器，能够从不同用户之间抽取共享兴趣模式，弥补纯个体化建模忽略群体共性的不足。</p>
+<p><strong>方法</strong>: NF-NPCDR整体由三部分组成：个性化偏好编码器、公共偏好编码器和随机自适应解码器。个性化部分先用 Neural Process 从源域支持集和目标域查询集学习用户级潜变量分布，再通过 Normalizing Flow 将高斯分布变换为多模态分布，以捕获用户多兴趣；公共偏好部分利用 preference pool 对用户支持集表示进行软聚类，提取不同用户之间的共性偏好。最后，解码器通过类似 FiLM 的调制机制，将个体多兴趣偏好与群体公共偏好联合注入目标域评分预测过程，实现对冷启动用户的跨域推荐。</p>
+<p><strong>实验</strong>: 实验在 Amazon 和 Douban 上共 5 个跨域场景进行，并在 20%、50%、80% 不同冷启动比例下评估，结果显示 NF-NPCDR 在 MAE 和 RMSE 上均显著优于全部基线，尤其相对前一最优方法 CDRNP 有大幅领先。作者还通过消融实验验证了 Normalizing Flow、preference pool 和 FiLM 式解码器三个模块都带来稳定收益，说明多兴趣建模、公共偏好建模以及自适应融合机制都是真正有效的。</p>
+<p><strong>Deep理由</strong>: 如果你关注冷启动推荐、跨域推荐或不确定性建模，这篇工作很值得看，方法组合新颖且实验优势明显。但从目前论文内容看，增益幅度异常大，且部分实验与复杂度分析仍需要进一步核查其公平性与可复现性，因此更适合作为启发性参考而非立即无保留采纳。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25700v1" target="_blank" rel="noopener noreferrer">Bug-Report-Driven Fault Localization: Industrial Benchmarking and Lesson Learned at ABB Robotics</a></h3>
+<p class="meta">方向: FL | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 工业缺陷定位中文本方法优于Transformer</p>
+<p><strong>筛选理由</strong>: 真实工业基准扎实，但方法增量有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把工业场景下的故障定位严格约束为“仅基于 bug report 文本”的多标签排序问题，不依赖源码、执行轨迹、调用图或静态分析结果，因此非常贴近真实维护流程。另一个重要贡献是基于 ABB Robotics 五年专有缺陷数据构建了一个高可信工业基准，并系统比较了传统 TF-IDF 机器学习与微调 Transformer，得出了“经典轻量模型在小样本、强领域术语、强不平衡工业数据上可优于 LLM”的有价值结论。</p>
+<p><strong>方法</strong>: 方法上，作者将 bug 标题与描述进行清洗、去模板、de-camelcase、去停用词和词形还原，然后把修复提交涉及的文件路径映射为子文件夹级组件标签，形成多标签监督数据。传统模型部分使用 TF-IDF 和句向量特征，训练 LR、SVM、RF 三类分类器，并用 One-vs-Rest 输出组件排名；深度模型部分则微调 RoBERTa-Base 和 Distil-RoBERTa，并用 focal loss 处理类别不平衡。评估采用 Top-k Accuracy、Recall@k、MAP、MRR 等排序指标，同时测试同义词替换和随机交换两类数据增强策略。</p>
+<p><strong>实验</strong>: 实验最大亮点是建立在真实 ABB 工业专有数据上：从 1867 个关闭缺陷中筛选出 660 个可监督样本、31 个组件标签，且存在明显长尾分布，因而结论很有实践意义。结果显示，LR/SVM + TF-IDF 在多数指标上稳定优于微调 RoBERTa，最佳 Top-1 约 0.53、Top-5 最高约 0.86、MAP 约 0.61–0.62；同时数据增强显著提升了 RF，但对线性模型和 Transformer 的收益有限甚至略有负效应。</p>
+<p><strong>Deep理由</strong>: 如果你关注工业级软件工程 AI、缺陷定位或“LLM 是否真的优于传统方法”的问题，这篇论文很值得看，因为它提供了少见的真实工业证据。之所以不是必读，是因为方法本身并不复杂，主要价值在于高质量工业基准与结论，而非提出全新的算法框架。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25693v1" target="_blank" rel="noopener noreferrer">RADD: Retrieval-Augmented Discrete Diffusion for Multi-Modal Knowledge Graph Completion</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 检索与扩散重排解耦MMKGC</p>
+<p><strong>筛选理由</strong>: 思路清晰且有效，但偏任务改进</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于指出 MMKGC 的关键瓶颈不是“多模态融合不够好”，而是“单一打分器同时承担全局检索与局部判别”这一目标耦合问题。作者提出 RADD，将高召回的全局候选检索交给 relation-aware 多模态 KGE retriever，将细粒度候选判别交给 conditional discrete diffusion denoiser，从架构上显式解耦 recall 与 precision。另一个重要创新是把离散扩散直接用于实体身份恢复，而不是连续 embedding 生成，从而更贴合 KGC 的本质任务。</p>
+<p><strong>方法</strong>: RADD 采用两阶段 retrieve-then-rerank 框架：首先用关系感知的多模态 KGE 检索器，对结构、文本、图像特征做 relation gate 融合，并在全实体集合上打分得到 top-K shortlist。随后，条件离散去噪器以查询上下文、关系、噪声实体 token、时间步 embedding 和 head/tail 方向 embedding 为条件，在离散实体词表上直接预测正确实体，对 shortlist 做重排序。训练时联合使用 KGE 损失、双向去噪交叉熵损失和从 retriever 到 denoiser 的温度蒸馏；推理时用 Diff-Rerank 硬门控，只允许 shortlist 内实体被最终提升排名。</p>
+<p><strong>实验</strong>: 在 DB15K、MKG-W、MKG-Y 三个 MMKGC 基准上，RADD 的 MRR 分别达到 45.02、45.45、39.40，均优于现有多模态、负采样增强和 LLM-based 基线，尤其在 DB15K 和 MKG-W 上提升显著。消融实验表明，检索器与去噪器缺一不可，tail-only 训练会导致性能大幅崩塌，说明双向训练对 head prediction 尤其关键。结构-only 的 RADD-S 也显著超过强单模态基线，说明收益主要来自架构解耦而不只是多模态信息。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题定义很到位，提出了比“继续堆融合模块”更本质的架构性改进，对 MMKGC 和更一般的 KGC 都有启发性。虽然方法设计清晰、实验也较强，但其优势高度依赖 retriever 的召回上界，且推理链路更复杂，因此更适合作为值得重点关注的研究型工作，而非立即通用替代方案。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25652v1" target="_blank" rel="noopener noreferrer">Euclid: Asteroid rotation periods from the Euclid Ecliptic Survey</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 欧几里得巡天测得大量小行星自转周期</p>
+<p><strong>筛选理由</strong>: 方法扎实且数据规模大，但偏天文应用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把 Euclid 对小行星形成的长条拖迹（streak）从“成像困难”转化为“时间分辨率优势”：作者沿拖迹布置多个矩形孔径，在单次 560.5 s 长曝光内部重建更高时间采样的光变曲线。其次，论文提出了一个面向稠密但不规则采样光变数据的周期反演流程，将 Lomb–Scargle、MAP 优化与 MCMC 后验采样结合起来，并系统处理多峰后验中的 alias 问题。最终，该工作首次从 Euclid Ecliptic Survey 中大规模提取出 889 个高质量自转周期，其中 93% 为首次测量，具有明显的数据资源开创性。</p>
+<p><strong>方法</strong>: 作者基于 Euclid Ecliptic Survey 期间获得的 148 组 VIS 观测，处理了 2321 颗已知小行星、约 23000 次拖迹观测。针对每条拖迹，方法采用 5×7 像素矩形孔径沿运动方向切分，并结合背景孔径、宇宙线掩膜和迭代 sigma clipping，构造单目标稠密光变曲线。周期搜索先用 Lomb–Scargle 给出初值与搜索范围，再通过差分进化和 L-BFGS-B 做 MAP 优化，最后用 emcee 进行 MCMC 后验采样，在单谐波双峰假设下估计自转周期及其不确定性。对多模态后验，作者显式报告多个 alias 及其相对概率，并用 phase-dispersion 指标 Θ 与 phase coverage ϕc 对结果进行可靠性筛选。</p>
+<p><strong>实验</strong>: 论文用 48 个文献中已有周期的目标验证管线性能：44% 的结果与文献值（含谐波）误差在 1% 以内，98% 在 15% 以内，并证明以 98% 置信度真实解通常位于前三个最可能 alias 中。最终在全部样本中得到 889 个可靠周期，且整体周期分布与现有小行星自转统计规律一致。特别值得注意的是，作者发现了 16 个绝对星等 H&lt;19 且周期低于 2.2 h 自转屏障的候选超快自转体（super-fast rotators），具有较高后续跟踪价值。</p>
+<p><strong>Deep理由</strong>: 如果你关注天体测光、时序信号分析或将航天巡天数据转化为物理参数的自动化流程，这篇论文很值得读。它的方法论对机器人/AI 方向的启发主要体现在“非标准观测形态下的时序重建、概率推断和多解管理”，但其科学贡献更偏天文学应用，因此我给出推荐而非必读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25636v1" target="_blank" rel="noopener noreferrer">Refinement via Regeneration: Enlarging Modification Space Boosts Image Refinement in Unified Multimodal Models</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 以重生成替代编辑提升图像精修</p>
+<p><strong>筛选理由</strong>: 思路新且指标提升显著，值得关注</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 Refinement via Regeneration（RvR）这一新的统一多模态模型图像精炼范式：不再把精炼视作“生成编辑指令+局部编辑”，而是直接基于目标文本与初始图像的语义表示进行条件再生成。其关键洞见是，现有 refinement-via-editing（RvE）受限于粗糙的中间编辑指令和不必要的像素级内容保持约束，导致可修改空间过小；RvR通过去除这两类约束，显著提升了复杂提示词下的语义对齐上限。</p>
+<p><strong>方法</strong>: RvR在训练时输入系统提示、目标文本提示、初始失配图像的 ViT 语义 token，以及目标对齐图像的带噪 VAE token，用 flow matching 学习从“失配语义条件”到“对齐图像”的再生成过程。与编辑式方法不同，它明确移除了初始图像的 VAE 条件，只保留高层语义条件，从而避免模型被像素级保真牵制。数据构造上，作者也不再依赖昂贵的编辑三元组，而是通过“提示词生成—多模型采样—VLM 对齐评估”自动构建〈失配图，对齐图，prompt〉训练样本。推理时，模型根据目标 prompt 和初始图像语义直接重新生成精炼图像，而不是先写编辑指令再执行编辑。</p>
+<p><strong>实验</strong>: 实验上，RvR在三个主流 T2I 对齐基准上都取得显著提升：Geneval 从 0.78 提升到 0.91，DPGBench 从 84.02 提升到 87.21，UniGenBench++ 从 61.53 提升到 77.41，全面优于 BAGEL 基座和多种 RvE 方法。消融实验进一步证明，加入编辑数据或保留输入图像的 VAE 像素特征都会降低性能，说明“扩大修改空间、弱化像素保持”正是性能提升的核心来源。多轮精炼与鲁棒性实验还表明，RvR既能继续修正残留错误，也能在需要时复用兼容语义、丢弃冲突语义。</p>
+<p><strong>Deep理由</strong>: 这篇工作对统一多模态模型中的“图像精炼”问题给出了一个非常清晰且有效的范式转移：从编辑走向再生成。无论从问题定义、训练数据构造，还是实验增益与消融证据来看，论文都较完整地证明了“扩大修改空间”对提升文本-图像对齐的决定性价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25618v1" target="_blank" rel="noopener noreferrer">Beyond Isolated Utterances: Cue-Guided Interaction for Context-Dependent Conversational Multimodal Understanding</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 显式线索引导对话多模态理解</p>
+<p><strong>筛选理由</strong>: 思路清晰有增量，任务相关性强，但创新跨度有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于，不再把“上下文”仅仅当作一个被动参与融合的附加信息，而是显式抽象出“context-utterance dependency”的解释线索（interpretation cue），并让该线索直接参与后续多模态推理。具体来说，作者提出了一个三阶段框架：先保留上下文与当前话语的结构边界，再结合局部跨模态证据与全局上下文证据构造解释 cue，最后用该 cue 引导文本、语音、视觉之间的交互。另一个较有辨识度的点是其 text-anchored relation + dual-expert 非语言编码设计，把“上下文一致/冲突”这种关系先验显式注入声学与视觉编码过程。</p>
+<p><strong>方法</strong>: CUCI-Net 整体分为三步。第一步是 Context-Utterance Structure Encoding：模型保留 context 和 target utterance 的结构区分，并以文本为锚点构造 relation representation，再用 relation-guided dual-expert Transformer 编码音频和视觉，得到主推理分支与结构保留分支两套表示。第二步是 Global-Local Interpretation Cue Construction：局部分支从三模态中提取 pairwise cue（t-a、t-v、a-v），全局分支则用上下文文本摘要作为 query，从当前 utterance 的三模态表示中读取全局解释证据，二者拼接形成最终 interpretation cue。第三步是 Cue-Guided Multimodal Interaction：将 cue 映射为 guidance vector，注入多层跨模态交互模块中，指导后续的文本-语音-视觉融合与最终分类。</p>
+<p><strong>实验</strong>: 实验上，CUCI-Net 在 MUStARD 和 MUStARD++ 上都显著优于 TFN、LMF、MulT、MISA、MAG、DMD、PS2RI、DLF、MFMB-Net 等强基线，尤其在 F1 指标上提升较明显；例如 MUStARD Entire Set 上达到 64.37，明显高于 PS2RI 的 58.45。消融实验也比较完整：去掉 role embeddings、dual-experts、独立双分支、local/global cue、guidance cue、adaptive aggregation 都会明显掉点，说明三阶段设计基本都在起作用。进一步的层数敏感性和 routing 行为可视化还展示了模型具有一定可解释性，证明 expert routing 学到了与 sarcastic/non-sarcastic 子集相关的偏好模式。</p>
+<p><strong>Deep理由</strong>: 这篇论文的思路比较清晰，问题定义也抓住了对话多模态理解中的关键痛点：上下文不只是信息源，更是解释条件。方法设计有新意，实验也较充分；不过数据集规模偏小、部分结论仍主要建立在 MUStARD 系列上，因而更适合作为“context-guided multimodal reasoning”方向的参考工作，而非已经完全定型的标杆方法。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25614v1" target="_blank" rel="noopener noreferrer">HotComment: A Benchmark for Evaluating Popularity of Online Comments</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多模态评论热度评测基准</p>
+<p><strong>筛选理由</strong>: 任务新颖，评测较全，但偏基准设计</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 HotComment，一个面向“评论热度/受欢迎程度”评测的多模态基准，不再只用语义相似度衡量评论质量，而是首次将内容质量、平台级热度预测、用户行为仿真三者统一起来评估评论的真实传播潜力。另一个核心创新是 StyleCmt，它把评论区历史高赞评论抽象成“风格共振场”，建模多种风格维度之间的协同与冲突，从而生成更符合群体偏好的评论。</p>
+<p><strong>方法</strong>: HotComment 数据集覆盖新闻与视频平台，包含热门/非热门评论，并构建三维评测框架：内容质量、热度预测、用户行为仿真。内容质量部分除 BLEU、METEOR、BERTScore 外，还引入语言表达、创意想象、情感共鸣、社会文化影响四个可解释风格维度。StyleCmt 先从相似历史热门评论中抽取风格分布，构建上下文相关的“共振场”，再通过风格强度与方向的向量化建模做干涉式规划，生成多个候选评论并按与社区风格的一致性选出最终输出。用户行为仿真则进一步用分层代理模拟不同受众群体的点赞倾向，以逼近真实社交平台反馈。</p>
+<p><strong>实验</strong>: 实验覆盖文本评论生成和视频评论生成两类任务，StyleCmt 在 Qwen、LLaMA、ChatGPT-4o 及多种视觉语言模型上都带来稳定提升。相较 CoT 和 few-shot，StyleCmt 在 BLEU/METEOR/BERTScore、风格共振分数 SRS、热度预测分数以及用户行为仿真分数上提升更显著，尤其在创意想象和社会文化影响两个风格维度收益最大。结果说明其不仅提升文本可读性，更增强了评论与真实社区偏好的对齐程度。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题设定很新，抓住了“评论生成不等于热门评论生成”这一关键空白，基准设计也比传统文本评测更贴近真实社交平台。虽然方法中的“共振/干涉”表述有一定概念包装色彩、部分评测仍依赖代理模型，但整体上对热门评论生成与社会化评测研究很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25612v1" target="_blank" rel="noopener noreferrer">The Nonverbal Syntax Framework: An Evidence-Based Tiered System for Inferring Learner States from Observable Behavioral Cues</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 学习者非言语线索证据分级框架</p>
+<p><strong>筛选理由</strong>: 系统综述扎实，但偏框架整理，方法创新有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 这篇论文的核心创新在于提出了一个面向学习者状态推断的“非言语语法框架（Nonverbal Syntax Framework）”，首次把分散在 908 篇实证研究中的 17,043 条 cue-state 关系系统化整合为一个四层级、可检索、可解释的证据框架。更关键的是，作者提出了“组件证据（cue/state 本身被研究得多不多）”与“关系证据（某个 cue-state 链接被独立重复了多少次）”的双证据体系，避免把“常见 cue + 常见 state”误判成“强关系”。此外，论文还引入了 actionability（可操作性）分类，使框架不仅适合研究综述，也能直接服务于教育观察、Affective Computing 和多模态检测系统设计。</p>
+<p><strong>方法</strong>: 方法上，论文基于一项遵循 PRISMA 的系统综述，从 1,987 条记录中筛得 908 篇可提取映射的研究，覆盖 1966–2025 年，形成 17,043 条 cue-state 关系。作者随后对 5,537 个原始状态标签和 11,521 个原始行为线索进行了规范化，分别压缩为 2,010 个 canonical states 和 6,434 个 normalized cues，并按九类行为通道组织。接着，论文分别构建了 Component Evidence Tier、Relationship Evidence Tier 和 Combined Confidence，并进一步加入 observability 与 actionability 标注。最终形成四层框架：Level 1 Cue Vocabulary、Level 2 State Clusters、Level 3 State Profiles、Level 4 Discriminative Analysis，用于从“看到什么行为”到“推断什么状态”再到“如何区分相似状态”的完整推理链条。</p>
+<p><strong>实验</strong>: 论文的亮点不在传统模型精度实验，而在超大规模证据整合后的统计发现。最重要的结果是：52% 被 component-based 规则评为“Very High” 的关系，实际上只在单篇论文中出现，直接证明了双证据体系的必要性。另一个关键发现是，全部唯一关系中仅有 480 条达到 R1–R4（至少 3 篇独立论文支持），只占 4.5%，但却覆盖了 35.5% 的全部证据量，说明该领域呈现明显的“少数高复现核心 + 大量单篇探索尾部”的长尾结构。</p>
+<p><strong>Deep理由</strong>: 如果你关注教育场景下的多模态 learner-state inference、affective computing 或 HRI 中的可解释状态识别，这篇论文非常值得读。它不是单点算法创新，而是提供了一个高价值的领域基础设施：既能纠正过去文献中证据强弱混淆的问题，也能为后续模型选特征、做标注体系、构建规则库提供坚实依据。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25591v1" target="_blank" rel="noopener noreferrer">Walking Through Uncertainty: An Empirical Study of Uncertainty Estimation for Audio-Aware Large Language Models</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 系统评测音频大模型不确定性估计</p>
+<p><strong>筛选理由</strong>: 首个系统基准，结论实用但偏经验性</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文首次系统性研究音频感知大语言模型（ALLM）的不确定性估计问题，把文本LLM中的经典方法正式迁移到音频-语言场景并做统一基准评测。论文的重要发现是：在一般音频理解/推理任务上，语义级不确定性（semantic entropy / discrete semantic entropy）和自验证方法 P(True) 明显优于基于token likelihood的熵方法；但在幻觉检测与不可回答问题上，这种优势会显著变得更依赖具体模型与任务。</p>
+<p><strong>方法</strong>: 论文采用两阶段协议：先用低温解码得到最终预测答案，再通过多次随机采样估计该样本上的不确定性。作者比较了五类代表性方法：predictive entropy、length-normalized entropy、semantic entropy、discrete semantic entropy 和 P(True)。其中 semantic entropy 通过语义等价聚类衡量“意义层”的分布离散度，discrete semantic entropy 适用于封闭答案空间，P(True) 则让模型在结合音频输入后自我判断答案是否为真。</p>
+<p><strong>实验</strong>: 实验覆盖三种主流ALLM（Qwen2.5-Omni-3B/7B、Audio Flamingo 3）和多类基准，包括一般理解推理（MMAU、MMAR、MMSU、SAKURA）以及可信性评测（AQUA-Bench、Audio-Hallucination）。结果显示，在一般任务上 semantic/discrete semantic entropy 与 P(True) 在 AUROC 和 AURAC 上整体更强；而在可信性任务上，最佳方法随模型变化明显。作者还进一步验证了不确定性可作为自适应推理路由信号，但只有当“更贵的 reasoning 模式本身确实有效”时，路由才真正带来收益。</p>
+<p><strong>Deep理由</strong>: 这篇工作选题新、实验扎实，填补了ALLM不确定性评估的明显空白，对做多模态可靠性、幻觉检测和推理路由的人很有参考价值。若你关注的是模型结构创新，它偏分析型而非算法突破型；但若你关心可靠AI，这是值得读的基线论文。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25584v1" target="_blank" rel="noopener noreferrer">DualFact+: A Multimodal Fact Verification Framework for Procedural Video Understanding</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 过程视频事实核验评测框架</p>
+<p><strong>筛选理由</strong>: 评测角度新，重事实对齐，偏基准非模型</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 DualFact / MultiFactScore 这一面向 procedural video captioning 的双层事实评估框架，把“事实正确性”拆成概念层事实（action、object/ingredient、tool、location 等角色语义）与上下文层事实（视频中真实发生的谓词-论元关系）两部分，从而能区分角色错配、遗漏、幻觉与视觉上存在但任务上不相关的 salience 错误。另一个关键创新是引入隐式论元补全（VIA）和对比负事实构造，使评估不再只看表面文本匹配，而能更完整地检查 procedural step 的语义完备性与视觉落地性。</p>
+<p><strong>方法</strong>: 方法上，作者先把 YouCook 和新建的 CraftBench 视频按子句级切分，并对省略的 patient/tool/location 做 VIA 补全，随后为每个步骤标注两类事实：概念事实（如 Action=stirring, Tool=spoon）和上下文事实（如 stir(soup), stir(with spoon), stir(in pot)）。对生成 caption，系统先用 LLM 抽取同构事实，再分别用文本 NLI（caption 证据）和多模态 NLI（video 证据）判断每条事实是 supported 还是 refuted。最后基于支持率给出 fact score，并进一步把错误分解为 hallucination、salience 和 omission，形成可解释的细粒度诊断。</p>
+<p><strong>实验</strong>: 实验覆盖 YouCook3-Fact 和 CraftBench-Fact 两个基准，结果显示现有多模态大模型虽然能生成流畅 caption，但在事实层面存在显著遗漏与角色级不一致：在用 gold facts 检验时 verifier 很强，但用模型生成 caption 抽取的事实去对齐 gold annotations 时，概念层与上下文层准确率都大幅下降。另一个很有价值的发现是，仅基于 caption 的评估会系统性高估 hallucination，而引入视频 grounding 后，不少“幻觉”其实应被重分类为 salience；同时该框架与人工 factuality 判断的相关性高于传统 lexical / embedding metrics。</p>
+<p><strong>Deep理由</strong>: 如果你关注多模态事实性评估、视频理解或机器人/操作规划中的程序语义，这篇论文很值得读，因为它把 caption 评估从“语言流畅性”推进到了“可执行的角色一致性与视觉真实性”。其双层事实表示和 error decomposition 对后续做 procedural video understanding、agent instruction grounding、甚至机器人操作数据评测都很有启发。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25533v1" target="_blank" rel="noopener noreferrer">DualGeo: A Dual-View Framework for Worldwide Image Geo-localization</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 双视角框架提升全球图像定位</p>
+<p><strong>筛选理由</strong>: 方法完整且指标提升明显，但偏工程集成</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 DualGeo，两阶段解决全球图像地理定位中的两个关键瓶颈：一是在表征层面引入 RGB-语义分割双视角建模，利用语义结构对光照、季节、天气变化的稳定性增强鲁棒性；二是在推理层面引入基于地理聚类的候选重排序与 LMM 地理推理，显式过滤空间离群点。另一个实际贡献是构建了大规模 MP16-SEG 数据集，为全球定位任务补充了与 GPS 对齐的语义分割监督。</p>
+<p><strong>方法</strong>: 方法分为两个阶段。第一阶段是 geo-representational foundation：分别编码 RGB 图像、语义分割图和 GPS，通过双视角对比学习进行 RGB↔GPS、SEG↔GPS 对齐，并用双向交叉注意力融合 RGB 与分割特征，建立全球检索库。第二阶段是 geo-cognitive refinement：先从检索库取 top-k 候选，再用 DBSCAN 基于地理空间密度进行聚类重排，抑制离群误匹配；随后把重排后的相似坐标、负样本坐标和原图一起输入 LMM，让模型结合视觉内容与地理上下文输出最终坐标。</p>
+<p><strong>实验</strong>: 在 IM2GPS、IM2GPS3k 和 YFCC4k 三个基准上，DualGeo 在细粒度定位上表现突出，街道级和城市级准确率相对现有最优方法提升约 3.6%–16.58% 和 1.29%–8.77%。消融实验表明，双视角学习、双向交叉注意力、地理聚类重排和 LMM 后处理均带来稳定增益，其中聚类重排尤其显著提升近距离定位，而 LMM 对国家/洲级推理更有帮助。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题定义清晰，方法组合有针对性，尤其是“语义稳定结构 + 地理聚类 + LMM”这一链条对全球定位任务很有启发性。不过其提升主要集中在细粒度尺度，粗粒度指标并非全面领先，且整体更像工程上有效的系统集成，而非单点理论突破。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25498v1" target="_blank" rel="noopener noreferrer">SymphonyGen: 3D Hierarchical Orchestral Generation with Controllable Harmony Skeleton</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 可控分层交响乐生成框架</p>
+<p><strong>筛选理由</strong>: 层次建模+RL奖励设计有新意，但偏应用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 SymphonyGen，将交响/影视管弦乐生成拆解为 Bar-Track-Event 三个维度的 3D 层级生成框架，显式缓解了长时结构建模与高密度多轨编排之间的“复杂度-可控性失衡”问题。其最关键的控制接口是可编辑的 multi-voice harmony skeleton（类似 short-score/piano reduction 草图），既提供和声走向与局部音高许可范围，又保留配器纹理生成的自由度。进一步地，作者把跨模态音频感知奖励的 GRPO 强化学习与推理时的 dissonance-averse sampling 结合起来，专门优化“电影化、听感更干净”的现代管弦乐输出。</p>
+<p><strong>方法</strong>: 方法上，SymphonyGen 采用级联式 Transformer 编解码器，分别在小节级、音轨级、事件级建模：先编码 harmony skeleton 与音乐事件，再通过 bar decoder、track decoder 和 event decoder 逐层把高层结构传递给低层细节生成。音乐事件解码器使用 two-stream cross-attention：一条流关注当前小节的和声骨架上下文，另一条流检索同一音轨在前一小节的隐藏状态，从而同时保持纵向和声一致性与横向织体延续性。输入表示上，论文设计了压缩版 REMI tokenization 与独立 metadata heads，以降低 3D 张量中的 padding/截断损耗。训练流程分为监督预训练与 GRPO 微调两阶段，推理阶段再利用基于和声骨架的失谐惩罚，对可能引入非预期冲突音的 pitch logits 进行重加权。</p>
+<p><strong>实验</strong>: 客观实验显示，GRPO 显著提高了 CLaMP 音频感知分数，并明显降低 harmonic–nonharmonic 与 nonharmonic–nonharmonic 两类失谐指标；在合适的惩罚系数下，还能维持较好的旋律运动性与装饰音表现。主观听评中，SymphonyGen 在 orchestral composition 任务上整体优于 SymphonyNet 与 NotaGen，尤其在普通听众中于 Quality、Coherence、Preference 上领先明显；在 arrangement 场景下，也超过 METEOR，并在加入轨道密度奖励后提升了 orchestral richness。值得注意的是，作者还分析了不同 dissonance penalty 的“甜点区间”，说明其推理控制不是简单压制所有张力，而是在清晰度与表现力之间寻找平衡。</p>
+<p><strong>Deep理由</strong>: 这篇论文在“可控交响/影视配器生成”方向上思路很新，结构设计、控制接口和后处理策略都具有较强工程启发性。虽然实验结果不错，但仍较依赖规则化和声骨架分析、手工设计失谐矩阵与筛选流程，离通用、稳健的高质量作曲系统还有距离，因此属于很值得读但未必到“必读奠基作”的级别。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25489v1" target="_blank" rel="noopener noreferrer">Adaptable phase retrieval for coherent transition radiation spectroscopy based on differentiable physics information</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 可微物理改进CTR相位恢复</p>
+<p><strong>筛选理由</strong>: 方法扎实且可扩展，但偏专用诊断场景</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: {
+  &quot;innovation&quot;: &quot;论文的核心创新是把 CTR 光谱相位恢复重写为一个“可微物理 + 梯度优化”的问题，而不是依赖传统 Gerchberg–Saxton 这类交替投影算法。作者提出的 GD-Phase 只优化频域相位、将测得的谱幅值作为硬约束固定下来，再通过实空间中的正性、有限支撑、平滑性和近实值等物理先验进行约束。这个设计既保留了传统物理可解释性，又天然适配更复杂的实验前向模型</p>
+<p><strong>Deep理由</strong>: AI 解析失败</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25420v1" target="_blank" rel="noopener noreferrer">Recommending Usability Improvements with Multimodal Large Language Models</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: MLLM自动评估界面可用性并给改进建议</p>
+<p><strong>筛选理由</strong>: 应用价值强，但方法偏工程，研究突破有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把“视频级用户交互轨迹 + Nielsen 启发式 + 多模态大模型”结合起来，自动发现动态界面中的可用性问题，而不再局限于静态截图分析。进一步地，作者不仅让模型报错，还通过相似问题聚合与严重度排序，直接输出面向开发者的、可执行的改进建议清单。整体上，它把可用性评估从“专家密集型人工检查”推进到“低门槛、可集成进工程流程的自动推荐”。</p>
+<p><strong>方法</strong>: 方法分为四步：首先收集应用描述、任务描述以及用户完成任务时的屏幕录制视频；其次将这些上下文输入 MLLM，按 Nielsen 十大启发式逐条分析，生成问题描述与修复建议。然后使用文本嵌入与余弦相似度对跨启发式产生的重复问题进行聚类，再让 LLM 做摘要聚合，减少冗余。最后再用 LLM 对聚合后的问题按任务成功影响、挫败感、发生概率和恢复成本等因素进行严重度排序，输出优先级明确的改进建议。</p>
+<p><strong>实验</strong>: 作者在两个真实应用（协同活动规划 EventHelpr、学习平台 KnowledgeCheckR）、12 个任务场景上开展用户研究，共有 95 名具备软件工程背景的参与者，累计评审了 285 条推荐。结果显示，问题描述与改进建议在清晰性和合理性上平均分约为 4.0–4.3/5，73.7% 的建议被认为是完整的，且约四分之三的参与者认为这些建议对发现可用性问题有帮助。另一个值得注意的结论是：参与者的可用性经验高低，与他们对系统输出质量的评价相关性很弱，说明该方法对非专家也具有可用性。</p>
+<p><strong>Deep理由</strong>: 这篇工作非常适合关注 AI4SE、HCI 与多模态代理落地的研究者阅读，尤其在“如何让 MLLM 真正服务开发工作流”方面给出了完整范式。不过它的实验更多验证的是感知有用性而非客观检测准确率，且模型、提示词、聚合阈值等设计仍偏工程经验驱动，因此更适合作为有启发性的系统论文，而非定论式方法基准。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25390v1" target="_blank" rel="noopener noreferrer">GeoSearch: Augmenting Worldwide Geolocalization with Web-Scale Reverse Image Search and Image Matching</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用网页反搜增强全球图像定位</p>
+<p><strong>筛选理由</strong>: 工程实用强，但方法增量偏大</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把“网页级反向图像搜索”真正引入全球图像地理定位的 RAG 流程中，从封闭数据库检索扩展到开放世界证据获取，从而缓解静态参考库覆盖不足的问题。作者还设计了“双层过滤机制”——先用 SuperPoint+LightGlue 做图像匹配验证，再用基于图像-坐标相似度的置信门控决定是否回退到基线结果，以控制网络噪声带来的误判。除此之外，论文用 ECEF 三维地心坐标替代常见二维地图投影来建模位置表示，提升了全球尺度下的空间连续性与对齐效果。</p>
+<p><strong>方法</strong>: GeoSearch整体分为预处理和推理两阶段：预处理阶段学习图像、文本、位置三模态统一表征，并基于 CLIP 视觉/文本编码器与 ECEF 位置编码器构建检索数据库。推理时，系统一方面从内部图库检索近邻/远邻坐标，另一方面通过 Google Lens 做反向图像搜索并抓取网页文本，将两类证据一起组织成提示词交给 Gemini 生成地点描述，再通过地理编码转成 GPS 候选。随后，模型利用图像-位置相似度对多个候选坐标打分，选出最优搜索结果。最后通过图像匹配和置信门控两层过滤，在开放世界预测与封闭世界基线之间自适应选择最终输出。</p>
+<p><strong>实验</strong>: 实验上最重要的亮点是作者强调并修正了以往 geolocalization 工作中常见的数据泄漏问题：不用来自 Flickr 的 MP16 构建检索库，而改用来源不同的 OSV-5M 进行 leakage-aware 评测。在这一更严格设定下，GeoSearch 在 Im2GPS3k 和 YFCC4k 上都显著超过 Img2Loc、G3、GeoRanker 等近期 RAG/LMM 方法，尤其在 1km 和 25km 等细粒度指标上提升非常明显。消融实验还表明，双层过滤中的置信门控最关键，而 ECEF 投影相比 Mercator/EEP 在 GPS gallery 检索上也带来了稳定收益。</p>
+<p><strong>Deep理由</strong>: 这篇论文抓住了当前全球图像定位里最关键的两个痛点：封闭库覆盖不足和评测数据泄漏，并给出了一个工程上可落地、效果上显著的解决方案。对于研究多模态 RAG、开放世界检索增强推理、视觉地理定位或 OSINT 场景的读者，这篇工作很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25383v1" target="_blank" rel="noopener noreferrer">ML-SAN: Multi-Level Speaker-Adaptive Network for Emotion Recognition in Conversations</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多层说话人自适应多模态情感识别</p>
+<p><strong>筛选理由</strong>: 问题实用，方法清晰，但创新偏工程化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新是把“说话人身份”从传统 ERC 中的静态辅助信息，提升为贯穿输入、跨模态交互和输出空间的主动调制信号。作者提出三层级 speaker-adaptive 机制：输入层用 FiLM 做说话人条件校准，交互层用 speaker gate 动态分配音频/视觉模态权重，输出层再用辅助说话人一致性约束避免深层表示丢失身份相关判别信息。</p>
+<p><strong>方法</strong>: ML-SAN 面向多模态会话情感识别中的“说话人异质性”问题，假设不同人表达同一情感时在声学和视觉上存在显著偏移。首先，模型利用说话人嵌入生成 FiLM 的缩放与平移参数，对原始音频和视觉特征进行条件校准，把不同说话人的特征拉到更一致的表征空间。随后，在上下文建模后的模态表示上，引入基于说话人身份的动态门控，对不同模态通道进行逐维重加权，从而适配“有人更靠声音表达、有人更靠表情表达”的差异。最后，通过 ERC 主任务与说话人辅助分类联合优化，维持潜空间中的说话人一致性，增强最终情感判别的稳健性。</p>
+<p><strong>实验</strong>: 在 MELD 和 IEMOCAP 两个基准数据集上，ML-SAN 分别达到 67.73 和 73.28 的 W-F1，均优于作者复现的强基线 MultiEMO。消融实验显示三层模块都有效，其中 IEMOCAP 上移除辅助说话人损失下降最大，说明长对话场景下保留身份一致性尤其重要。混淆矩阵与可视化结果进一步表明，该方法对 fear、anger 等更易混淆或长尾情绪类别有更好的区分能力。</p>
+<p><strong>Deep理由</strong>: 文章问题意识明确，针对 ERC 中常被忽视的说话人表达差异提出了结构上较完整的多层自适应方案，实验也有稳定提升。但方法整体属于在现有多模态融合框架上加入条件调制与辅助约束，创新性偏工程增强而非范式突破，因此更适合作为值得关注的改进型工作。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25376v1" target="_blank" rel="noopener noreferrer">CoRE: Concept-Reasoning Expansion for Continual Brain Lesion Segmentation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 概念推理驱动持续脑病灶分割</p>
+<p><strong>筛选理由</strong>: 临床概念结合持续学习，任务设定强但需看泛化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: CoRE 的核心创新是把持续学习中的“是否复用/是否扩容”从纯视觉分布判断，提升为“视觉特征 + 临床概念推理”的联合决策问题。作者首次为持续脑病灶分割引入层级化脑病灶概念库，并用概念对齐来指导专家路由与动态扩展，从而在减少灾难性遗忘的同时抑制冗余参数增长。另一个重要创新是提出双重新颖性检测机制：同时利用概念侧置信度和图像侧重建偏差来决定是否新增 adapter/expert。</p>
+<p><strong>方法</strong>: 方法建立在 Swin UNETR 上，并以 adapter 作为可扩展专家模块。首先，作者借助 LLM/VLM 构建 Brain Lesion Concept Library，将病灶相关知识组织为“模态信号—解剖位置—形态属性”的层级概念空间，再用 BiomedCLIP 文本编码器将其映射为可计算表示。随后，Concept-Guided Calibration 通过概念侧路由和图像侧路由融合来选择最合适的 adapter，使专家分配不仅依赖视觉统计，还受临床语义约束。最后，Concept-Driven Expansion 在新任务到来时联合判断概念陌生度与视觉重建异常，仅在确有新知识需求时触发扩容，从而实现更稳健的持续适应。</p>
+<p><strong>实验</strong>: 在 5 个公开数据集、12 个连续脑病灶 MRI 任务上，CoRE 取得 79.90% 平均 DSC 和 98.96% BWT，明显优于文中的各类 rehearsal-free PTM/PEFT 持续学习基线；相对第二名方法，平均 DSC 和 BWT 分别提升 2.46% 和 2.61%。作者还展示了更强的 few-shot 迁移能力，在后续 BraTS2023-SSA 增量任务中，即使训练样本受限也能保持更高精度。消融实验进一步证明：概念库质量、概念引导路由和概念驱动扩容三者都对最终性能不可或缺。</p>
+<p><strong>Deep理由</strong>: 这篇工作把多模态医学概念推理真正嵌入到持续分割框架中，问题设定新、方法闭环完整、实验也较扎实。对于关注医疗 AI、持续学习、MoE/Adapter 扩展和可解释医学分割的研究者，这是一篇很有启发性的论文。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25299v1" target="_blank" rel="noopener noreferrer">The Thinking Pixel: Recursive Sparse Reasoning in Multimodal Diffusion Latents</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 递归稀疏专家增强扩散推理</p>
+<p><strong>筛选理由</strong>: 思路新颖，提多模态推理；但偏生成改进，需看实验增益</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文把语言模型中的“潜在递归推理”迁移到扩散式多模态生成中，提出了在扩散 latent 内进行多步递归更新的 sparse MoE 机制。其关键创新是在 MMDiT/DiT 的注意力层中插入“thinking pixel”式递归模块，并通过条件感知 gating、Gumbel-Softmax 硬路由和共享 LoRA-adapter 专家，实现低额外参数下的多步视觉 token 精炼。相比直接重复整层网络，它强调“递归深度 + 稀疏模块选择 + 轻量适配器”的组合，以更低成本增强文本对齐和结构生成能力。</p>
+<p><strong>方法</strong>: 方法上，作者将递归模块插入到最关键的 joint attention 位置，因为这里负责视觉 token 与文本 token 的跨模态对齐。每个 latent step 中，gating 网络根据当前视觉 token、扩散 timestep 以及文本条件/类别条件，动态选择一个专家模块，仅对视觉分支的 Q/K/V 投影施加 LoRA 式低秩更新；文本分支保持完整参与 joint attention。递归过程中，中间步只使用 adapter 输出进行逐步 refinement，最后一步再与冻结的基座模型输出融合，从而避免反复经过 frozen backbone 导致分布漂移和生成退化。作者还通过跨样本 token 级路由与重组，让专家更容易形成功能分化。</p>
+<p><strong>实验</strong>: 在 ImageNet 256×256 类条件生成上，该方法在与 DiT-XL/2 相同参数规模下，将 FID 从 2.34 降至 2.27，表现出稳定收益。在文本到图像方面，基于 SD3-medium 微调后，GenEval overall 从 67.93 提升到最高 71.18，尤其在 two-object、counting、color attribute 等组合语义指标上提升明显；DPG 上 overall 也优于基线。可视化结果进一步显示：早期扩散阶段专家行为较一致，后期则出现更明显的模块专门化，说明递归稀疏路由确实学到了阶段性、上下文相关的处理策略。</p>
+<p><strong>Deep理由</strong>: 这篇论文的想法新，抓住了“扩散模型是否也能像 LLM 一样做 latent reasoning”这一很有前景的问题，并给出了相对工程可落地的方案。虽然当前绝对性能提升幅度不算颠覆性、实验规模也仍偏早期探索，但其方法设计和研究方向对多模态生成与测试时计算扩展都很有启发。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2604.25296v1" target="_blank" rel="noopener noreferrer">Learning from Medical Entity Trees: An Entity-Centric Medical Data Engineering Framework for MLLMs</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用医学实体树重构MLLM数据工程</p>
+<p><strong>筛选理由</strong>: 数据工程新颖，医疗多模态提升明确</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文的核心创新在于把医疗多模态数据工程从传统的“按模态/科室分桶”范式，升级为“按医学实体及其层级关系组织”的范式。作者从医学教材与论文中自动抽取并构建大规模 Medical Entity Tree（MET），再用它统一驱动数据检索、过滤、重标注和推理样本合成，使 MLLM 学到更接近人类医学教育路径的结构化知识。另一个重要创新是提出了“实体树约束下的数据合成”，不仅补充描述性 caption，还生成依赖视觉证据的因果推理型 VQA 数据。</p>
+<p><strong>方法</strong>: 方法上，论文首先通过 LLM 提示工程、类型抽取、层次聚类、增量挂载和 ReAct 冲突消解，构建出一个五层、约 147 万实体的医学实体树。随后利用 AC 自动机把海量语料和原始医学数据高效映射到实体树节点，并以节点为锚点进行数据检索。接着作者设计了两阶段混合过滤流程：先用强 MLLM 对小样本打标，再蒸馏训练轻量 ViT 对全量数据做可扩展筛选，并加入实体-视觉一致性校验。最后基于 MET 的层级与关系约束，生成实体增强 caption 和结构化推理 VQA，形成面向 MLLM 训练的知识感知数据集。</p>
+<p><strong>实验</strong>: 实验上，基于 Qwen2.5-VL-7B 训练的模型在 6 个医学基准上取得 69.16% 平均分，超过 Lingshu-7B 的 67.68%，其中在 MMMU-Med 上达到 73.77%，显示出较强的专家级推理提升。论文还验证了数据的跨架构泛化能力：无论是 LLaVA1.6-7B 还是 InternVL3-8B，使用其合成数据后都能稳定增益。更有价值的是，作者展示了对长尾稀有医学实体的显著改进，说明 MET 框架确实缓解了通用模型在罕见病和敏感解剖相关概念上的知识缺口。</p>
+<p><strong>Deep理由</strong>: 这篇工作不只是提出一个医疗 MLLM 模型，而是提出了一套更具可扩展性的医学数据工程方法论，对医疗垂域多模态训练非常有启发。尤其如果你关注数据构建、知识注入、长尾实体覆盖和医学推理能力提升，这篇论文的思路值得重点参考。</p>
+</section>
+</article></section><section><h2>⚪ 可跳过（1）</h2><ul><li>Assessment of the quantitative impact of occlusal positioning splints on temporomandibular joint conditions（方法演示为主，缺少临床验证，AI通用性有限）</li></ul></section>
+  </main>
+</body>
+</html>
