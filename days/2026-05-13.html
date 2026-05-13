@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-05-13</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-05-13</h1>
+    <p class="summary">共 19 篇。🔴 必读 0，🟡 推荐 18，⚪ 可跳过 1。</p>
+    <section><h2>🟡 推荐（18）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11972v1" target="_blank" rel="noopener noreferrer">Cooperative Robotics Reinforced by Collective Perception for Traffic Moderation</a></h3>
+<p class="meta">方向: 其他 | 标签: <span class="tag">VLA</span></p>
+<p><strong>简述</strong>: 机器人结合车路协同管控盲区并道</p>
+<p><strong>筛选理由</strong>: 真实部署新颖，但偏交通机器人非VLA核心</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一种“集体感知增强的协作机器人交通管控”框架：不再仅依赖车内V2X告警，而是引入一台具身 humanoid 机器人作为主动执行体，在NLOS并道/路口场景中直接做出STOP/PASS干预。其关键创新在于把路侧双目视觉CPM、车载CAM以及可转发的DENM融合到机器人决策闭环中，使系统既能“看见”被遮挡来车，又能“影响”未联网车辆驾驶员的行为。</p>
+<p><strong>方法</strong>: 系统由两条并行感知链路组成：路侧双相机基础设施通过YOLO检测、标定投影和速度估计生成CPM，机器人侧通过V2X接收来自联网车辆的CAM以及外部事件DENM。机器人内部采用“V2X优先、视觉补充”的融合逻辑，避免对同一车辆重复跟踪，并把所有目标统一映射到道路参考线。决策层没有直接使用几何上不稳定的TTC，而是定义50×50 m的Zone of Danger，通过预测车辆进入/离开ZoD的时间判断是否会对并道车辆构成风险。若目标在阈值时间内进入ZoD且检测到有车准备并入主路，ARI机器人就移动到路中央并执行类交警式STOP手势，直到风险解除。</p>
+<p><strong>实验</strong>: 系统在鹿特丹Future Mobility Park进行了4小时真实部署，在NLOS主辅路汇入场景中共记录798辆来车，路侧视觉平均首次探测距离达到110.1 m，说明其具备较早风险预警能力。针对一辆搭载V2X的VW ID.4，实验验证了CPM+CAM融合后机器人能提前进入拦截状态：车辆在ZoD内停留10.99 s，而机器人STOP时长为12.59 s，表明其能在车辆进入危险区前介入并在其离开后及时释放。额外的DENM中继实验还展示了机器人作为移动V2X relay 扩展危险通知覆盖范围的潜力。</p>
+<p><strong>Deep理由</strong>: 这篇工作在具身智能+V2X+集体感知交叉方向上非常新颖，展示了VLA/机器人从“感知理解”走向“交通场景主动执行”的可能性。不过论文目前更偏系统原型验证，量化评测、基线对比和安全性论证仍不够充分，因此更适合作为前沿概念和系统集成案例来读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11959v1" target="_blank" rel="noopener noreferrer">Multimodal Abstractive Summarization of Instructional Videos with Vision-Language Models</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用冻结CLIP提升教学视频摘要</p>
+<p><strong>筛选理由</strong>: 方法直接有效，但创新偏工程化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于提出 ClipSum：用冻结的 CLIP 视觉表征替代传统 ResNet/CNN 特征做视频摘要，从表示层面缓解“视觉特征与语言生成语义空间不对齐”的问题。作者进一步结合显式时序建模和维度自适应跨模态融合，证明了在 instructional video summarization 中，语义对齐比高维视觉容量更重要，而且冻结 CLIP 反而优于微调。</p>
+<p><strong>方法</strong>: ClipSum 以 BART-base 作为文本编码器-解码器骨干，输入是视频对应的步骤文本与均匀采样的 50 帧图像。每帧先经过冻结的 CLIP ViT-B/32 提取 512 维视觉特征，再加入可学习位置编码并通过 2 层 Transformer 做显式时序建模。随后将视觉特征线性投影到 768 维，在 BART 编码器第 5 层通过 cross-attention 进行中层融合，由文本特征作为 query、视觉特征作为 key/value，最后由 BART 解码器自回归生成摘要。</p>
+<p><strong>实验</strong>: 在 YouCook2 上，ClipSum 达到 ROUGE-1 33.0，高于文本-only BART 的 28.3，也优于使用 ResNet 特征的强基线 VG-BART（30.8）和受控 ResNet-152 配置（30.5）。尤其值得注意的是，CLIP 仅用 512 维特征就超过了 2048 维 ResNet，说明视觉-语言语义对齐优于单纯增加特征维度。消融实验还显示：中层融合最好、冻结 CLIP 优于微调、50 帧采样已基本达到最优效率/性能平衡。</p>
+<p><strong>Deep理由</strong>: 这篇论文的问题定义清晰、实验设计规范，尤其对“CLIP 特征是否比传统 CNN 更适合生成式视频摘要”给出了有说服力的验证。虽然方法本身属于较稳健的工程整合而非强突破，但其结论对多模态生成任务中的表征选择和训练策略很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11934v1" target="_blank" rel="noopener noreferrer">Interactive State Space Model with Cross-Modal Local Scanning for Depth Super-Resolution</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: Mamba做跨模态深度超分</p>
+<p><strong>筛选理由</strong>: 任务较专，方法新颖但通用性有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文将 Mamba/状态空间模型首次系统性引入 Guided Depth Super-Resolution，并提出 Interactive State Space Model，在保持线性复杂度的同时完成跨模态全局建模。其关键在于 Cross-Modal Local Scanning：通过对 RGB 与深度特征做通道重排与 patchify，使语义相关的跨模态通道在扫描序列中靠近，从而增强长程依赖中的语义交互。另一个创新点是 Cross-Modal Matching Transform，通过显式计算跨模态相似性并选择最相关特征进行融合，进一步提升 RGB 对深度重建的有效指导能力。</p>
+<p><strong>方法</strong>: 整体框架是一个 U-shaped 编解码网络，输入为上采样后的低分辨率深度图和高分辨率 RGB 图，二者先经过卷积投影到共享特征空间，再通过多层 Mamba Block 进行多尺度编码与解码。每个 Mamba Block 包含 ISSM、FFN 和 CMMT：ISSM 先做归一化、线性映射和深度卷积，再通过跨模态局部扫描机制将 RGB/Depth 特征联合送入 selective scan 进行线性复杂度的全局建模；随后用门控方式增强有效响应。CMMT 则在 FFN 后显式构建跨模态相似度矩阵，挑选最相关的 RGB 或 Depth 特征与当前模态融合，实现更强的双向匹配与补充。最终网络预测深度残差，并与双三次上采样深度相加得到高分辨率输出。</p>
+<p><strong>实验</strong>: 在 Middlebury、Lu 和 NYU-v2 三个基准上，论文在 ×4/×8/×16 多个放大倍率下取得了具有竞争力的结果，尤其在 NYU-v2 ×4 上相较此前最佳方法 DuCos 获得约 10.38% 的 RMSE 降低。可视化结果显示，该方法在边界、结构细节和整体几何一致性上更接近真实深度。消融实验进一步验证了 ISSM 与 CMMT 都是有效组件，其中以深度为主模态的跨模态匹配增益更明显，也符合任务目标本身。</p>
+<p><strong>Deep理由</strong>: 这篇工作在思路上较新，把 Mamba 与跨模态交互结合到深度超分中，具有一定启发性，尤其适合关注高效多模态建模的研究者。不过实验优势总体属于“稳健提升”而非压倒性领先，方法描述中部分细节也仍略显粗糙，因此更适合作为值得跟进的推荐阅读，而非必读级里程碑。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11931v1" target="_blank" rel="noopener noreferrer">Learn to Think: Improving Multimodal Reasoning through Vision-Aware Self-Improvement Training</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 视觉感知自改进增强多模态推理</p>
+<p><strong>筛选理由</strong>: 抓住自训练痛点，方法实用且增益明显</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文指出当前 MLLM 自我改进训练存在两个被系统忽视的关键问题：数据不均衡（简单样本被过度训练、困难样本缺乏有效监督）和语言先验偏置（推理时依赖文本惯性而忽视视觉证据）。为此提出 VISTA，通过“prefix resampling”重用失败轨迹中的正确前缀来补足困难样本，并设计无需双前向传播的 Vision-aware Attention Score (VAS) 来筛除视觉幻觉式正确答案，从数据数量与数据质量两个维度同时提升多模态推理训练。</p>
+<p><strong>方法</strong>: VISTA 包含两个核心模块。第一，prefix resampling 会在错误推理轨迹中定位“关键错误 token”，保留其之前的部分正确推理前缀，并基于该前缀重新采样后续推理，从而更高效地产生困难样本的正确解。第二，VAS 从模型中间层注意力中统计输出推理 token 对视觉 token、指令 token 和 system prompt token 的注意力分配，用视觉占比衡量该推理是否真正依赖图像证据；低 VAS 的“答对但看错/没看图”的样本会被过滤。最后，保留下来的高质量样本可统一用于 SFT、DPO 甚至 GRPO 等多种后训练范式。</p>
+<p><strong>实验</strong>: 实验覆盖 Qwen2.5-VL、Qwen3-VL、InternVL3 等 5 个模型，以及医学、数学、科学问答、图表理解等 5 类任务。结果显示，VISTA-SFT 在 Qwen2.5-VL-3B 上最高带来 +13.66% 平均提升，在多个设置下优于 ReSTEM、R3V、IRPO，甚至部分场景超过使用外部大模型蒸馏的 SFT-Oracle。更重要的是，VISTA 在 IllusionBench 和多个 OOD 基准上显著减轻视觉幻觉并提升泛化，说明它不仅提高分数，也确实改善了视觉 grounding。</p>
+<p><strong>Deep理由</strong>: 这篇工作对多模态自我改进训练中的核心瓶颈给出了非常清晰且实用的诊断，并提出了低成本、可迁移、实验上显著有效的解决方案。对于做 MLLM reasoning、self-training、hallucination mitigation 或 post-training 的研究者，这是一篇很有参考价值的方法论文。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11919v1" target="_blank" rel="noopener noreferrer">STAGE: Tackling Semantic Drift in Multimodal Federated Graph Learning</a></h3>
+<p class="meta">方向: FL/MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 解决多模态联邦图学习语义漂移</p>
+<p><strong>筛选理由</strong>: 问题新且实用，方法清晰，实验较全面</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把多模态联邦图学习（MM-FGL）的主要瓶颈从传统的 Non-IID/参数漂移，提升为更本质的“语义漂移（semantic drift）”问题：不同模态客户端在协作前就可能对同一概念形成不可比表示。基于此，作者进一步提出一条完整失败链——语义漂移、伪对齐（pseudo-alignment）和传播诱导漂移（propagation-induced drift）——并据此设计了 protocol-first 的 STAGE 框架，先做跨客户端语义校准，再控制图传播放大效应。</p>
+<p><strong>方法</strong>: STAGE 分成两个有明确先后顺序的阶段。第一阶段是语义校准：先用冻结的全局锚点库把各客户端的多模态特征投影为锚点分布，再通过服务器维护的全局锚原型（GAP）进行对比式校准，并配合最大熵正则避免锚点塌缩。第二阶段是传播控制：客户端将局部“结构-语义冲突”压缩成低维 sketch 上传，服务器中的 meta-controller 生成每个客户端的传播温度/先验，从而抑制残余语义不一致在 GNN 消息传递中的放大。整体上，它不是直接对齐参数，而是对齐“可通信的语义协议”。</p>
+<p><strong>实验</strong>: 实验覆盖 8 个多模态图数据集、5 类任务（节点分类、链路预测、模态检索、G2Text、G2Image），STAGE 在整体上稳定优于 FedAvg、FedProto、FedLap、FedSPA、FedIIH、FedMVP、FedMAC 等强基线。论文还通过消融实验验证了冻结语义锚库、GAP 校准、最大熵投影和 meta-controller 都是关键组件；同时在特征漂移增强、模态噪声注入和客户端碎片化设置下，STAGE 仍保持更强鲁棒性。另一个亮点是通信效率高：作者报告每轮通信载荷相比参数共享类方法可降低 100× 以上。</p>
+<p><strong>Deep理由</strong>: 这篇工作对 MM-FGL 的问题定义非常到位，不只是提出新方法，更清晰地揭示了多模态联邦图学习为何会失败。若你关注联邦图学习、多模态协作或语义对齐机制，这篇论文在问题建模、方法设计和实验论证上都很有参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11867v1" target="_blank" rel="noopener noreferrer">When Brains Disagree: Biological Ambiguity Underlies the Challenge of Amyloid PET Synthesis from Structural MRI</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: MRI合成淀粉样PET受生物歧义限制</p>
+<p><strong>筛选理由</strong>: 问题定义深刻，结论实用，但偏医学垂直</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 这篇论文的核心创新不在于提出更复杂的生成网络，而在于首次以“可控实验”的方式验证：MRI 到 amyloid PET 合成表现不稳定的根源，是阿尔茨海默病中淀粉样蛋白沉积与神经退行性变在生物学上的时序解耦，从而导致映射本质上存在 one-to-many 的歧义。作者进一步证明，这种限制来自数据分布与缺失生物信息，而不是模型容量不足；当引入血浆生物标志物后，映射稳定性和诊断性能都显著恢复。</p>
+<p><strong>方法</strong>: 作者设计了两个层层递进的验证实验。第一部分将 ADNI 中的 MRI-PET 配对样本按 amyloid 状态（A+/A-）和神经退行性变状态（N+/N-）分层，分别构造 Baseline（全数据）、Concordant（A-/N- 与 A+/N+）和 Discordant（A-/N+ 与 A+/N-）三种训练分布，在相同预处理、相同分割和相同测试集下比较 pix2pix 与 3D latent diffusion 两类标准合成模型。第二部分在 MRI-only baseline 上加入血浆 biomarkers（pT217、Aβ42、Aβ40、NfL、GFAP），通过 FiLM 调制 U-Net bottleneck，测试外源分子信息能否补全 MRI 中缺失的 amyloid 相关信号。评估同时覆盖图像质量指标（PSNR、SSIM）和临床相关指标（皮层 amyloid 负荷相关性、A+/A- 分类性能）。</p>
+<p><strong>实验</strong>: 实验最有说服力的地方在于：无论是 pix2pix 还是 LDM，只要训练数据处于“生物学一致”的子分布内，模型都能学到较强映射；但一旦把 concordant 与 discordant 状态混合，性能明显坍塌，说明问题不在架构而在任务本身的生物歧义。更关键的是，在加入血浆标志物后，MRI+plasma 模型在同一测试集上的 balanced accuracy 从 64.5% 提升到 85.3%，amyloid 负荷相关性从 0.21 提升到 0.75，同时在 concordant/discordant 子集上都保持稳定，强有力支持了“生物信息补全可解歧义”的结论。</p>
+<p><strong>Deep理由</strong>: 这是少见的从疾病生物学与可辨识性角度反思医学影像生成任务的工作，结论对 amyloid PET 合成乃至更广泛的跨模态医学影像预测都很有启发性。如果你做的是医学影像生成、AD 诊断或多模态建模，这篇论文非常值得读，因为它指出了“加大模型”未必能解决“信息缺失”的根本问题。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11864v1" target="_blank" rel="noopener noreferrer">Very Efficient Listwise Multimodal Reranking for Long Documents</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 高效长文档多模态列表重排</p>
+<p><strong>筛选理由</strong>: 兼顾效果与时延，工程价值高，方法较务实</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 ZipRerank，针对长文档多模态 listwise reranking 的两大延迟瓶颈同时下手：一方面用 query-aware 的早期交互机制裁剪视觉 token，另一方面用 single-logit/single-token scoring 替代传统自回归生成式排序，从而把排序压缩到单次前向中完成。更重要的是，它不仅做推理加速，还设计了“两阶段训练 + 教师蒸馏 soft ranking”范式，使这种高效推理形式在精度上仍能逼近甚至超过现有最强多模态 reranker。</p>
+<p><strong>方法</strong>: 方法上，ZipRerank 先在大规模文本重排数据上做 Stage 1 预训练：把文本 passage 渲染成图像，学习通用的 listwise 排序能力，并联合语言建模损失与 RankNet 损失。随后在 Stage 2 用 MMDocIR 这类多模态数据做微调，但由于真实标签通常只有单个正例，作者引入强 VLM 教师生成候选列表软排序，并用几何衰减的 soft-ranking loss 学习噪声鲁棒的排序分布。推理时，模型先从 query hidden states 与 image tokens 的最大余弦相似度中选出每页最相关的 top-ρ token，再基于候选页的单 token ID 直接读取首步 logits 排序，避免多步解码。</p>
+<p><strong>实验</strong>: 在 MMDocIR 上，ZipRerank 相比 MM-R5 在 Recall@3 和 Recall@5 上整体更强，同时把 LLM reranking latency 从约 3.8s 降到约 0.36s，达到约 10× 加速；相对 GPT-5-mini 这类强教师，成本差距更达到数十倍。消融实验表明，第一阶段预训练、第二阶段多模态微调、soft-ranking loss 与 single-logit decoding 都是有效组件，其中 single-logit 几乎不掉点却可带来 6 倍以上推理提速。作者还在 ViDoRe 英文子集上验证了泛化性，ZipRerank 在 listwise reranker 中取得最优 NDCG@5。</p>
+<p><strong>Deep理由</strong>: 这篇论文在“长文档多模态重排如何真正落地”这个问题上给出了非常务实且完整的答案，尤其适合做 M-RAG、文档检索和工业级 reranking 的研究者参考。若你更关注极致 SOTA 精度而非延迟，它未必最惊艳；但若你关心效果-效率权衡，这篇非常值得读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11856v1" target="_blank" rel="noopener noreferrer">UniVLR: Unifying Text and Vision in Visual Latent Reasoning for Multimodal LLMs</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 统一视觉潜空间多模态推理</p>
+<p><strong>筛选理由</strong>: 思路新颖且高效，值得关注验证泛化</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: UniVLR 的核心创新在于把“文本推理链 + 辅助视觉证据”统一映射到同一个视觉工作空间中，而不再像以往方法那样在推理时交替生成显式文本 CoT 和视觉 latent。它进一步证明：MLLM 的中间推理不一定要保留为语言 token，也可以先渲染成可读图像，再压缩成紧凑的视觉 latent 序列，从而实现更统一、更高效的视觉潜推理。</p>
+<p><strong>方法</strong>: 方法上，UniVLR先将每一步文本推理渲染成图像，并与对应的裁剪图、标注图、草图等辅助图像拼接成统一 visual canvas，再用冻结的视觉编码器提取特征并压缩为固定长度 latent target。训练分两阶段进行：第一阶段用纯辅助图像做视觉 latent grounding，先教会模型生成有语义的视觉潜变量；第二阶段改用“文本渲染 + 辅助图像”的统一画布作为监督目标，完成 text-vision unified alignment。推理时模型不再生成中间文本 CoT，也不再调用外部工具，而是只生成一小段连续视觉 latent token，最后直接输出答案。</p>
+<p><strong>实验</strong>: 实验上，UniVLR 在 V*、HRBench4K/8K、MME-RealWorld-Lite 等感知与视觉推理基准上整体优于 LVR、Monet、SkiLa、CoVT 等视觉 latent 推理方法。论文最亮眼的结果是：在去掉显式中间文本推理后，平均准确率仍提升约 5.4%，同时生成的推理 token 数减少约 15.2 倍。额外的 hidden-state 可视化和因果扰动实验还表明，其 latent token 更接近视觉表征空间，且确实承载了任务相关的推理信息。</p>
+<p><strong>Deep理由</strong>: 这篇工作提出了一个很有代表性的范式转向：从“多通道交错推理”走向“统一视觉潜空间推理”。如果你关注 MLLM 的 latent reasoning、thinking with images 或高效多模态推理，这篇论文的思想和实验都很值得重点跟进。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11840v1" target="_blank" rel="noopener noreferrer">Selection, Not Fusion: Radar-Modulated State Space Models for Radar-Camera Depth Estimation</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 雷达调制Mamba做深度估计</p>
+<p><strong>筛选理由</strong>: 融合点新颖，提速且SOTA，具参考价值</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心观点非常鲜明：在雷达-相机深度估计中，关键不应是传统的特征级 fusion，而应让雷达直接进入状态空间模型的 selection 机制。作者提出 Radar-Modulated Selection（RMS），只用雷达去调制 Mamba selective scan 中的步长 Δ 和读出 C，而保持状态动力学 A 与输入投影 B 仍由图像主导，从而让雷达影响“信息保留与传播”而不破坏视觉主干。更重要的是，该调制采用零初始化，保证模型初始时严格退化为预训练的 image-only Mamba，这个设计在工程和理论上都很漂亮。</p>
+<p><strong>方法</strong>: 整体框架 SemoDepth 由图像编码器、雷达图结构提取器以及多尺度解码器组成。图像端使用 ResNet-34 提取金字塔特征，雷达端先通过 PCA-GM 图网络将极稀疏雷达点编码为稠密雷达特征图，再在各尺度形成 radar pyramid。核心模块 MVSP（Multi-View Scan Pyramid）在不同分辨率采用不同雷达调制策略：粗尺度使用全局四方向 RMS 建模长程依赖，中尺度只在雷达点附近窗口做 RMS，细尺度则退化为低成本 FiLM。训练时结合稠密但噪声较大的累积监督和稀疏但干净的单帧 LiDAR 监督，以兼顾鲁棒性和精度。</p>
+<p><strong>实验</strong>: 在 nuScenes 上，SemoDepth 在 0–50/70/80 m 三个区间的 MAE 分别相对前最好方法下降 34.0%、29.9%、29.9%，同时 RMSE 也全面刷新 SOTA，并且单帧延迟仅 26.8 ms，是公开可比方法中最快的。与作者复现的 FusionMamba 相比，在保持同类 Mamba 主干和相近参数预算下，SemoDepth 仍有明显优势，说明收益确实来自“in-scan selection”而不是单纯换 backbone。消融实验也很有说服力：在 RMS 之上继续做 pre-scan fusion 几乎没有收益，支持了“selection can replace fusion”的中心论断。</p>
+<p><strong>Deep理由</strong>: 这篇工作不只是提出一个性能更强的模型，更重要的是给出了一个很有启发性的设计范式：对多模态状态空间模型而言，跨模态交互可以发生在 selection dynamics 而非 feature fusion。无论你关注自动驾驶深度估计、Mamba 多模态建模，还是稀疏传感器与稠密视觉融合，这篇论文都值得认真读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11824v1" target="_blank" rel="noopener noreferrer">REFNet++: Multi-Task Efficient Fusion of Camera and Radar Sensor Data in Bird&#x27;s-Eye Polar View</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 相机雷达极坐标BEV高效融合</p>
+<p><strong>筛选理由</strong>: 融合思路实用，兼顾效率与多任务</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出 REFNet++，将相机前视图到 BEV 极坐标域的映射由手工几何变换改为通过变分编码器-解码器隐式学习，同时让雷达分支从原始 RD 频谱中恢复角度信息生成 RA 特征，从而在统一的 Bird’s-Eye Polar 域内实现高效融合。相比前作 REFNet，该方法进一步扩展为检测+可行驶区域分割的多任务框架，并强调在保持性能的同时降低预处理与训练成本。</p>
+<p><strong>方法</strong>: 整体框架由两个并行分支组成：雷达分支以 16 天线复数 RD 张量为输入，经 MIMO pre-encoder 与残差编码器-解码器学习 RA 表征；相机分支以降采样后的前视 RGB 图像为输入，通过带重参数化技巧的变分编码器-解码器学习从透视视角到 BEV 极坐标视角的隐式转换。两路特征在检测头与分割头前通过维度对齐和通道拼接进行融合，其中检测头输出车辆存在概率及距离/角度回归，分割头输出 drivable free-space 概率图。训练时采用检测 focal loss + smooth L1 与分割 BCE 的联合多任务损失。</p>
+<p><strong>实验</strong>: 在 RADIal 数据集上，REFNet++ 单任务检测达到 AP 96.92、AR 90.68、F1 93.70，并在 RE 0.11m、AE 0.09° 上与最优结果持平或领先；多任务检测 F1 也达到 92.67，说明联合学习没有明显拖累检测性能。更突出的是自由空间分割，单任务 mIoU 达到 88.13%，多任务仍有 87.58%，显著优于 REFNet 的 85.16/84.84；同时模型参数量约 6.6M、GPU 占用约 2.06GB，体现了较好的精度-效率折中。</p>
+<p><strong>Deep理由</strong>: 这篇工作在“原始雷达 + 相机 BEV 极坐标融合”这一相对细分但很实用的方向上做出了清晰改进，尤其是把手工视角变换替换为可学习的隐式映射，并在分割任务上取得了明显收益。不过其验证主要基于 RADIal 单数据集，任务类别也较窄，因此更适合作为高效多模态融合设计的参考，而不是领域内的决定性里程碑。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11782v1" target="_blank" rel="noopener noreferrer">Urban Risk-Aware Navigation via VQA-Based Event Maps for People with Low Vision</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 用VQA事件地图做低视力导航</p>
+<p><strong>筛选理由</strong>: 应用明确，数据集有价值，但方法偏系统集成</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新在于把面向低视力人群的城市导航，从“单任务视觉检测器拼接”转向“基于VQA/MLLM的统一查询式风险感知框架”。作者提出了三级层次化问题结构与加权风险评分机制，能够将图像中的多类危险语义自动汇总为可导航的街段级风险事件地图；同时还构建了覆盖20个城市、6大洲的多样化评测数据集，用于系统验证跨地域泛化能力。</p>
+<p><strong>方法</strong>: 方法上，系统先对行进过程中的关键帧进行三级层次化提问：第1层判断是否存在楼梯、路口、施工、障碍物、拥挤、车辆、地面异常、非人行道等主类风险，第2/3层仅在命中后继续追问细节，以降低冗余查询并提升语义粒度。随后，模型对每个一级风险类别输出二值回答，并按风险等级赋予不同权重，其中施工、地面异常、非人行道被视为最高风险。最后，作者将图像级风险分数聚合到GPS对应的道路片段上，采用保守的最大值策略生成四级安全标签的风险事件地图，用于路径规划与风险可视化。</p>
+<p><strong>实验</strong>: 实验上，作者比较了ViLT、LLaVA、InstructBLIP和Qwen-VL四类VQA模型，结果显示生成式MLLM整体显著优于分类式方法，其中Qwen-VL取得最优综合表现（Accuracy 0.77，F1 0.69，Recall 0.70）。此外，Qwen-VL在不同洲别上的性能较稳定，说明方法具备一定跨地域泛化性；但在最关键的高风险类别，如非人行道、施工和地面异常上，召回率仍明显偏低，这也揭示了实际部署前的主要瓶颈。</p>
+<p><strong>Deep理由</strong>: 这篇工作选题很有价值，系统设计完整，且把MLLM真正落到助盲导航中的“风险地图构建”这一更实用的目标上，具备明显方法论启发性。不过当前最危险类别的检测性能仍不足，离安全关键场景下的可靠部署还有距离，因此更适合作为值得关注的研究型工作，而非已经成熟可用的方案。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11753v1" target="_blank" rel="noopener noreferrer">Towards Visually Grounded Multimodal Summarization via Cross-Modal Transformer and Gated Attention</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 分层跨模态融合做图文摘要</p>
+<p><strong>筛选理由</strong>: 方法完整但偏工程，需看实验增益与基线强度</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了一个统一的多模态摘要框架 SPeCTrA-Sum，把“文本摘要生成”和“代表性图片选择”联合建模，而不是把图像选择当作后处理步骤。其最核心的两点创新是：一是用 Deep Visual Processor 在与语言模型对应的深度上逐层对齐视觉表示，缓解浅层视觉特征与深层语言表征之间的语义鸿沟；二是用 DPP 教师蒸馏出的 Visual Relevance Predictor，在兼顾相关性与多样性的前提下高效选择图片子集。</p>
+<p><strong>方法</strong>: 方法以 LLaVA-OneVision/Qwen2 为骨架，先通过 Perceiver-style Vision Sampler 将每张图压缩成少量高信息量视觉 token，再送入 DVP 做层级式视觉表征精炼。随后在语言解码器的若干层插入 gated cross-attention，使不同深度的文本隐藏状态与对应深度的视觉表示进行受控融合。除此之外，模型还引入 DPP-based teacher 生成图像软选择标签，并训练轻量 VRP 学习这些边际包含概率，从而在推理时实现无需文本条件的快速图像筛选。整体训练目标由摘要生成损失、图文对齐损失和 DPP 蒸馏损失共同组成。</p>
+<p><strong>实验</strong>: 在 MSMO 数据集上，DVP 取得了 44.20/20.77 的 ROUGE-1/2，文本摘要性能接近甚至基本追平当前强基线 ViL-Sum，同时在图像选择精度 IP 上达到 74.03，明显优于 ViL-Sum 的 66.27，并接近 SITA 的 76.41。消融实验显示，仅增强视觉处理并不会自动提升文本指标，但加入多目标训练后，ROUGE 与视觉选择质量能同时改善。人工评测也表明模型在图像相关性、图像多样性和整体多模态质量上获得较高评分，说明其视觉 grounding 确实带来了可感知收益。</p>
+<p><strong>Deep理由</strong>: 这篇论文在多模态摘要中提出了较完整且结构清晰的联合建模方案，尤其适合关注视觉 grounding、跨模态融合和图像选择机制的研究者参考。不过其实验主要基于 MSMO，提升幅度相对稳健但并非颠覆性，加上一些关键细节放在附录、通用性仍需更多数据集验证，因此更适合作为“值得认真读”的近期方法，而非绝对必读经典。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11727v1" target="_blank" rel="noopener noreferrer">Allegory of the Cave: Measurement-Grounded Vision-Language Learning</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 将VLM输入前移到相机测量域</p>
+<p><strong>筛选理由</strong>: 问题新颖，增益明确，但场景较专门</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文把“VLM 看什么”从默认的后 ISP RGB，提升为一个一等公民问题：作者指出很多视觉-语言错误并非推理失败，而是关键证据在 RGB 渲染阶段就已被裁剪、压缩或量化丢失。基于此，论文提出 measurement-grounded vision-language learning，让模型直接面向更接近传感器测量的表示进行 grounding。进一步地，作者不仅换输入，还把相机元数据条件化和多曝光代理监督整合进统一框架 PRISM-VL，形成了较完整的测量域学习范式。</p>
+<p><strong>方法</strong>: PRISM-VL 以 RAW 派生的线性三通道 Meas.-XYZ 作为模型输入，替代传统 sRGB，从而保留更多低照度、HDR 和曝光不均场景中的原始证据。为了让模型正确解释这些测量值，方法在两条路径注入相机元数据：一是在问题文本中附加 ISO、曝光时间、光圈等信息，二是在视觉编码器后层加入 residual metadata conditioning。由于人工/自动标注更容易在可视化 RGB 上完成，作者提出 BracketSup，用同一 RAW 的多曝光 RGB 代理生成并聚合问答监督，再把该监督回挂到对应的 Meas.-XYZ 样本上进行训练。</p>
+<p><strong>实验</strong>: 作者构建了一个 150K 指令微调数据集和 2,183 条 held-out benchmark，重点覆盖低光、HDR、可见性敏感和幻觉敏感场景。结果上，PRISM-VL-8B 相比 RGB Qwen3-VL-8B 达到 0.6120 BLEU、0.4571 ROUGE-L 和 82.66% LLM-Judge，分别提升 +0.1074、+0.1071 和 +4.46 个百分点；甚至 PRISM-VL-2B 在多项指标上已超过 RGB 版 8B。消融还表明主要收益来自 measurement-domain 输入本身，BracketSup 对低照与 HDR 尤其有效，而相机元数据带来稳定但相对次要的增益。</p>
+<p><strong>Deep理由</strong>: 这篇工作提出了一个非常值得重视的新视角：VLM 的误差可能源于观测接口而非纯粹的推理能力不足。对于多模态、机器人感知、自动驾驶、低照/HDR 感知等方向，它都提供了很强的方法启发和新的研究切入点。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11705v1" target="_blank" rel="noopener noreferrer">CAST: Collapse-Aware multi-Scale Topology Fusion for Multimodal Coreset Selection</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 多尺度拓扑融合的多模态子集选择</p>
+<p><strong>筛选理由</strong>: 问题重要，方法新颖，但偏数据选择</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文把多模态数据选择中的两个关键痛点说清楚了：一是图像/文本在样本级信息量上存在细粒度失衡，二是传统单频段或打分式采样难以保证子集对原始分布的结构性保真。为此，作者提出了 collapse-aware 的跨模态拓扑修正、基于 diffusion wavelet 的多尺度拓扑匹配，以及面向稠密区域去冗余的局部软关系覆盖（LSRC），三者组合形成一个较完整的多模态 coreset selection 框架。</p>
+<p><strong>方法</strong>: CAST首先分别为图像模态和文本模态构建k-NN拓扑图，并通过局部坍塌感知指标检测某一模态中邻域结构退化的位置，再利用另一模态的相对健康结构进行有界修正。随后，方法将两个 refined 图投影到 diffusion wavelet 多尺度响应空间，在不同拓扑尺度上自适应融合模态信息，得到统一潜在拓扑图。基于该统一图，CAST优化一组连续 proxy，通过多尺度 wavelet 分布匹配、边界保护和覆盖损失，使 proxy 同时贴合全局分布与局部高频结构。最后再引入 LSRC，让 proxy 不只做几何最近邻覆盖，还能通过关系传播实现邻域级软覆盖，减少稠密簇中的冗余选样。</p>
+<p><strong>实验</strong>: 在 Flickr30K 和 MS-COCO 的图文检索任务上，CAST在不同压缩预算下整体优于随机、FAST、ViSA、PreSel 等选择基线，尤其在文本检索指标上优势明显。作者还展示了较强的跨架构泛化：即使选择阶段不依赖下游模型，CAST在 ViT、ResNet、NFNet 等不同骨干上都更稳健。除此之外，在 LLaVA 指令数据子集微调到 Qwen2-VL-2B 的实验中，CAST相对随机采样在 GQA、ScienceQA、MMBench、TextVQA、POPE 上也带来稳定提升，同时能耗远低于多模态数据合成方法。</p>
+<p><strong>Deep理由</strong>: 这篇工作的问题定义很准确，方法设计也有较强完整性，把图拓扑、多尺度频域分析和覆盖式采样结合得比较自然。若你关注多模态数据压缩/数据选择，这是值得读的；但论文目前更偏方法堆叠，且部分实验设定与附录细节仍需要进一步核实，因此我给“推荐”而非“必读”。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11693v1" target="_blank" rel="noopener noreferrer">Measuring What Matters Beyond Text: Evaluating Multimodal Summaries by Quality, Alignment, and Diversity</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 统一评测多模态摘要质量框架</p>
+<p><strong>筛选理由</strong>: 评测框架实用，但方法偏整合创新有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文的核心创新是提出 MM-Eval，一个面向 MSMO（多模态输入、多模态输出摘要）的统一评测框架，把文本质量、图文对齐和图像多样性三类长期割裂的指标整合到同一体系中。相比只看 ROUGE 或 Image Precision 的传统做法，作者进一步用监督式聚合学习出各维度对人类总体偏好的贡献权重，并揭示了新闻场景下“文本主导、事实一致性门控”的评价结构。</p>
+<p><strong>方法</strong>: MM-Eval 由三大支柱组成：第一，文本质量部分用 OpenFActScore 做原子事实级一致性验证，并结合 G-Eval 评估相关性、连贯性和流畅性；第二，图文对齐部分采用 MLLM-as-a-Judge，对所选图片是否真正支持摘要内容进行打分；第三，图像多样性部分用 Truncated CLIP Entropy 衡量图像集合在语义嵌入空间中的冗余与覆盖情况。最后，作者在 mLLM-EVAL 基准上用两阶段 Ridge Regression 对各子分数进行归一化聚合，得到最终 MM-Eval 分数，使其尽可能贴合人类整体质量判断。</p>
+<p><strong>实验</strong>: 实验中，MM-Eval 相比等权聚合基线显著提升了与人工评分的一致性，达到 Kendall’s τ=0.374、Spearman’s ρ=0.514，说明学习式聚合优于拍脑袋式加权。更有价值的是，作者通过分布分析、消融实验和额外人工评测证明：事实一致性是影响总体质量的关键门槛，而图文相关性与图像多样性虽然单独相关性偏弱，但在联合建模中能显著提升与人类排序的一致性。</p>
+<p><strong>Deep理由</strong>: 这篇论文对多模态摘要评测提出了一个相当清晰且实用的统一框架，尤其适合关注评测方法、事实一致性与图文对齐问题的研究者。不过其实验主要验证于新闻领域，整体相关性仍属中等，视觉指标本身也还有噪声，因此更像是一篇扎实的评测框架论文，而不是决定性突破。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11680v1" target="_blank" rel="noopener noreferrer">ShapeCodeBench: A Renewable Benchmark for Perception-to-Program Reconstruction of Synthetic Shape Scenes</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 可再生图像到绘图程序重建基准</p>
+<p><strong>筛选理由</strong>: 基准设计清晰可复现，但更偏评测资源</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了 ShapeCodeBench，一个面向“从图像重建可执行程序”的可再生（renewable）合成基准：输入是渲染图，输出是 DSL 绘图程序，并通过确定性重渲染进行自动评分。其关键创新不在任务本身新颖，而在于把“种子驱动的数据生成 + 安全受限解析器 + 渲染闭环评测 + 可刷新测试集”整合成一套低成本、抗污染、可审计的 benchmark 工作流。</p>
+<p><strong>方法</strong>: 作者设计了一个仅含 4 个图元的 ShapeCodeBench DSL，在 512×512 黑白画布上绘制空心/实心圆与方形，并用受限 Python AST 解析器保证输出程序安全且可验证。数据集由 seeded RNG 自动生成，通过控制形状数量、尺寸、描边、裁剪和重叠程度构造 easy/medium/hard 三档难度。评测时将模型预测程序解析并重渲染，与目标图像比较 exact match、pixel accuracy、foreground IoU，同时记录 parse success 和 execution success。作者还提供了 provider-agnostic runner，完整保存 prompt、原始输出、归一化结果和逐样本 artifact，支持复现实验与快速刷新 held-out split。</p>
+<p><strong>实验</strong>: 在 150 个样本的 eval_v1 上，作者比较了空程序、经典 CV 启发式，以及 Claude Opus 4.7 和 GPT-5.5 的四种推理配置。结果显示明显的分层 crossover：经典启发式在 easy 档 exact match 最强（0.26），但遇到重叠场景迅速失效；GPT-5.5 extra_high 在 foreground IoU 上整体最佳（均值 0.865，分档最高可到 0.87），说明其能大致恢复空间结构，但 exact match 仍然很低（最佳多模态仅 0.027），暴露出参数精度而非语义识别才是当前主要瓶颈。</p>
+<p><strong>Deep理由</strong>: 这篇论文的 benchmark 设计思路非常扎实，尤其适合关注多模态推理、程序归纳、可验证评测和 benchmark contamination 问题的研究者。虽然任务设定较窄、现实性有限，但它提供了一个非常干净的诊断平台，对分析模型“看懂了但写不准”的失效模式很有价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11675v1" target="_blank" rel="noopener noreferrer">Accounting for Missed Events in the Bayesian Modeling of IP3R Multimodal Gating</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 贝叶斯校正漏检重塑IP3R门控模型</p>
+<p><strong>筛选理由</strong>: 方法扎实，但偏离主流AI机器人应用</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 本文的核心创新是在 IP3R 单通道门控的贝叶斯建模中，将 missed events（由于采样分辨率不足而漏检的短暂开闭事件）以精确似然修正的方式直接纳入推断过程，而不是事后校正或完全忽略。作者证明，这一修正不仅改变了快时间尺度速率常数的估计，还显著改变了模型选择结论：Park 和 Drive 两种模态最终都更支持同一个 3 状态拓扑，只是参数不同。该结果把“模态切换”从‘拓扑变化’重新解释为‘同一拓扑下闭态稳定性重分配’，在机制上更简洁也更合理。</p>
+<p><strong>方法</strong>: 方法上，作者首先对 Wagner &amp; Yule 的 IP3R2 patch-clamp 原始记录进行阈值化理想化，并用 Siekmann 等人的 RJMCMC 分段方法识别 Park/Drive 模态切换。随后，对每个模态内部的动力学，使用连续时间马尔可夫链（CTMC）建模，并调用 DCPROGS/HJCFIT 框架，把 Hawkes 等人提出的 missed-event exact likelihood 嵌入贝叶斯 MCMC 推断中。作者在四种候选拓扑之间用 BIC 做模型选择，再将选出的模态内模型与模态间转移率拼接成分层马尔可夫模型，最后拟合 Ca2+ 对 Park↔Drive 转移的调控规律。</p>
+<p><strong>实验</strong>: 实验上最重要的发现是：一旦考虑 missed events，原先文献中 Park/Drive 对应不同拓扑的结论被推翻，绝大多数 Ca2+ 条件下两种模态都更支持 topology (b) 的 3 状态模型。其次，修正后推断得到的快转移速率明显更大，说明传统方法系统性低估了短暂事件相关速率。最后，作者发现 Ca2+ 主要调控的是 Drive→Park 的模态间转移率，而非模态内速率；中等 Ca2+ 浓度会显著压低该转移，使通道主要停留在高活性的 Drive 模态。</p>
+<p><strong>Deep理由</strong>: 这篇论文对单通道离子通道建模中的一个长期技术盲点——missed events——给出了严谨且有实质影响的处理，直接改变了 IP3R 模态门控的模型结构解释。若你关注贝叶斯生物物理建模、离子通道动力学或多模态随机系统建模，这篇文章非常值得读。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.11663v1" target="_blank" rel="noopener noreferrer">Human-Grounded Multimodal Benchmark with 900K-Scale Aggregated Student Response Distributions from Japan&#x27;s National Assessment of Academic Ability</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 日本中考多模态真人基准</p>
+<p><strong>筛选理由</strong>: 真实考试+90万作答分布，评测价值高</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 该论文最大的创新在于提出了一个基于日本全国学力・学习状况调查真实试题构建的人类落地（human-grounded）多模态基准，而不是依赖合成题或人工筛选题库。更重要的是，它不仅保留了原始试卷中的图表、版式、纵排日文等真实教育场景特征，还引入了约 90 万学生的聚合答题分布，使模型评测第一次能够与大规模真实学生群体表现直接对齐。论文因此把“多模态理解评测”推进到了“教育真实性 + 人类参照 + 误答分布建模”三个层面。</p>
+<p><strong>方法</strong>: 作者从 2022 年日本中学三年级全国学力调查的国语、数学、理科公开试题与官方报告出发，先将复杂 PDF 试卷手工转写为保留阅读顺序的 Markdown，并抽取题目相关图像、公式和子题结构，再自动转换为统一的 JSON/JSONL 数据格式。数据中不仅包含题干、图像路径、答案形式、标准答案和评分条件，还纳入官方报告中的答题类型分布、正误示例以及各类学生作答比例。评测时针对选择题采用标签输出、针对开放题采用简答输出，并用准确率、字符级 F1、人工评审和 GPT-4o-as-a-judge 多种方式联合评估多模态大模型。</p>
+<p><strong>实验</strong>: 实验显示，不同模型在学科间表现差异显著：理科对视觉输入最敏感，图像能显著提升成绩；数学选择题整体较强，但开放题波动明显；国语则暴露出当前模型在纵排文本、汉字字形识别和精确引用上的明显短板。论文还做了去图像消融，发现总体上图像可带来 MC +0.061、开放题 F1 +0.050 的提升，说明该基准确实有效测到了视觉 grounding 能力。与此同时，LLM-as-a-judge 在理科和数学上与人工评分相关性较高，但在国语上几乎失效，揭示了自动评审在复杂日语教育任务中的局限。</p>
+<p><strong>Deep理由</strong>: 如果你关注教育评测、多模态基准或 human-grounded evaluation，这篇论文很有价值，因为它把模型能力放到了真实学生群体和真实考试环境中检验。虽然当前数据规模仍局限于单年、单国别，但其基准设计思路和“学生答题分布对齐”的评测范式非常值得参考。</p>
+</section>
+</article></section><section><h2>⚪ 可跳过（1）</h2><ul><li>MindMirror: A Local-First Multimodal State-Aware Support System for Digital Workers（系统集成型工作，算法与评测创新较弱）</li></ul></section>
+  </main>
+</body>
+</html>
