@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-05-22</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-05-22</h1>
+    <p class="summary">共 4 篇。🔴 必读 0，🟡 推荐 4，⚪ 可跳过 0。</p>
+    <section><h2>🟡 推荐（4）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.22493v1" target="_blank" rel="noopener noreferrer">Understanding Multimodal Failure in Action-Chunking Behavioral Cloning</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 解析多模态BC失效机理</p>
+<p><strong>筛选理由</strong>: 问题关键，机制清晰，但偏分析非通用方法</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文首次对 action-chunking behavioral cloning 中的“多模态失效”给出较系统的理论刻画，并明确指出两类主流多模态策略会因不同机制而塌缩：CVAE 类方法受 posterior-prior 正则约束，action-space 生成方法受 base-to-action 映射的 Lipschitz 平滑性约束。作者进一步把“模式保持”与可量化的条件互信息、Fano 下界、模式间隔和 Lipschitz 常数联系起来，提供了比单纯看 rollout 成功率更可解释的分析框架。</p>
+<p><strong>方法</strong>: 论文先形式化定义了 imitation learning 中的多模态性：同一观测对应多个彼此分离的有效动作模式。对 latent-variable policy，作者证明若要恢复示范中的模式身份，潜变量 Z 必须携带关于动作的条件信息 I(A;Z|S)；而常用 pointwise KL 正则会直接压缩这部分信息，β 过大时必然导致模式塌缩。对 action-space generative policy，作者把策略视为从高斯噪声到动作 chunk 的确定性传输映射，证明若该映射 Lipschitz 常数较小，就无法同时给多个相互分离的模式分配足够概率质量，因此多模态表达要么依赖尖锐过渡，要么产生离支撑的 bridge 区域。</p>
+<p><strong>实验</strong>: 实验在四个可控 2D 合成任务和 Push-T、UR3 BlockPush、Kitchen 等机器人基准上验证了理论。结果显示：KL-CVAE 随 β 增大，潜变量中的模式信息会显著下降并最终接近 0；而 diffusion/flow 类 action-space 方法虽然模式覆盖高，但在高模态任务中常通过无效 bridge 区域而非稳定模式切换来“勉强覆盖”多模态。另一个重要发现是，模式覆盖并不等于高任务成功率，说明“会采样多个模式”和“能执行有效轨迹”是两回事。</p>
+<p><strong>Deep理由</strong>: 如果你关注机器人模仿学习、ACT/CVAE、Diffusion Policy 或 flow matching 这类方法，这篇论文非常值得读，因为它解释了这些方法为什么会“看起来是多模态，实际上却失效”。它的价值不只在于提出结论，更在于给出了可迁移的分析视角，可直接指导模型设计与超参数选择。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.22446v1" target="_blank" rel="noopener noreferrer">Pre-VLA: Preemptive Runtime Verification for Reliable Vision-Language-Action and World-Model Rollouts</a></h3>
+<p class="meta">方向: VLA | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 为VLA执行前做动作预验证</p>
+<p><strong>筛选理由</strong>: 工程实用强，提升明确，但偏系统增强</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: Pre-VLA 的核心创新在于把“动作执行后再纠错”前移为“动作进入执行器或世界模型之前先验证”，从而同时服务于真实机器人执行安全和 world model rollout 可靠性。它提出了一个统一的轻量级运行时验证器，结合安全分类分支与 critic advantage 回归分支，并通过 Focal Loss、软阈值校准和失败回溯惩罚来处理类别不平衡与边界不稳定问题。</p>
+<p><strong>方法</strong>: 方法上，Pre-VLA 复用冻结的统一多模态 backbone，将语言指令、图像观测、本体状态和候选 action chunk 编码到同一表示空间，再通过 modality-aware pooling 分别提取各模态特征并拼接。随后，一个双分支轻量头同时输出动作通过概率和连续 advantage 分数，其中监督信号来自 PPO rollout 中构造的 safety-aware advantage 与二值安全标签。部署时，系统先用分类分支拦截高风险动作，在有限重采样预算内重新采样；若预算耗尽，则使用回归分支选择 advantage 最高的候选作为 fallback，以兼顾安全性、实时性与控制连续性。</p>
+<p><strong>实验</strong>: 在 LIBERO 上，Pre-VLA 将基线 RynnVLA-002 的四个 suite 平均闭环成功率从 30.79% 提升到 37.62%，并普遍减少任务执行步数，说明它不仅更安全，也更高效。离线动作判别方面，其测试集 F1 达到 0.8303、Accuracy 达到 0.9542，invalid action 的 false pass rate 仅 0.0200。论文还展示了 world model rollout 的可视化结果：加入 Pre-VLA 后，能够明显抑制错误动作导致的目标漂移、模糊和伪成功预测。</p>
+<p><strong>Deep理由</strong>: 这篇工作切中了 VLA/WM 落地中的一个真实痛点：生成动作不可靠却缺少前置验证机制，工程价值和系统意义都很强。虽然方法本身更偏“系统整合+训练目标设计”而非全新基础模型突破，但在 embodied safety/runtime verification 方向上具有较高参考价值。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.22413v1" target="_blank" rel="noopener noreferrer">From Recognition to Reasoning: Benchmarking and Enhancing MLLMs on Real-World Receipt Document Understanding</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 收据理解基准与强化优化框架</p>
+<p><strong>筛选理由</strong>: 基准真实且细粒度，方法实用，但任务较垂直</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文的核心创新有两点：第一，提出了 ReceiptBench——一个面向真实收据/票据理解的大规模基准，将任务从传统“识别字段”系统性提升为“感知—规范化—语义推理—结构解析”四层能力评测。第二，作者提出 Metric-Aware GRPO，把评测规则（如 JSON 结构合法性、字段缺失判断、算术一致性、列表匹配）直接转成强化学习奖励，显式抑制幻觉并提升财务场景下的逻辑一致性。</p>
+<p><strong>方法</strong>: 方法上，作者先构建了包含 10,656 张真实票据、19 个细粒度字段的人工标注数据集，并设计混合评测协议：简单字段用精确匹配，语义字段用 LLM Judge，结构化列表用 Hungarian matching。训练分为两阶段：第一阶段用严格 JSON schema 指令做 SFT，让模型学会按财务抽取规范输出；第二阶段用 GRPO 做对齐，把 TP/TN/FP/FN 映射为差异化奖励，其中对 hallucination 的 FP 给负奖励。这样模型不仅学会“看懂并抽取”，还学会“该答时答、不该编时不编”。</p>
+<p><strong>实验</strong>: 实验最亮眼的结果是：微调后的 Qwen3-VL-8B 在 ReceiptBench 上达到 0.7950 F1，显著超过 GPT-5（0.7076）和 Gemini-3-Pro（0.7373），说明领域对齐比单纯模型规模更关键。GRPO 进一步提升了 Qwen3-VL 的感知、规范化和推理能力，并明显降低复杂字段中的误报/幻觉；不过在 2B 小模型上出现奖励坍塌，也表明这种 RL 对齐方法存在容量门槛。</p>
+<p><strong>Deep理由</strong>: 这篇工作兼具高质量基准构建和方法创新，对文档智能、财务票据自动化、多模态推理三个方向都有直接价值。尤其值得关注的是它把“减少幻觉、提升结构一致性”具体落实到 reward engineering 中，这对真实业务落地非常有启发。</p>
+</section>
+</article><article class="paper">
+<h3><a href="https://arxiv.org/abs/2605.22366v1" target="_blank" rel="noopener noreferrer">AgroTools: A Benchmark for Tool-Augmented Multimodal Agents in Agriculture</a></h3>
+<p class="meta">方向: MM | 标签: <span class="tag">MM</span></p>
+<p><strong>简述</strong>: 农业多模态工具使用评测基准</p>
+<p><strong>筛选理由</strong>: 农业工具型Agent评测稀缺，基准设计较有参考价值</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<p><strong>创新</strong>: 论文提出了首个面向农业场景的工具增强多模态智能体基准 AgroTools，不再只评估最终答案是否正确，而是同时评估工具规划、工具调用、参数生成、执行恢复和证据整合全过程。其核心价值在于把农业多模态理解从“答对题”推进到“能否可靠完成可执行工作流”的层面，并通过14个农业专用工具和结构化轨迹标注实现细粒度评测。</p>
+<p><strong>方法</strong>: AgroTools 基于12个公开农业数据集构建，共包含539个问答样本和1097张异构农业图像，覆盖识别检索、计数测量、分割解释、变化检测、可视化分析五大任务族。每个样本都配有可执行工具环境与参考工具使用轨迹，工具链采用 ReAct 风格交互，要求模型自主决定何时调用何种工具、生成参数并整合中间结果。评测上同时设计了无工具、step-by-step、端到端三种模式，并用过程级指标（如 ToolAcc、ArgAcc、EAR）和结果级指标（如 FAS、CSS、OTS）联合衡量模型能力。</p>
+<p><strong>实验</strong>: 作者系统评测了13个开源与闭源多模态模型，结果显示当前模型在农业工具使用场景下整体仍不可靠，尤其卡在参数生成、错误恢复和最终答案综合三个环节。强模型通常能从工具增强中获益明显，但弱模型在端到端模式下反而性能下降，说明长工具说明、严格输出格式和交互式执行对模型提出了更高要求。变化检测与可视化分析是最难两类任务，暴露出高参数错误率、工具切换错误和证据不足幻觉等关键瓶颈。</p>
+<p><strong>Deep理由</strong>: 如果你关注多模态智能体、工具学习或农业AI，这篇论文非常值得读，因为它把“农业视觉问答”提升为“农业可执行智能体评测”问题。它不仅提出了高质量 benchmark，也清楚揭示了当前主流 MLLM 在真实工具链场景中的系统性短板。</p>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
