@@ -6,7 +6,7 @@ So we put the full daily body into <description> (and mirror in <content:encoded
 while still keeping <link> to the standalone HTML page.
 
 Data source:
-  /Volumes/Extra/agnet_workspace/arxiv_daily/YYYY-MM-DD/reviews/screening.json
+  /Volumes/Extra/agent_workspace/arxiv_daily/YYYY-MM-DD/reviews/screening.json
 
 Output structure under site root:
   index.html
@@ -29,7 +29,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-BASE = Path('/Volumes/Extra/agnet_workspace/arxiv_daily')
+BASE = Path('/Volumes/Extra/agent_workspace/arxiv_daily')
 SITE_LINK_DEFAULT = 'https://desperadoccy.github.io/Arxiv-daily/'
 CST = dt.timezone(dt.timedelta(hours=8))
 
