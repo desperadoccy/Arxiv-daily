@@ -42,6 +42,16 @@ def _safe(s: str) -> str:
     return html.escape(s, quote=True)
 
 
+def _paragraphs_html(text: str) -> str:
+    paragraphs = []
+    for block in text.split('\n\n'):
+        block = block.strip()
+        if not block:
+            continue
+        paragraphs.append(f'<p>{_safe(block).replace(chr(10), "<br />")}</p>')
+    return ''.join(paragraphs)
+
+
 def _fmt_rfc2822(d: dt.date) -> str:
     dt_ = dt.datetime(d.year, d.month, d.day, 12, 0, 0, tzinfo=CST)
     return dt_.strftime('%a, %d %b %Y %H:%M:%S %z')
@@ -60,6 +70,11 @@ def _pick_deep_text(item: Dict[str, Any]) -> Optional[Dict[str, str]]:
     deep = item.get('deep_review')
     if not isinstance(deep, dict):
         return None
+
+    analysis = deep.get('analysis')
+    if isinstance(analysis, str) and analysis.strip():
+        return {'analysis': analysis.strip()}
+
     for k in ('codex', 'gemini'):
         v = deep.get(k)
         if isinstance(v, dict):
@@ -70,6 +85,13 @@ def _pick_deep_text(item: Dict[str, Any]) -> Optional[Dict[str, str]]:
                     out[key] = val.strip()
             if out:
                 return out
+    out = {}
+    for key in ('innovation', 'method', 'experiments', 'reason'):
+        val = deep.get(key)
+        if isinstance(val, str) and val.strip():
+            out[key] = val.strip()
+    if out:
+        return out
     return None
 
 
@@ -145,6 +167,8 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
 
     if deep:
         parts.append('<p><strong>Deep Review</strong></p>')
+        if deep.get('analysis'):
+            parts.append(_paragraphs_html(deep['analysis']))
         if deep.get('innovation'):
             parts.append(f'<p><strong>创新</strong>: {_safe(deep["innovation"])}</p>')
         if deep.get('method'):
@@ -220,6 +244,8 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
     if deep:
         parts.append('<section class="deep">')
         parts.append('<p class="deep-title">Deep Review</p>')
+        if deep.get('analysis'):
+            parts.append(_paragraphs_html(deep['analysis']))
         if deep.get('innovation'):
             parts.append(f'<p><strong>创新</strong>: {_safe(deep["innovation"])}</p>')
         if deep.get('method'):
