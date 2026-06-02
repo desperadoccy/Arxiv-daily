@@ -26,6 +26,7 @@ import argparse
 import datetime as dt
 import html
 import json
+import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -50,6 +51,57 @@ def _paragraphs_html(text: str) -> str:
             continue
         paragraphs.append(f'<p>{_safe(block).replace(chr(10), "<br />")}</p>')
     return ''.join(paragraphs)
+
+
+def _inline_markdown_html(text: str) -> str:
+    escaped = _safe(text)
+    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', escaped)
+
+
+def _markdownish_html(text: str) -> str:
+    """Small Markdown subset for model output inside RSS/HTML pages."""
+    out: List[str] = []
+    list_items: List[str] = []
+    para: List[str] = []
+
+    def flush_para() -> None:
+        nonlocal para
+        if para:
+            out.append('<p>' + '<br />'.join(_inline_markdown_html(line) for line in para) + '</p>')
+            para = []
+
+    def flush_list() -> None:
+        nonlocal list_items
+        if list_items:
+            out.append('<ul>' + ''.join(f'<li>{item}</li>' for item in list_items) + '</ul>')
+            list_items = []
+
+    for raw_line in text.splitlines():
+        line = raw_line.strip()
+        if not line:
+            flush_para()
+            flush_list()
+            continue
+        if line.startswith('>'):
+            line = line.lstrip('> ').strip()
+        if line.startswith('### '):
+            flush_para()
+            flush_list()
+            out.append(f'<h4>{_inline_markdown_html(line[4:].strip())}</h4>')
+        elif line.startswith('## '):
+            flush_para()
+            flush_list()
+            out.append(f'<h4>{_inline_markdown_html(line[3:].strip())}</h4>')
+        elif line.startswith('- '):
+            flush_para()
+            list_items.append(_inline_markdown_html(line[2:].strip()))
+        else:
+            flush_list()
+            para.append(line)
+
+    flush_para()
+    flush_list()
+    return ''.join(out)
 
 
 def _fmt_rfc2822(d: dt.date) -> str:
@@ -146,11 +198,11 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
     reason = _paper_reason(it)
     deep = _pick_deep_text(it) if include_deep else None
 
-    parts = ['<li>']
+    parts = ['<article class="paper-item" style="margin:18px 0;padding:14px 0;border-top:1px solid #d8dee4;">']
     if url:
-        parts.append(f'<p><strong><a href="{_safe(url)}">{_safe(title)}</a></strong></p>')
+        parts.append(f'<h3><a href="{_safe(url)}">{_safe(title)}</a></h3>')
     else:
-        parts.append(f'<p><strong>{_safe(title)}</strong></p>')
+        parts.append(f'<h3>{_safe(title)}</h3>')
 
     meta = []
     if direction:
@@ -166,9 +218,9 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
         parts.append(f'<p><strong>筛选理由</strong>: {_safe(reason)}</p>')
 
     if deep:
-        parts.append('<p><strong>Deep Review</strong></p>')
+        parts.append('<section class="deep-review" style="margin-top:12px;padding:12px 14px;background:#f8fafc;border-left:3px solid #8b949e;"><h4>Deep Review</h4>')
         if deep.get('analysis'):
-            parts.append(_paragraphs_html(deep['analysis']))
+            parts.append(_markdownish_html(deep['analysis']))
         if deep.get('innovation'):
             parts.append(f'<p><strong>创新</strong>: {_safe(deep["innovation"])}</p>')
         if deep.get('method'):
@@ -177,8 +229,9 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
             parts.append(f'<p><strong>实验</strong>: {_safe(deep["experiments"])}</p>')
         if deep.get('reason'):
             parts.append(f'<p><strong>Deep理由</strong>: {_safe(deep["reason"])}</p>')
+        parts.append('</section>')
 
-    parts.append('</li>')
+    parts.append('</article>')
     return ''.join(parts)
 
 
@@ -194,15 +247,11 @@ def _render_day_full_html(day: dt.date, screening: List[Dict[str, Any]], site_li
 
     if must:
         parts.append(f'<p><strong>🔴 必读（{len(must)}）</strong></p>')
-        parts.append('<ul>')
         parts.extend(_render_paper_full_html(it, include_deep=True) for it in must)
-        parts.append('</ul>')
 
     if rec:
         parts.append(f'<p><strong>🟡 推荐（{len(rec)}）</strong></p>')
-        parts.append('<ul>')
         parts.extend(_render_paper_full_html(it, include_deep=True) for it in rec)
-        parts.append('</ul>')
 
     if skip:
         parts.append(f'<p><strong>⚪ 可跳过（{len(skip)}）</strong></p>')
@@ -245,7 +294,7 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
         parts.append('<section class="deep">')
         parts.append('<p class="deep-title">Deep Review</p>')
         if deep.get('analysis'):
-            parts.append(_paragraphs_html(deep['analysis']))
+            parts.append(_markdownish_html(deep['analysis']))
         if deep.get('innovation'):
             parts.append(f'<p><strong>创新</strong>: {_safe(deep["innovation"])}</p>')
         if deep.get('method'):
