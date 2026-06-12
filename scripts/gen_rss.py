@@ -397,7 +397,7 @@ def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
 
 
 def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
-    now = dt.datetime.now().astimezone(CST).replace(microsecond=0).strftime('%a, %d %b %Y %H:%M:%S %z')
+    last_build = _fmt_rfc2822(days[0][0]) if days else _fmt_rfc2822(_today())
     self_feed = site_link + 'feed.xml'
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -407,7 +407,7 @@ def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date,
         f'  <description>{_safe(desc)}</description>',
         f'  <link>{_safe(site_link)}</link>',
         f'  <atom:link href="{_safe(self_feed)}" rel="self" type="application/rss+xml" />',
-        f'  <lastBuildDate>{_safe(now)}</lastBuildDate>',
+        f'  <lastBuildDate>{_safe(last_build)}</lastBuildDate>',
         '  <language>zh-cn</language>',
     ]
     for day, screening in days:
