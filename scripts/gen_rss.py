@@ -188,10 +188,47 @@ def _paper_tags(it: Dict[str, Any]) -> List[str]:
     return [str(t) for t in tags] if isinstance(tags, list) else []
 
 
+def _paper_authors_text(it: Dict[str, Any]) -> str:
+    return str(it.get('paper', {}).get('authors', '')).strip()
+
+
+def _paper_author_info(it: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    info = it.get('author_info')
+    if isinstance(info, dict):
+        return info
+    paper_info = it.get('paper', {}).get('author_info')
+    return paper_info if isinstance(paper_info, dict) else None
+
+
+def _paper_authors_html(it: Dict[str, Any]) -> str:
+    info = _paper_author_info(it)
+    if not isinstance(info, dict):
+        return _safe(_paper_authors_text(it))
+
+    authors = info.get('authors')
+    if not isinstance(authors, list):
+        return _safe(_paper_authors_text(it))
+
+    parts = []
+    for author in authors:
+        if not isinstance(author, dict):
+            continue
+        name = str(author.get('name', '')).strip()
+        affiliation = str(author.get('affiliation', '')).strip()
+        if not name:
+            continue
+        if affiliation:
+            parts.append(f'{_safe(name)} <span class="affiliation">({_safe(affiliation)})</span>')
+        else:
+            parts.append(_safe(name))
+    return '; '.join(parts) or _safe(_paper_authors_text(it))
+
+
 def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
     """Conservative HTML snippet for one paper."""
     title = _paper_title(it)
     url = _paper_url(it)
+    authors = _paper_authors_html(it)
     direction = _paper_direction(it)
     tags = _paper_tags(it)
     summary = _paper_summary(it)
@@ -203,6 +240,9 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
         parts.append(f'<h3><a href="{_safe(url)}">{_safe(title)}</a></h3>')
     else:
         parts.append(f'<h3>{_safe(title)}</h3>')
+
+    if authors:
+        parts.append(f'<p><strong>作者</strong>: {authors}</p>')
 
     meta = []
     if direction:
@@ -271,6 +311,7 @@ def _render_day_full_html(day: dt.date, screening: List[Dict[str, Any]], site_li
 def _render_paper_card(it: Dict[str, Any]) -> str:
     title = _paper_title(it)
     url = _paper_url(it)
+    authors = _paper_authors_html(it)
     tags = _paper_tags(it)
     direction = _paper_direction(it)
     summary = _paper_summary(it)
@@ -279,6 +320,8 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
 
     parts = ['<article class="paper">']
     parts.append(f'<h3><a href="{_safe(url)}" target="_blank" rel="noopener noreferrer">{_safe(title)}</a></h3>')
+    if authors:
+        parts.append(f'<p class="authors"><strong>作者</strong>: {authors}</p>')
     meta = []
     if direction:
         meta.append(f'方向: {_safe(direction)}')
@@ -343,6 +386,8 @@ def _render_day_page(day: dt.date, screening: List[Dict[str, Any]]) -> str:
     .paper {{ background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }}
     .paper h3 {{ margin: 0 0 10px; font-size: 18px; line-height: 1.45; }}
     .paper p {{ line-height: 1.7; margin: 8px 0; }}
+    .authors {{ color: #24292f; font-size: 14px; }}
+    .affiliation {{ color: #57606a; }}
     .meta {{ color: #57606a; font-size: 14px; }}
     .tag {{ display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }}
     .deep {{ margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }}
