@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-08-11</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .authors { color: #24292f; font-size: 14px; }
+    .affiliation { color: #57606a; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-08-11</h1>
+    <p class="summary">共 1 篇。🔴 必读 1，🟡 推荐 0，⚪ 可跳过 0。</p>
+    <section><h2>🔴 必读（1）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2608.08485v1" target="_blank" rel="noopener noreferrer">HoloAegis: Frozen Representation, Topological Inference: Minimally Parametric Safety Manifolds for Zero-Shot LLM Guardrails</a></h3>
+<p class="authors"><strong>作者</strong>: Tak Ho Alex Li <span class="affiliation">(Department of Mathematics, Hong Kong Baptist University, Hong Kong 999077; Guangdong-Hong Kong-Macao Institute of ESG and New Quality Productive Forces, School of Optoelectronic Engineering, Guangdong Polytechnic Normal University, Guangzhou 510665; Guangdong Institute of Digital Industry, Guangzhou 510000)</span>; Kaijie Liu <span class="affiliation">(Guangdong-Hong Kong-Macao Institute of ESG and New Quality Productive Forces, School of Optoelectronic Engineering, Guangdong Polytechnic Normal University, Guangzhou 510665)</span>; Lik-Hang Lee <span class="affiliation">(The Hong Kong Polytechnic University, Hong Kong 999077)</span>; Kin Chung Ho <span class="affiliation">(Academy for Applied Policy Studies and Education Futures, The Education University of Hong Kong, Hong Kong 999077)</span>; Ping Shum <span class="affiliation">(Southern University of Science and Technology, Shenzhen 518055)</span>; Michael K. Ng <span class="affiliation">(Department of Mathematics, Hong Kong Baptist University, Hong Kong 999077)</span></p>
+<p class="meta">方向: 其他 | 标签: <span class="tag">LLM-SAFETY</span></p>
+<p><strong>简述</strong>: 冻结表征的LLM安全护栏</p>
+<p><strong>筛选理由</strong>: 零样本高效，结果亮眼但需核实</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<h4>一句话判断</h4><p>这篇论文最值得关注的是：<strong>用“冻结编码器 + 预计算锚点 + 几何能量”把 LLM 安全护栏做成零冷启动、超低延迟的非生成式守卫</strong>；但从审稿视角看，<strong>方法想法有新意，实证优势并不在所有指标上压倒性成立，适合精读其框架与鲁棒性部分，不适合只看结论下定论</strong>。</p><h4>核心问题与动机</h4><p>论文解决的是 LLM 在线 moderation/guardrail 的两难：一类是 Llama-Guard、WildGuard 这类生成式裁判，准确但慢、吃显存；另一类是轻量分类器快，但在冷启动、类别极不平衡、对抗扰动下误报高。作者认为根因不只是工程代价，而是<strong>微调安全模型会扭曲预训练语义流形</strong>，导致 representation collapse。</p><p>因此他们主张：<strong>保留冻结语义表示，只在几何空间里做安全推理</strong>。这个动机在低延迟部署、边缘 CPU、网关式在线审核场景里很重要；但论文未明确证明“表示坍塌”是普遍主要矛盾，更多是作者的理论立场。</p><h4>方法拆解</h4><p>整体 pipeline 很清楚：输入文本先经过一个<strong>不参与训练的轻量 encoder</strong>（文中示例维度 384），映射到单位球面；然后在离线阶段用 safe/unsafe 语料做 K-Means++，构建两组 anchor bank。推理时，对查询向量只计算其到最近 k 个 anchors 的 Gibbs-Boltzmann potential，再用 unsafe 与 safe 的势能差做阈值判别。</p><p>多轮场景下，作者额外引入<strong>双时间尺度 EMA</strong>：对每轮 embedding 维护 fast/slow 两条轨迹，若两者夹角漂移超过阈值就触发 drift alert。另有一个“Compliance auditing”模块，把查询投影到 policy graph 上算 Graph Laplacian Dirichlet energy，用于给出可审计的政策张力分数。训练层面基本无端到端学习；只有 anchor 数 K、温度 τ、阈值 η 等少量超参，且论文声称可零样本运行。</p><h4>创新点含金量</h4><p>第一，<strong>冻结表示 + 非神经几何决策</strong>是主轴创新。它针对传统 guardrail 的高延迟与高资源占用，属于有实际价值的架构重构，不只是简单工程拼接，可迁移到任何能提取稳定 embedding 的安全过滤任务。</p><p>第二，<strong>anchor bank + free energy</strong>把分类边界写成能量差而非最近邻阈值，形式上比普通 KNN/ cosine threshold 更“可解释”。但就方法本身看，和原型学习、核密度、向量量化有明显谱系关系，实质创新中等，更多是把既有几何思想系统化。</p><p>第三，<strong>双时间尺度 EMA</strong>用于多轮 semantic drift 检测，针对逐步诱导式 jailbreak，属于有针对性的补强；但论文自己也承认这是“promising first step”，说明成熟度有限。</p><p>第四，<strong>Topological Boundary Stability Conjecture</strong>提供了锚点稳定性的理论动机，但论文明确写的是 conjecture 不是证明，因此更像理论包装 + 经验支撑，迁移性取决于具体 embedding 质量与锚点覆盖度。</p><h4>实验证据</h4><p>实验覆盖 8 个基准：ToxicChat、BeaverTails、AuthenHallu、HarmBench、XSTest、HaluBench、PKU-SafeRLHF、CHIFRAUD。基线包括 Llama-Guard-3-8B、WildGuard-7B、OpenAI Moderation API、Detoxify，以及一个 BGE-Small KNN 基线。论文强调 HoloAegis 在 AuthenHallu 达到 1.0000 AUC、HarmBench 0.9802、CHIFRAUD 零样本中文迁移 0.9758 AUC，并宣称 &lt;3.5MB、0.8ms。</p><p>但证据并非全线碾压：Table 2 里 HoloAegis 的<strong>平均 AUC 0.8757 低于 KNN baseline 的 0.9476</strong>，说明它的核心优势主要在<strong>延迟、内存、零冷启动、可审计性</strong>，而不是统一的绝对精度胜出。消融方面，K 与 τ 对不同任务影响明显；FPR@90%Recall 在 1% 毒性比例下优于 cosine thresholding 和 OpenAI API；25% Leetspeak 噪声下 AUC 下降更小；双 EMA 把多轮检测 AUC 从 0.4096 提到 0.7270。总体上，鲁棒性证据较充分，但“全局 SOTA”论断支撑不均衡。</p><h4>局限与风险</h4><p>第一，方法高度依赖冻结 encoder 的语义质量，论文未证明换 backbone 后仍稳定优于简单检索式方法。第二，anchor bank 是静态的，论文自己也承认对 white-box 攻击、零日威胁和锚点间隙可能脆弱。第三，多语言只给了中文 CHIFRAUD 一个结果，跨语言覆盖仍然有限。第四，部分表述存在不一致感（例如不同表格的延迟口径、平均 AUC 与“更优”叙述并不完全一致），需要精读时特别核对。</p><h4>与我方向的关系</h4><p>对 <strong>VLA / embodied AI / multimodal safety</strong> 有启发，但不是直接的 embodied 论文。它最可借鉴的是：<strong>把安全监控从重模型推理改成冻结表征上的几何门控</strong>，这对机器人系统里的在线安全过滤、跨轮对话意图漂移、低算力边缘守卫很有用。若扩展到 VLA，可把图像-语言-动作 embedding 视作统一流形，再做 anchor-based safety manifold；但论文没有处理动作级风险、闭环控制或传感器噪声，因此只能算方法论启发，不算现成方案。</p><h4>单篇深度评审标签（终评前参考）</h4><ul><li>单篇推荐等级：🟡推荐</li><li>三个关键词：冻结表征 / 锚点能量 / 多轮漂移检测</li><li>最适合写进文献综述的一句话：<strong>HoloAegis 代表了一类“非神经、几何化、零冷启动”的 LLM guardrail 思路：先冻结语义表征，再用锚点势能与漂移轨迹完成安全判别。</strong></li></ul>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
