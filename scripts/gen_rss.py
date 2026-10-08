@@ -106,6 +106,7 @@ def _markdownish_html(text: str) -> str:
 
 def _fmt_rfc2822(d: dt.date) -> str:
     dt_ = dt.datetime(d.year, d.month, d.day, 12, 0, 0, tzinfo=CST)
+    dt_ = min(dt_, dt.datetime.now(CST))
     return dt_.strftime('%a, %d %b %Y %H:%M:%S %z')
 
 
@@ -176,7 +177,8 @@ def _paper_summary(it: Dict[str, Any]) -> str:
 
 
 def _paper_reason(it: Dict[str, Any]) -> str:
-    return str(it.get('screening', {}).get('reason', '')).strip()
+    screen = it.get('screening', {})
+    return str(screen.get('final_rating_reason') or screen.get('reason', '')).strip()
 
 
 def _paper_direction(it: Dict[str, Any]) -> str:
@@ -257,6 +259,9 @@ def _render_paper_full_html(it: Dict[str, Any], include_deep: bool) -> str:
     if reason:
         parts.append(f'<p><strong>筛选理由</strong>: {_safe(reason)}</p>')
 
+    if it.get('reading_focus'):
+        parts.append(f'<p><strong>阅读重点</strong>: {_safe(it["reading_focus"])}</p>')
+
     if deep:
         parts.append('<section class="deep-review" style="margin-top:12px;padding:12px 14px;background:#f8fafc;border-left:3px solid #8b949e;"><h4>Deep Review</h4>')
         if deep.get('analysis'):
@@ -284,6 +289,9 @@ def _render_day_full_html(day: dt.date, screening: List[Dict[str, Any]], site_li
     parts.append(f'<p><strong>ArXiv Daily · {day.isoformat()}</strong></p>')
     parts.append(f'<p>共 {len(screening)} 篇，🔴 必读 {len(must)}，🟡 推荐 {len(rec)}，⚪ 可跳过 {len(skip)}。</p>')
     parts.append(f'<p>原网页版本: <a href="{_safe(day_url)}">{_safe(day_url)}</a></p>')
+    digest = _load_digest(day)
+    if digest:
+        parts.append(_digest_intro(digest, day, site_link))
 
     if must:
         parts.append(f'<p><strong>🔴 必读（{len(must)}）</strong></p>')
@@ -333,6 +341,8 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
         parts.append(f'<p><strong>简述</strong>: {_safe(summary)}</p>')
     if reason:
         parts.append(f'<p><strong>筛选理由</strong>: {_safe(reason)}</p>')
+    if it.get('reading_focus'):
+        parts.append(f'<p><strong>阅读重点</strong>: {_safe(it["reading_focus"])}</p>')
     if deep:
         parts.append('<section class="deep">')
         parts.append('<p class="deep-title">Deep Review</p>')
@@ -351,12 +361,15 @@ def _render_paper_card(it: Dict[str, Any]) -> str:
     return '\n'.join(parts)
 
 
-def _render_day_page(day: dt.date, screening: List[Dict[str, Any]]) -> str:
+def _render_day_page(day: dt.date, screening: List[Dict[str, Any]], full_archive=False) -> str:
     must, rec, skip = _group_items(screening)
     title = f'ArXiv Daily · {day.isoformat()}'
     nav = '<p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>'
 
     sections = []
+    digest = _load_digest(day)
+    if digest:
+        sections.append(_digest_intro(digest, day, SITE_LINK_DEFAULT))
     if must:
         sections.append(f'<section><h2>🔴 必读（{len(must)}）</h2>' + ''.join(_render_paper_card(it) for it in must) + '</section>')
     if rec:
@@ -369,6 +382,10 @@ def _render_day_page(day: dt.date, screening: List[Dict[str, Any]]) -> str:
             items.append(f'<li>{_safe(title_i)}' + (f'（{_safe(reason_i)}）' if reason_i else '') + '</li>')
         tail = f'<p>其余 {len(skip) - 20} 篇略。</p>' if len(skip) > 20 else ''
         sections.append(f'<section><h2>⚪ 可跳过（{len(skip)}）</h2><ul>{"".join(items)}</ul>{tail}</section>')
+
+    if full_archive:
+        sections = ([ _digest_intro(digest, day, SITE_LINK_DEFAULT) ] if digest else [])
+        sections.append('<section><h2>全部全文评审</h2>' + ''.join(_render_paper_card(item) for item in screening) + '</section>')
 
     return f'''<!doctype html>
 <html lang="zh-CN">
@@ -442,7 +459,7 @@ def _render_index(days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
 
 
 def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date, List[Dict[str, Any]]]]) -> str:
-    last_build = _fmt_rfc2822(days[0][0]) if days else _fmt_rfc2822(_today())
+    last_build = dt.datetime.now(CST).strftime('%a, %d %b %Y %H:%M:%S %z')
     self_feed = site_link + 'feed.xml'
     out = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -472,15 +489,55 @@ def _render_rss(title: str, site_link: str, desc: str, days: List[Tuple[dt.date,
     return '\n'.join(out) + '\n'
 
 
+def _load_digest(day):
+    path = BASE / day.isoformat() / 'consolidated_recommendations.json'
+    if not path.exists():
+        return None
+    data = json.loads(path.read_text())
+    if not data.get('completed') or not data.get('results') or len(data.get('all_results', [])) != data.get('total_reviewed'):
+        raise RuntimeError('补发推荐尚未完整完成，停止发布')
+    return data
+
+
+def _digest_intro(digest, day, site_link):
+    return (f'<p><strong>补发范围：{_safe(digest["start_date"])} 至 {_safe(digest["end_date"])}；'
+            f'全文评审 {digest["total_reviewed"]} 篇，模型 {_safe(digest["model"])}。</strong></p>'
+            + _paragraphs_html(digest['overview'])
+            + '<p>评审范围：每篇最多使用 PDF 提取文本的前 50,000 字符；推荐基于逐篇评审、分组终评和跨组筛选。</p>'
+            + f'<p><a href="{_safe(site_link)}days/{day.isoformat()}-all.html">查看全部 {digest["total_reviewed"]} 篇全文评审</a></p>')
+
+
 def generate_site(days: int, out_dir: Path, site_link: str, title: str, desc: str) -> None:
     today = _today()
     day_records: List[Tuple[dt.date, List[Dict[str, Any]]]] = []
+    digests = {}
     for i in range(days):
         day = today - dt.timedelta(days=i)
+        digest = _load_digest(day)
+        if digest:
+            digests[day] = digest
+    for i in range(days):
+        day = today - dt.timedelta(days=i)
+        digest = digests.get(day)
+        if digest:
+            day_records.append((day, digest['results']))
+            continue
+        if any(item['start_date'] <= day.isoformat() <= item['end_date'] for item in digests.values()):
+            continue  # A consolidated recommendation already covers this source day.
+        summary_path = BASE / day.isoformat() / 'reviews' / 'summary.json'
+        if not summary_path.exists():
+            continue
         screening = _load_screening(BASE / day.isoformat())
         if screening:
+            with summary_path.open(encoding='utf-8') as stream:
+                summary = json.load(stream)
+            if summary.get('results') != screening or summary.get('total') != len(screening):
+                continue
             day_records.append((day, screening))
     day_records.sort(key=lambda x: x[0], reverse=True)
+
+    if not day_records:
+        raise RuntimeError('最近窗口内没有可发布的评审结果；保留现有 RSS，停止空内容发布')
 
     out_dir.mkdir(parents=True, exist_ok=True)
     days_dir = out_dir / 'days'
@@ -488,6 +545,10 @@ def generate_site(days: int, out_dir: Path, site_link: str, title: str, desc: st
 
     for day, screening in day_records:
         (days_dir / f'{day.isoformat()}.html').write_text(_render_day_page(day, screening), encoding='utf-8')
+        digest = _load_digest(day)
+        if digest:
+            full = _render_day_page(day, digest['all_results'], full_archive=True)
+            (days_dir / f'{day.isoformat()}-all.html').write_text(full, encoding='utf-8')
 
     (out_dir / 'index.html').write_text(_render_index(day_records), encoding='utf-8')
     (out_dir / 'feed.xml').write_text(_render_rss(title, site_link, desc, day_records), encoding='utf-8')
