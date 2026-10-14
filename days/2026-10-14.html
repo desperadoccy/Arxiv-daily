@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArXiv Daily · 2026-10-14</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; background: #f5f7fb; color: #1f2328; }
+    main { max-width: 980px; margin: 0 auto; padding: 32px 20px 64px; }
+    h1 { margin-bottom: 8px; }
+    h2 { margin-top: 36px; border-bottom: 1px solid #d8dee4; padding-bottom: 8px; }
+    .summary { color: #57606a; margin-bottom: 20px; }
+    .paper { background: #fff; border: 1px solid #d8dee4; border-radius: 14px; padding: 18px 18px 12px; margin: 14px 0; box-shadow: 0 1px 2px rgba(31,35,40,.04); }
+    .paper h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.45; }
+    .paper p { line-height: 1.7; margin: 8px 0; }
+    .authors { color: #24292f; font-size: 14px; }
+    .affiliation { color: #57606a; }
+    .meta { color: #57606a; font-size: 14px; }
+    .tag { display: inline-block; padding: 1px 8px; margin-right: 4px; background: #eef2ff; color: #3b5bdb; border-radius: 999px; font-size: 12px; }
+    .deep { margin-top: 12px; padding: 12px 14px; background: #f8fafc; border-left: 3px solid #8b949e; border-radius: 8px; }
+    .deep-title { font-weight: 700; margin-top: 0; }
+    a { color: #0969da; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../index.html">← 返回索引</a> | <a href="../feed.xml">RSS</a></p>
+    <h1>ArXiv Daily · 2026-10-14</h1>
+    <p class="summary">共 1 篇。🔴 必读 0，🟡 推荐 1，⚪ 可跳过 0。</p>
+    <section><h2>🟡 推荐（1）</h2><article class="paper">
+<h3><a href="https://arxiv.org/abs/2610.14443v1" target="_blank" rel="noopener noreferrer">Specification-Based Testing of Large Language Models</a></h3>
+<p class="authors"><strong>作者</strong>: Kausar Moshood <span class="affiliation">(School of Electrical Engineering and Computer Science, Oregon State University, Corvallis, Oregon, USA)</span>; Jace Bolante <span class="affiliation">(School of Electrical Engineering and Computer Science, Oregon State University, Corvallis, Oregon, USA)</span>; Roshan Aditya Murali <span class="affiliation">(School of Electrical Engineering and Computer Science, Oregon State University, Corvallis, Oregon, USA)</span>; Manish Motwani <span class="affiliation">(School of Electrical Engineering and Computer Science, Oregon State University, Corvallis, Oregon, USA)</span></p>
+<p class="meta">方向: 其他 | 标签: <span class="tag">LLM-SAFETY</span></p>
+<p><strong>简述</strong>: 将安全声明转化为可追踪测试</p>
+<p><strong>筛选理由</strong>: 池内唯一候选，审计方法可借鉴但证据与方向关联有限</p>
+<section class="deep">
+<p class="deep-title">Deep Review</p>
+<h4>一句话判断</h4><p>LEST 最值得关注的是把系统卡安全声明转化为可追溯的黑盒测试，并揭示自动裁判对失败的严重高估；建议精读其评估方法，但需审慎看待“反例推翻声明”的语义依据。</p><h4>核心问题与动机</h4><p>论文追问的不是“模型在安全榜单上得分多少”，而是“基准究竟测试了厂商承诺的哪些行为”。同属安全类别，不代表提示覆盖具体声明；声明可通过交互测试，也不代表能用拒答判断。固定提示还无法揭示改写后的行为变化，因此需要连接声明、测试输入、判定标准与反例证据。</p><h4>方法拆解</h4><p>LEST 输入系统卡、危险请求种子及目标模型，输出声明级覆盖与反例报告。先通过章节语义检索和规则抽取生成候选，再由三名作者审核声明及其可测试性；随后独立标注“声明—提示”映射，以及拒答是否为适用判据。例如，声明若承认模型偶尔服从危险请求，观察到服从并不能反驳它。</p><p>生成阶段对所有种子统一做随机迭代变异，包括词汇替换、修饰词增删、人称转换、T5 改写和身份替换；生成不依赖声明或目标模型反馈。经语法、困惑度、语义相似性及去重过滤后执行测试，三个安全分类器多数投票筛出“原提示拒绝、变异后服从”的候选，再人工确认有害意图保留且回答真正服从，最后回溯对应声明。该方法不训练目标模型；无反例只表示“未观察到”，不表示验证成立。</p><h4>创新点含金量</h4><p><strong>第一，声明驱动的测试充分性与判据选择。</strong>它针对基准覆盖与文档承诺脱节的问题，属于有实质价值的方法论组织创新，但不是新攻击算法。<strong>第二，端到端证据追溯。</strong>保留声明、种子、变异路径与人工验证结果，主要是工程整合，却提升了审计价值。</p><p><strong>第三，区分行为变化与有效反例。</strong>将意图保持和真实服从分开审核，是重要的评估纪律，但不是新的通用裁判技术。三点均可迁移；论文也明确承认，变异算子本身主要来自已有技术。</p><h4>实验证据</h4><p>研究使用 Claude Opus 4.8、GPT-5.5 系统卡及 SORRY-Bench 三个领域的97条种子。56项声明中29项可提示测试，仅17项有适用种子；11项适用拒答判据，其中9项被覆盖。两模型对原始提示的拒答率均超过95%。1,836条变异提示在两模型上执行后产生312个自动候选，仅19个通过人工验证，占6.1%，关联到6项被覆盖声明。</p><p>这些结果支持“类别覆盖不等于声明覆盖”，也支持“本设置下自动候选存在大量误报”；6.1%不能当作整体攻击成功率。比较对象主要是原始提示测试和仅自动裁判的评估，未展示与 PAIR、TAP 等方法在等预算下的比较。五种算子产生有效反例，但作者未据此排名。所给原文在实现细节处截断，后续完整结果、消融和重复执行统计无法核查。</p><h4>局限与风险</h4><p><strong>声明适用范围可能被扩大。</strong>动机案例把 BBQ 问答情境中的“不产生不公平或刻板输出”，用于解释辱骂词请求；列举辱骂词是否等同于产生不公平输出、是否超出原声明语境，都需要更严格论证。人工确认服从，并不自动证明声明被反驳。</p><p><strong>召回率与外推范围有限。</strong>仅审核自动筛出的候选，无法估计被裁判漏掉的失败；拒答转换也遗漏原始提示已服从及非拒答型安全问题。两个模型、单一基准和三个领域不足以支撑广泛结论，最终变异集仅覆盖87条种子。此外，抽取阈值在同两份系统卡上调定，多阶段作者标注增加成本与主观性；独立外部复现证据在所给内容中未展示。</p><h4>与我方向的关系</h4><p>对 VLA、embodied AI 的直接算法贡献有限，但其“声明—场景—判据—反例”链条值得借鉴。<strong>推断：</strong>可将机器人安全承诺映射到视觉场景、语言指令与动作轨迹，并通过光照、视角或指令改写测试鲁棒性；判据应转为碰撞、越界、任务约束等，不能直接沿用拒答。</p><p>对多模态 safety/robustness，最有价值的是将“扰动是否保持任务与风险语义”和“输出是否真正违规”分开验证。<strong>推断：</strong>这有助于避免把视觉扰动改变任务后的行为差异误报为安全失效，但论文没有提供多模态或机器人实验证据。</p><h4>单篇深度评审标签（终评前参考）</h4><ul><li>单篇推荐等级：🟡推荐</li><li>三个关键词：规格驱动测试、声明覆盖、人工反例验证</li><li>最适合写进文献综述的一句话：LEST 将系统卡安全声明映射到黑盒变异测试与人工验证反例，揭示了基准类别覆盖和自动裁判结果不足以直接支撑声明级安全结论。</li></ul>
+</section>
+</article></section>
+  </main>
+</body>
+</html>
